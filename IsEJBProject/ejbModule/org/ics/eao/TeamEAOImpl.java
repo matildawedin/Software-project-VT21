@@ -25,6 +25,9 @@ public class TeamEAOImpl implements TeamEAOLocal {
     	em.persist(team);
     	return team;
     }
-
-  //update?
+    
+    public Team updateTeam(Team team) {
+    	em.merge(team);
+    	return team;
+    }
 }

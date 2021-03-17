@@ -1,13 +1,10 @@
 package org.ics.ejb;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +14,6 @@ public class Team implements Serializable{
 	private String teamID;
 	private String teamName;
 	
-	private List<TournamentTeam> tournamentTeam;
-
 	@Id
 	@Column(name = "teamID")
 	public String getTeamID() {
@@ -38,15 +33,6 @@ public class Team implements Serializable{
 		this.teamName = teamName;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "team")  //behövs fetchType??
-	public List<TournamentTeam> getTournamentTeam() {
-		return tournamentTeam;
-	}
-
-	public void setTournamentTeam(List<TournamentTeam> tournamentTeam) {
-		this.tournamentTeam = tournamentTeam;
-	}
-	
 
 	
 }

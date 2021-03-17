@@ -27,5 +27,8 @@ public class TournamentEAOImpl implements TournamentEAOLocal {
     	return tournament;
     }
     
-    //update?
+    public Tournament updateTournament(Tournament tournament) {
+    	em.merge(tournament);
+    	return tournament;
+    }
 }

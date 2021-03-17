@@ -9,4 +9,5 @@ public interface TeamEAOLocal {
 
 	public Team findTeam(String teamID);
 	public Team createTeam(Team team);
+	public Team updateTeam(Team team);
 }

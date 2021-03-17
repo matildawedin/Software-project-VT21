@@ -9,4 +9,5 @@ public interface TournamentEAOLocal {
 
 	public Tournament findTournament(String tournamentID);
 	public Tournament createTournament(Tournament tournament);
+	public Tournament updateTournament(Tournament tournament);
 }

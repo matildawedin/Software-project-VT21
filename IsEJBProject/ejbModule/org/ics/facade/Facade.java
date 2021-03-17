@@ -5,10 +5,8 @@ import javax.ejb.Stateless;
 
 import org.ics.eao.TeamEAOLocal;
 import org.ics.eao.TournamentEAOLocal;
-import org.ics.eao.TournamentTeamEAOLocal;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
-import org.ics.ejb.TournamentTeam;
 
 /**
  * Session Bean implementation class Facade
@@ -22,10 +20,7 @@ public class Facade implements FacadeLocal {
 	@EJB
 	TeamEAOLocal team;
 	
-	@EJB
-	TournamentTeamEAOLocal tournamentTeam;
-	
-  
+
     public Facade() {}
     
     //---------- Tournament ---------
@@ -38,6 +33,11 @@ public class Facade implements FacadeLocal {
 		return tournament;
 	}
 	
+	public void updateTournament(Tournament tournament) {
+    	this.tournament.updateTournament(tournament);
+    
+    }
+	
 	//---------- Team ---------
 	public Team findTeam(String teamID) {
 		return team.findTeam(teamID);
@@ -47,15 +47,11 @@ public class Facade implements FacadeLocal {
 		team = this.team.createTeam(team);
 		return team;
 	}
+	public void updateTeam(Team team) {
+    	this.team.updateTeam(team);
+    }
 	
-	//---------- TournamentTeam ---------
-	public TournamentTeam createTournamentTeam(TournamentTeam tournamentTeam) {
-		tournamentTeam = this.tournamentTeam.create(tournamentTeam);
-		return tournamentTeam;
-	}
-	
-	
-	//public TournamentTeam findTournamentTeam(TournamentTeamID id){}
+
 		
 
 }
