@@ -12,7 +12,9 @@ import org.ics.ejb.Tournament;
 @Stateless
 public class TournamentEAOImpl implements TournamentEAOLocal {
 
+
 	@PersistenceContext(unitName = "ISP")  
+
 	private EntityManager em;
     
     public TournamentEAOImpl() {}

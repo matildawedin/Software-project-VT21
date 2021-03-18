@@ -13,6 +13,7 @@ import org.ics.ejb.Team;
 public class TeamEAOImpl implements TeamEAOLocal {
 
 	@PersistenceContext(unitName = "ISP")  
+
 	private EntityManager em;
    
     public TeamEAOImpl() { }
