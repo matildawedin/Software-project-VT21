@@ -12,7 +12,7 @@ import org.ics.ejb.Team;
 @Stateless
 public class TeamEAOImpl implements TeamEAOLocal {
 
-	@PersistenceContext(unitName = "LabEJBSql")  //byta unitnamn?? i percistence.xml filen?
+	@PersistenceContext(unitName = "ISP")  
 	private EntityManager em;
    
     public TeamEAOImpl() { }
