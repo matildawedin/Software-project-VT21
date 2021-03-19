@@ -1,9 +1,13 @@
 package org.ics.eao;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
+import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 
 /**
@@ -14,7 +18,6 @@ public class TournamentEAOImpl implements TournamentEAOLocal {
 
 
 	@PersistenceContext(unitName = "ISP")  
-
 	private EntityManager em;
     
     public TournamentEAOImpl() {}
@@ -29,8 +32,14 @@ public class TournamentEAOImpl implements TournamentEAOLocal {
     	return tournament;
     }
     
-    public Tournament updateTournament(Tournament tournament) {
+    public void updateTournament(Tournament tournament) {
     	em.merge(tournament);
-    	return tournament;
     }
+
+	public List<Tournament> findAllTournaments() {
+
+		TypedQuery<Tournament> query = em.createNamedQuery("Tournament.findAllTournaments", Tournament.class);
+		List<Tournament> results = query.getResultList();
+		return results;
+	}
 }
