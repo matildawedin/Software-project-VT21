@@ -42,7 +42,7 @@ public class IsServlet extends HttpServlet {
 		
 		out.println("<h2>IS</h2>");
 		
-		/*//lägg till object i tables
+		/*//lï¿½gg till object i tables
 		Team team = new Team();
 		team.setTeamID("T1");
 		team.setTeamName("Matilda");
@@ -55,7 +55,7 @@ public class IsServlet extends HttpServlet {
 		facade.createTournament(tournament);
 		
 		*/
-		//Hämtar alla teams och tournaments genom queries
+		//Hï¿½mtar alla teams och tournaments genom queries
 		out.println("<h3>Alla Teams</h3>");
 		List<Team> allTeams = facade.findAllTeams();
 		for(Team t : allTeams) {
@@ -66,7 +66,12 @@ public class IsServlet extends HttpServlet {
 		for(Tournament t : allTournament) {
 			out.println(t.getTournamentName());
 		}
-		
+		Tournament tmpTournament = facade.findTournament("I101");
+		out.println("<p>Tournament: "+tmpTournament.getTournamentName()+" has the following teams:<br>");
+		for(Team tmpTeam: tmpTournament.getTeams()) 
+		{
+			out.println("<p>Team: "+tmpTeam.getTeamID() +" | Name: "+ tmpTeam.getTeamName()+"</p>");
+		}
 		out.println("</body></html>");
 		out.close();
 	}

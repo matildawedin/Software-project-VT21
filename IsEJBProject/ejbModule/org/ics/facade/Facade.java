@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-import org.ics.eao.GenericEAOLocal;
+//import org.ics.eao.GenericEAOLocal;
 import org.ics.eao.TeamEAOLocal;
 import org.ics.eao.TournamentEAOLocal;
 import org.ics.ejb.Team;
@@ -30,7 +30,7 @@ public class Facade implements FacadeLocal {
 	/* test kod
 
 	@EJB
-	private GenericEAOLocal eao;
+	//private GenericEAOLocal eao;
     
     public T createTournament(T tournament) {
     	tournament = eao.create(tournament);
