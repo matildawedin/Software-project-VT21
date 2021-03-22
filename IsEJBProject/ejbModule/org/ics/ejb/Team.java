@@ -1,21 +1,28 @@
 package org.ics.ejb;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
 @Entity
 @NamedQueries({@NamedQuery(name = "Team.findAllTeams()", query="SELECT t FROM Team t")})
 @Table(name = "Team")
 public class Team implements Serializable{
-	
+
+	private static final long serialVersionUID = 1L;
 	private String teamID;
 	private String teamName;
+	private Set<Tournament> tournaments;
 	
 	@Id
 	@Column(name = "teamID")
@@ -34,6 +41,21 @@ public class Team implements Serializable{
 
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
+	}
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name="TournamentTeam",
+		joinColumns= 
+				@JoinColumn(name="teamID",
+				referencedColumnName="teamID"),
+			inverseJoinColumns= 
+					@JoinColumn(name="tournamentID",
+					referencedColumnName="tournamentID"))
+	public Set<Tournament> getTournaments() {
+		return tournaments;
+	}
+	public void setTournaments(Set<Tournament> tournaments) {
+		this.tournaments = tournaments;
 	}
 
 
