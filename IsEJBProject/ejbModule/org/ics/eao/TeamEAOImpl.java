@@ -1,8 +1,11 @@
 package org.ics.eao;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.ics.ejb.Team;
 
@@ -12,7 +15,8 @@ import org.ics.ejb.Team;
 @Stateless
 public class TeamEAOImpl implements TeamEAOLocal {
 
-	@PersistenceContext(unitName = "ISP")  //byta unitnamn?? i percistence.xml filen?
+	@PersistenceContext(unitName = "ISP")  
+
 	private EntityManager em;
    
     public TeamEAOImpl() { }
@@ -26,8 +30,14 @@ public class TeamEAOImpl implements TeamEAOLocal {
     	return team;
     }
     
-    public Team updateTeam(Team team) {
+    public void updateTeam(Team team) {
     	em.merge(team);
-    	return team;
+    }
+    
+    public List<Team> findAllTeams(){
+    	
+    	TypedQuery<Team> query = em.createNamedQuery("Team.findAllTeams()", Team.class);
+    	List<Team> results = query.getResultList();
+    	return results;
     }
 }

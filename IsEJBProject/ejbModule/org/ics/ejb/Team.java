@@ -5,9 +5,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({@NamedQuery(name = "Team.findAllTeams()", query="SELECT t FROM Team t")})
 @Table(name = "Team")
 public class Team implements Serializable{
 	

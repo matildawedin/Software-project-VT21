@@ -2,6 +2,7 @@ package org.ics.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -41,7 +42,7 @@ public class IsServlet extends HttpServlet {
 		
 		out.println("<h2>IS</h2>");
 		
-		/* lägg till object i tables
+		/*//lägg till object i tables
 		Team team = new Team();
 		team.setTeamID("T1");
 		team.setTeamName("Matilda");
@@ -52,7 +53,19 @@ public class IsServlet extends HttpServlet {
 		tournament.setSport("Fotboll");
 		tournament.setTournamentName("VM");
 		facade.createTournament(tournament);
+		
 		*/
+		//Hämtar alla teams och tournaments genom queries
+		out.println("<h3>Alla Teams</h3>");
+		List<Team> allTeams = facade.findAllTeams();
+		for(Team t : allTeams) {
+			out.println(t.getTeamName());
+		}
+		out.println("<h3>Alla Tournament</h3>");
+		List<Tournament> allTournament = facade.findAllTournaments();
+		for(Tournament t : allTournament) {
+			out.println(t.getTournamentName());
+		}
 		
 		out.println("</body></html>");
 		out.close();
