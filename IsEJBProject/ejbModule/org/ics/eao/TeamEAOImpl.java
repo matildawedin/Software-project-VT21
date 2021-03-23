@@ -1,18 +1,24 @@
 package org.ics.eao;
 
+import java.sql.SQLException;
 import java.util.List;
 
+import javax.ejb.FinderException;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
+import javax.persistence.OptimisticLockException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.ics.ejb.Team;
+import org.ics.interceptor.LogInterceptor;
 
 /**
  * Session Bean implementation class TeamEAOImpl
  */
 @Stateless
+@Interceptors(LogInterceptor.class)
 public class TeamEAOImpl implements TeamEAOLocal {
 
 	@PersistenceContext(unitName = "ISP")  
@@ -31,13 +37,29 @@ public class TeamEAOImpl implements TeamEAOLocal {
     }
     
     public void updateTeam(Team team) {
-    	em.merge(team);
+    	
+    	try {
+    		em.merge(team);
+    	}
+    	catch(OptimisticLockException o) {
+    		//error hantering
+    	}
+    	
     }
+    
     
     public List<Team> findAllTeams(){
     	
-    	TypedQuery<Team> query = em.createNamedQuery("Team.findAllTeams()", Team.class);
-    	List<Team> results = query.getResultList();
-    	return results;
+    	try {
+    		TypedQuery<Team> query = em.createNamedQuery("Team.findAllTeams()", Team.class);
+    		List<Team> results = query.getResultList();
+    		return results;
+    	}
+    	catch(Exception e) {
+    		
+    		//error hantering???
+    		
+    		return null;
+    	}
     }
 }

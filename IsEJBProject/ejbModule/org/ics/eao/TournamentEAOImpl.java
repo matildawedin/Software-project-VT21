@@ -3,17 +3,20 @@ package org.ics.eao;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
+import org.ics.interceptor.LogInterceptor;
 
 /**
  * Session Bean implementation class TournamentEAOImpl
  */
 @Stateless
+@Interceptors(LogInterceptor.class)
 public class TournamentEAOImpl implements TournamentEAOLocal {
 
 
@@ -33,9 +36,11 @@ public class TournamentEAOImpl implements TournamentEAOLocal {
     }
     
     public void updateTournament(Tournament tournament) {
+    	
     	em.merge(tournament);
     }
 
+    
 	public List<Tournament> findAllTournaments() {
 
 		TypedQuery<Tournament> query = em.createNamedQuery("Tournament.findAllTournaments", Tournament.class);

@@ -5,6 +5,7 @@
 	<non-jta-data-source>java:jboss/datasources/jdbc/ISPVT21</non-jta-data-source>
 	<properties>
 		<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"></property>
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
 	</properties>
   </persistence-unit>
 </persistence>
