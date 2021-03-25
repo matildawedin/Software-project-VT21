@@ -27,6 +27,7 @@ public class TeamEAOImpl implements TeamEAOLocal {
     
     public Team createTeam(Team team) {
     	em.persist(team);
+    	
     	return team;
     }
     
@@ -41,8 +42,9 @@ public class TeamEAOImpl implements TeamEAOLocal {
     	List<Team> results = query.getResultList();
     	return results;
     }
-    public String generateID() {
-    	TypedQuery<Team> query= em.createNamedQuery("TeamGenerateQuery", Team.class);
+    public String generateID(String teamName) {
+    	TypedQuery<Team> query= em.createNamedQuery("Team.generateID()", Team.class);
+    	query.setMaxResults(1).getResultList();
     	String tmp = query.toString();
     	String teamID = null;
     	if (tmp.length() == 4) {

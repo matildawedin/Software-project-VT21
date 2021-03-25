@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.*;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -18,8 +20,11 @@ import javax.persistence.JoinColumn;
 
 
 @Entity
-@NamedQueries({@NamedQuery(name = "Team.findAllTeams()", query="SELECT t FROM Team t"), @NamedQuery(name= "TeamGenerateQuery",
-query = "SELECT TOP 1 teamID FROM Team ORDER BY teamID DESC"),
+@NamedQueries({
+	@NamedQuery(name = "Team.findAllTeams()",
+			query="SELECT t FROM Team t"),
+	 @NamedQuery(name="Team.generateID()",
+query= "SELECT teamID FROM Team"),
 })
 @Table(name = "Team")
 
