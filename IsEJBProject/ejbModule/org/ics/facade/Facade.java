@@ -27,19 +27,6 @@ public class Facade implements FacadeLocal {
 	
 	public Facade() {}
 	
-	/* test kod
-
-	@EJB
-	//private GenericEAOLocal eao;
-    
-    public T createTournament(T tournament) {
-    	tournament = eao.create(tournament);
-    	return tournament;
-    }
-*/
-	
-
-    
     //---------- Tournament ---------
     public Tournament findTournament(String tournamentID) {
     	return tournament.findTournament(tournamentID);

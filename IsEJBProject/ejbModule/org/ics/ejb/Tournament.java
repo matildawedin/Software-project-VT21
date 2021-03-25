@@ -3,6 +3,7 @@ package org.ics.ejb;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @NamedQueries({@NamedQuery(name = "Tournament.findAllTournaments", query="SELECT t FROM Tournament t")})
@@ -22,6 +24,7 @@ public class Tournament implements Serializable {
 	private String tournamentName;
 	private String sport;
 	private Set<Team> teams;
+	private int version;
 	
 	
 
@@ -53,12 +56,22 @@ public class Tournament implements Serializable {
 		this.sport = sport;
 	}
 
-	@ManyToMany(fetch = FetchType.EAGER, mappedBy="tournaments")
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy="tournaments", cascade = CascadeType.PERSIST)
 	public Set<Team> getTeams() {
 		return teams;
 	}
 
 	public void setTeams(Set<Team> teams) {
 		this.teams = teams;
+	}
+	
+	@Version
+	@Column(name = "version")
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 }
