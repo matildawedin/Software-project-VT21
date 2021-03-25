@@ -19,4 +19,5 @@ public interface FacadeLocal{
 	 public void updateTeam(Team team);
 	 public List<Team> findAllTeams();
 	 public List<Tournament> findAllTournaments();
+	 public String generateID();
 }

@@ -42,9 +42,8 @@ public class IsServlet extends HttpServlet {
 		
 		out.println("<h2>IS</h2>");
 		
-		/*//l�gg till object i tables
+		//l�gg till object i tables
 		Team team = new Team();
-		team.setTeamID("T1");
 		team.setTeamName("Matilda");
 		facade.createTeam(team);
 		
@@ -54,7 +53,7 @@ public class IsServlet extends HttpServlet {
 		tournament.setTournamentName("VM");
 		facade.createTournament(tournament);
 		
-		*/
+		
 		//H�mtar alla teams och tournaments genom queries
 		out.println("<h3>Alla Teams</h3>");
 		List<Team> allTeams = facade.findAllTeams();

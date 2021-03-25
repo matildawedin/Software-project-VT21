@@ -2,10 +2,12 @@ package org.ics.ejb;
 
 import java.io.Serializable;
 import java.util.Set;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -14,24 +16,27 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
-@Entity
-@NamedQueries({@NamedQuery(name = "Team.findAllTeams()", query="SELECT t FROM Team t")})
-@Table(name = "Team")
-public class Team implements Serializable{
 
-	private static final long serialVersionUID = 1L;
+@Entity
+@NamedQueries({@NamedQuery(name = "Team.findAllTeams()", query="SELECT t FROM Team t"), @NamedQuery(name= "TeamGenerateQuery",
+query = "SELECT TOP 1 teamID FROM Team ORDER BY teamID DESC"),
+})
+@Table(name = "Team")
+
+public class Team implements Serializable{
+	
 	private String teamID;
 	private String teamName;
 	private Set<Tournament> tournaments;
+	
 	
 	@Id
 	@Column(name = "teamID")
 	public String getTeamID() {
 		return teamID;
 	}
-
-	public void setTeamID(String teamID) {
-		this.teamID = teamID;
+	public void setTeamID(String teamID)	{
+		this.teamID= teamID;
 	}
 
 	@Column(name = "teamName")

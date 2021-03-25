@@ -33,6 +33,7 @@ public class TeamEAOImpl implements TeamEAOLocal {
     public void updateTeam(Team team) {
     	em.merge(team);
     }
+   
     
     public List<Team> findAllTeams(){
     	
@@ -40,4 +41,25 @@ public class TeamEAOImpl implements TeamEAOLocal {
     	List<Team> results = query.getResultList();
     	return results;
     }
+    public String generateID() {
+    	TypedQuery<Team> query= em.createNamedQuery("TeamGenerateQuery", Team.class);
+    	String tmp = query.toString();
+    	String teamID = null;
+    	if (tmp.length() == 4) {
+    		StringBuilder sb = new StringBuilder();
+			sb.append(tmp.charAt(1));
+			String charString = sb.toString();
+			int number = Integer.parseInt(charString);
+			if (tmp != null) {
+			number++;
+    	}
+    	String newString = Integer.toString(number);
+		StringBuilder newSb = new StringBuilder();
+		newSb.append(tmp.charAt(0));
+		newSb.append(newString);
+		teamID = newSb.toString();
+    }
+    	 return teamID;
+}
+   
 }

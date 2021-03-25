@@ -74,6 +74,9 @@ public class Facade implements FacadeLocal {
 	public List<Team> findAllTeams() {
 		return team.findAllTeams();
 	}
+	 public String generateID() {
+		 return team.generateID();
+	 }
 
 	
 	
