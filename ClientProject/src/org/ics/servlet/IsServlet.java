@@ -42,38 +42,43 @@ public class IsServlet extends HttpServlet {
 		
 		out.println("<h2>IS</h2>");
 		
-		/*//l�gg till object i tables
-		Team team = new Team();
-		team.setTeamID("T1");
-		team.setTeamName("Matilda");
-		facade.createTeam(team);
+		//l�gg till object i tables
+		
+		Team t = new Team();
+		t.setTeamName("Leo");
+		String id = facade.generateID("Leo");
+		t.setTeamID(id);
+		facade.createTeam(t);
+		out.println(t.getTeamID() + t.getTeamName());
 		
 		Tournament tournament = new Tournament();
-		tournament.setTournamentID("T2");
-		tournament.setSport("Fotboll");
 		tournament.setTournamentName("VM");
+		tournament.setSport("Fotboll");
+		String idTour = facade.generateIDTour("VM");
+		tournament.setTournamentID(idTour);
+		out.println(tournament.getTournamentID()+ tournament.getSport()+ tournament.getTournamentName());
+		
+		
 		facade.createTournament(tournament);
 		
-		*/
-		//H�mtar alla teams och tournaments genom queries
-		out.println("<h3>Alla Teams</h3>");
-		List<Team> allTeams = facade.findAllTeams();
-		for(Team t : allTeams) {
-			out.println(t.getTeamName());
-		}
-		out.println("<h3>Alla Tournament</h3>");
-		List<Tournament> allTournament = facade.findAllTournaments();
-		for(Tournament t : allTournament) {
-			out.println(t.getTournamentName());
-		}
 		
-		/*
-		Tournament tmpTournament = facade.findTournament("I101");
-		out.println("<p>Tournament: "+tmpTournament.getTournamentName()+" has the following teams:<br>");
-		for(Team tmpTeam: tmpTournament.getTeams()) 
-		{
-			out.println("<p>Team: "+tmpTeam.getTeamID() +" | Name: "+ tmpTeam.getTeamName()+"</p>");
-		}*/
+//		//H�mtar alla teams och tournaments genom queries
+//		out.println("<h3>Alla Teams</h3>");
+//		List<Team> allTeams = facade.findAllTeams();
+//		for(Team t : allTeams) {
+//			out.println(t.getTeamName());
+//		}
+//		out.println("<h3>Alla Tournament</h3>");
+//		List<Tournament> allTournament = facade.findAllTournaments();
+//		for(Tournament t : allTournament) {
+//			out.println(t.getTournamentName());
+//		}
+//		Tournament tmpTournament = facade.findTournament("I101");
+//		out.println("<p>Tournament: "+tmpTournament.getTournamentName()+" has the following teams:<br>");
+//		for(Team tmpTeam: tmpTournament.getTeams()) 
+//		{
+//			out.println("<p>Team: "+tmpTeam.getTeamID() +" | Name: "+ tmpTeam.getTeamName()+"</p>");
+//		}
 		out.println("</body></html>");
 		out.close();
 	}
