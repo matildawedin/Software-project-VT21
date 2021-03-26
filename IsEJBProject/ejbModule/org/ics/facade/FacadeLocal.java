@@ -20,4 +20,5 @@ public interface FacadeLocal{
 	 public List<Team> findAllTeams();
 	 public List<Tournament> findAllTournaments();
 	 public String generateID(String teamName);
+	 public String generateIDTour(String tournamentName);
 }

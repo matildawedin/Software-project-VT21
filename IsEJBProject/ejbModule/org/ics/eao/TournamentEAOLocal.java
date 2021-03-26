@@ -13,4 +13,5 @@ public interface TournamentEAOLocal {
 	public Tournament createTournament(Tournament tournament);
 	public void updateTournament(Tournament tournament);
 	public List<Tournament> findAllTournaments();
+	 public String generateIDTour(String tournamentName);
 }

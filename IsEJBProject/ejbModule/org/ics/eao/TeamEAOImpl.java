@@ -65,13 +65,14 @@ public class TeamEAOImpl implements TeamEAOLocal {
     	}
     }
     public String generateID(String teamName) {
-    	TypedQuery<Team> query= em.createNamedQuery("Team.generateID()", Team.class);
-    	query.setMaxResults(1).getResultList();
-    	String tmp = query.toString();
+    	TypedQuery<String> query= em.createNamedQuery("Team.generateID()",String.class);
+    	String tmp = query.getResultList().get(0);
     	String teamID = null;
     	if (tmp.length() == 4) {
     		StringBuilder sb = new StringBuilder();
 			sb.append(tmp.charAt(1));
+			sb.append(tmp.charAt(2));
+			sb.append(tmp.charAt(3));
 			String charString = sb.toString();
 			int number = Integer.parseInt(charString);
 			if (tmp != null) {

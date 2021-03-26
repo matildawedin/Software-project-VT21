@@ -44,6 +44,10 @@ public class Facade implements FacadeLocal {
 	public List<Tournament> findAllTournaments() {
 		return tournament.findAllTournaments();
 	}
+	public String generateIDTour(String tournamentName){
+		 tournamentName = this.tournament.generateIDTour(tournamentName);
+		 return tournamentName;
+	 }
 	
 	//---------- Team ---------
 	public Team findTeam(String teamID) {
@@ -65,6 +69,7 @@ public class Facade implements FacadeLocal {
 		 teamName = this.team.generateID(teamName);
 		 return teamName;
 	 }
+	 
 
 	
 	

@@ -26,9 +26,13 @@ import javax.persistence.JoinColumn;
 	@NamedQuery(name = "Team.findAllTeams()",
 			query="SELECT t FROM Team t"),
 	 @NamedQuery(name="Team.generateID()",
-query= "SELECT teamID FROM Team"),
+query= "SELECT teamID FROM Team ORDER BY teamID DESC"),
 })
 @Table(name = "Team")
+//@SequenceGenerator(name="ID_SEQUENCE", allocationSize=1)//KOLLA UPP VAD SOM SKA STÅ HÄR 
+//@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name="teamID",
+//discriminatorType=DiscriminatorType.STRING, length=1)
 
 public class Team implements Serializable{
 	
@@ -39,6 +43,7 @@ public class Team implements Serializable{
 	
 	
 	@Id
+	//@GeneratedValue
 	@Column(name = "teamID")
 	public String getTeamID() {
 		return teamID;
