@@ -45,21 +45,23 @@ public class IsServlet extends HttpServlet {
 		//l�gg till object i tables
 		
 		Team t = new Team();
-		t.setTeamName("Leo");
-		String id = facade.generateID("Leo");
+		t.setTeamName("TestTeam1");
+		String id = facade.generateID("TEAM");
 		t.setTeamID(id);
 		facade.createTeam(t);
-		out.println(t.getTeamID() + t.getTeamName());
+		out.println("<h3>New Team with ID: "+t.getTeamID());
+		out.println("Name: "+ t.getTeamName()+"</h3>");
 		
-		Tournament tournament = new Tournament();
-		tournament.setTournamentName("VM");
-		tournament.setSport("Fotboll");
-		String idTour = facade.generateIDTour("VM");
-		tournament.setTournamentID(idTour);
-		out.println(tournament.getTournamentID()+ tournament.getSport()+ tournament.getTournamentName());
+		Tournament tour = new Tournament();
+		tour.setTournamentName("TestTournament1");
+		tour.setSport("Test");
+		id = facade.generateID("TOURNAMENT");
+		tour.setTournamentID(id);
+		facade.createTournament(tour);
+		out.println("<h3>New Tournament with ID: "+tour.getTournamentID());
+		out.println("Name: "+ tour.getTournamentName()+"</h3>");
 		
-		
-		facade.createTournament(tournament);
+	
 		
 		
 //		//H�mtar alla teams och tournaments genom queries

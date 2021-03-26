@@ -26,10 +26,10 @@ import javax.persistence.JoinColumn;
 	@NamedQuery(name = "Team.findAllTeams()",
 			query="SELECT t FROM Team t"),
 	 @NamedQuery(name="Team.generateID()",
-query= "SELECT teamID FROM Team ORDER BY teamID DESC"),
+	 		query= "SELECT teamID FROM Team ORDER BY teamID DESC"),
 })
 @Table(name = "Team")
-//@SequenceGenerator(name="ID_SEQUENCE", allocationSize=1)//KOLLA UPP VAD SOM SKA STÅ HÄR 
+//@SequenceGenerator(name="ID_SEQUENCE", allocationSize=1)//KOLLA UPP VAD SOM SKA STï¿½ Hï¿½R 
 //@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="teamID",
 //discriminatorType=DiscriminatorType.STRING, length=1)

@@ -15,9 +15,11 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 
 @Entity
-@NamedQueries({@NamedQuery(name = "Tournament.findAllTournaments", query="SELECT t FROM Tournament t"),
-	 @NamedQuery(name="Tournament.generateIDTour()",
-	 query= "SELECT tournamentID FROM Tournament ORDER BY tournamentID DESC"),
+@NamedQueries({
+	@NamedQuery(name = "Tournament.findAllTournaments", 
+			query="SELECT t FROM Tournament t"),
+	 @NamedQuery(name="Tournament.generateID()",
+	 		query= "SELECT tournamentID FROM Tournament ORDER BY tournamentID DESC"),
 })
 @Table(name = "Tournament")
 public class Tournament implements Serializable {
@@ -29,8 +31,6 @@ public class Tournament implements Serializable {
 	private Set<Team> teams;
 	private int version;
 	
-	
-
 	@Id
 	@Column(name = "tournamentID")
 	public String getTournamentID() {
