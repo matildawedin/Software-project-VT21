@@ -36,6 +36,7 @@ import javax.persistence.JoinColumn;
 
 public class Team implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private String teamID;
 	private String teamName;
 	private Set<Tournament> tournaments;
@@ -43,7 +44,6 @@ public class Team implements Serializable{
 	
 	
 	@Id
-	//@GeneratedValue
 	@Column(name = "teamID")
 	public String getTeamID() {
 		return teamID;

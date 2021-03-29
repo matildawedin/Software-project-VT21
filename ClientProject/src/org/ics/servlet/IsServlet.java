@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ics.ejb.Game;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
@@ -44,25 +45,45 @@ public class IsServlet extends HttpServlet {
 		
 		//l�gg till object i tables
 		
-		Team t = new Team();
-		t.setTeamName("TestTeam1");
-		String id = facade.generateID("TEAM");
-		t.setTeamID(id);
-		facade.createTeam(t);
-		out.println("<h3>New Team with ID: "+t.getTeamID());
-		out.println("Name: "+ t.getTeamName()+"</h3>");
+		Team team1 = new Team();
+		team1.setTeamName("TestTeam1");
+		String id1 = facade.generateID("TEAM");
+		team1.setTeamID(id1);
+		facade.createTeam(team1);
+		out.println("<h3>New Team with ID: "+team1.getTeamID());
+		out.println("Name: "+ team1.getTeamName()+"</h3>");
+		
+		Team team2 = new Team();
+		team2.setTeamName("TestTeam1");
+		String id2 = facade.generateID("TEAM");
+		team2.setTeamID(id2);
+		facade.createTeam(team2);
+		out.println("<h3>New Team with ID: "+team2.getTeamID());
+		out.println("Name: "+ team2.getTeamName()+"</h3>");
 		
 		Tournament tour = new Tournament();
 		tour.setTournamentName("TestTournament1");
 		tour.setSport("Test");
-		id = facade.generateID("TOURNAMENT");
-		tour.setTournamentID(id);
+		String id3 = facade.generateID("TOURNAMENT");
+		tour.setTournamentID(id3);
 		facade.createTournament(tour);
 		out.println("<h3>New Tournament with ID: "+tour.getTournamentID());
 		out.println("Name: "+ tour.getTournamentName()+"</h3>");
 		
-	
-		
+		Game game = new Game();
+		String id4 = facade.generateID("GAME");
+		game.setGameID(id4);
+		game.setRound(1);
+		game.setParticipantOne(id1);
+		game.setParticipantTwo(id2);
+		game.setTournamentID(id3);
+		game.setTournamentID(id3);
+		game.setVersion(0);
+		facade.createGame(game);
+		out.println("<h3>New Game with ID: "+game.getGameID());
+		out.println("Belonging to TournamentID: "+ game.getTournamentID());
+		out.println("With participantOne being: "+game.getParticipantOne());
+		out.println("And participantTwo being: "+game.getParticipantTwo()+"</h3>");
 		
 //		//H�mtar alla teams och tournaments genom queries
 //		out.println("<h3>Alla Teams</h3>");

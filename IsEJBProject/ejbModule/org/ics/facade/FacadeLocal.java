@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import org.ics.ejb.Game;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 
@@ -19,5 +20,8 @@ public interface FacadeLocal{
 	 public void updateTeam(Team team);
 	 public List<Team> findAllTeams();
 	 public List<Tournament> findAllTournaments();
+	 public Game findGame(String gameID);
+	 public Game createGame(Game game);
+	 public void updateGame(Game game);
 	 public String generateID(String type);
 }
