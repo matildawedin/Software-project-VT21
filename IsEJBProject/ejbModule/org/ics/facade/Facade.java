@@ -5,10 +5,12 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import org.ics.eao.GameEAOLocal;
 import org.ics.eao.GenerateIDLocal;
 //import org.ics.eao.GenericEAOLocal;
 import org.ics.eao.TeamEAOLocal;
 import org.ics.eao.TournamentEAOLocal;
+import org.ics.ejb.Game;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 
@@ -25,12 +27,15 @@ public class Facade implements FacadeLocal {
 	@EJB
 	TeamEAOLocal team;
 	
+	@EJB
+	GameEAOLocal game;
+	
 	@EJB 
 	GenerateIDLocal id;
 	
 	public Facade() {}
 	
-    //---------- Tournament ---------
+    //---------- Tournament ---------\\
     public Tournament findTournament(String tournamentID) {
     	return tournament.findTournament(tournamentID);
     }
@@ -47,7 +52,7 @@ public class Facade implements FacadeLocal {
 	public List<Tournament> findAllTournaments() {
 		return tournament.findAllTournaments();
 	}
-	//---------- Team ---------
+	//---------- Team ---------\\
 	public Team findTeam(String teamID) {
 		return team.findTeam(teamID);
 	}
@@ -63,6 +68,19 @@ public class Facade implements FacadeLocal {
 	public List<Team> findAllTeams() {
 		return team.findAllTeams();
 	}
+	//---------- Game ---------\\
+	public Game findGame(String gameID) {
+		return game.findGame(gameID);
+	}
+	
+	public Game createGame(Game game) {
+		game = this.game.createGame(game);
+		return game;
+	}
+	public void updateGame(Game game) {
+    	this.game.updateGame(game);
+    }
+	//---------- Generate ---------\\
 	 public String generateID(String type){
 		 return this.id.generateID(type);
 	 }

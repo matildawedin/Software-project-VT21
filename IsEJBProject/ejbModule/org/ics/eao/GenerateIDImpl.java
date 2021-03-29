@@ -29,6 +29,9 @@ public class GenerateIDImpl implements GenerateIDLocal {
     	else if (type.toUpperCase() == "TOURNAMENT") {
     		query = em.createNamedQuery("Tournament.generateID()",String.class);
     	}
+    	else if (type.toUpperCase() == "GAME") {
+    		query = em.createNamedQuery("Game.generateID()",String.class);
+    	}
     	String tmp = query.getResultList().get(0);
     	String newID = null;
     	
