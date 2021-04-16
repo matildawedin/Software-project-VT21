@@ -1,9 +1,7 @@
 package org.ics.eao;
 
-import java.sql.SQLException;
-import java.util.List;
 
-import javax.ejb.FinderException;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
@@ -48,8 +46,6 @@ public class TeamEAOImpl implements TeamEAOLocal {
     	
     }
    
-    
-    
     public List<Team> findAllTeams(){
     	
     	try {
