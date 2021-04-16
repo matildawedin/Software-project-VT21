@@ -9,7 +9,7 @@ $(document).ready(function() {
 				success: ajaxFindReturnSuccess
 			})
 			function ajaxFindReturnSuccess(result, status, xhr) {
-				parseJsonTournament(result);
+				ParseJsonFileTournamnet(result);
 			}
 			function ajaxFindReturnError(result, status, xhr) {
 				alert("Error");
@@ -41,7 +41,7 @@ $(document).ready(function() {
 				}
 		}
 		
-	});
+	})
 });
 function ParseJsonFileTournamnet(result) {
 	$("#txtID").val(result.txtID);

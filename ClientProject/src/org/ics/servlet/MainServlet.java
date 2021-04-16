@@ -7,6 +7,7 @@ import javax.ejb.EJB;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,25 +33,28 @@ public class MainServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("Inne i doget");
-		
-		
-		/* utan json  <%Tournament tournament = (Tournament) request.getAttribute("tournament");%>
+		// search and show likt labb 3
 		String url = null;
 		
 		String operation = request.getParameter("operation");
 		
 		if(operation.equals("Show")) {
+			System.out.println("MainServlet-show");  
 			String id = request.getParameter("txtID");
 			Tournament tournament = facade.findTournament(id);
 			request.setAttribute("tournament", tournament);
 			url ="/Show.jsp";
 		}
+		else {
+			url = "/Search.jsp";
+		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		*/
 		
 		
+		//Med jQuery i separat js fil                      (FUNGERAR INTE JUST NU!!!)
+		/*System.out.println("Inne i doget");
+
 		String pathInfo= request.getPathInfo();
 		System.out.println(pathInfo);
 		
@@ -69,33 +73,18 @@ public class MainServlet extends HttpServlet {
 		
 		System.out.println(id);
 		Tournament tournament= facade.findTournament(id);
+		System.out.println(tournament.getTournamentName() + tournament.getSport() + tournament.getVersion());
 		sendAsJson(response, tournament);
 		
+		*/
+		
+				
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//add metod 
 		
-		
-		/*<input name="operation" value="Show" type="hidden">
-		 * 
-		 * String url = null;
-		
-		String operation = request.getParameter("operation");
-		
-		if(operation.equals("Show")) {
-			System.out.println("MainServlet-show");  
-			String id = request.getParameter("txtID");
-			Tournament tournament = facade.findTournament(id);
-			request.setAttribute("tournament", tournament);
-			url ="/Show.jsp";
-		}
-		else {
-			url = "/Search.jsp";
-		}
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-		dispatcher.forward(request, response);
-		*/
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -126,8 +115,10 @@ public class MainServlet extends HttpServlet {
 
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//delete metod 
 	}
+	
+	
 	
 	private void sendAsJson(HttpServletResponse response, Tournament tournament) throws IOException {
 		System.out.println("inne i sendasjson");
@@ -139,7 +130,7 @@ public class MainServlet extends HttpServlet {
 			out.print(",\"txtName\":");
 			out.print("\""+tournament.getTournamentName()+"\"");
 			out.print(",\"txtSport\":");
-			out.print("\""+tournament.getSport()+"\"}");
+			out.print("\""+tournament.getSport()+"\"");
 			out.print(",\"txtVersion\":");
 			out.print("\""+tournament.getVersion()+"\"}");
 		} 
