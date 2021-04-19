@@ -33,13 +33,13 @@ public class MainServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// search and show likt labb 3
+		System.out.println("inne i doGet");
+
 		String url = null;
 		
 		String operation = request.getParameter("operation");
 		
-		if(operation.equals("Show")) {
-			System.out.println("MainServlet-show");  
+		if(operation.equals("Show")) {  
 			String id = request.getParameter("txtID");
 			Tournament tournament = facade.findTournament(id);
 			request.setAttribute("tournament", tournament);
@@ -83,43 +83,37 @@ public class MainServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//add metod 
-		
-	}
+		String url = null;
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String pathInfo= request.getPathInfo();
-		
-		if(pathInfo== null|| pathInfo.equals("/")){
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-			return;
-		}
-		String[] splits= pathInfo.split("/");
-		if(splits.length!= 2) {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-			return;
-		}
-		String id= splits[1];
-		BufferedReader reader= request.getReader();
-		Tournament tournament= parseJsonTournament(reader);
-		
-		try{
-			facade.updateTournament(tournament);
-		}
-		catch(Exception e) {
-			System.out.println("facade Update Error");
-		}
-		sendAsJson(response, tournament);  
-	}
+		//String operation = request.getParameter("operation");
+		/*if(operation.equals("Show")) {
 
+		}*/
+		System.out.println("inne i doPost");
+
+		Tournament tournament = facade.findTournament(request.getParameter("txtID"));
+		tournament.setTournamentName(request.getParameter("txtName"));
+		tournament.setSport(request.getParameter("txtSport"));
+
+		facade.updateTournament(tournament);
+		request.setAttribute("tournament", tournament);
+		url ="/Show.jsp";
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+		dispatcher.forward(request, response);
+	}
+	
+
+	protected void doPut(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//delete metod 
 	}
 	
 	
-	
+	/*
 	private void sendAsJson(HttpServletResponse response, Tournament tournament) throws IOException {
 		System.out.println("inne i sendasjson");
 		PrintWriter out= response.getWriter();
@@ -153,5 +147,5 @@ public class MainServlet extends HttpServlet {
 		
 		return tournament;
 		}
-
+*/
 }
