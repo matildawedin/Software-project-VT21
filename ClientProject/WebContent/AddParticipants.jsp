@@ -9,12 +9,12 @@
 	
 </script>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="css/createStyle.css">
+<link rel="stylesheet" type="text/css" href="css/addStyle.css">
 <title>BracketGenerator</title>
 </head>
 <body>
 	<header>
-		<p>Create a new Tournament</p>
+		<p>Add your participants</p>
 	</header>
 	<section id="row">
 		<nav>
@@ -51,25 +51,31 @@
 
 		<section id="main">
 			<section id="content">
-					<article>
-						<fieldset id="createNew">
-							<legend>Create new:</legend>
-							Name: <br> 
-							<form action="/ClientProject/MainServlet" method="post">
+				<article>
+					<fieldset id="addTeam">
+						<legend>New Team:</legend>
+						Name: <br>
+						<form action="/ClientProject/MainServlet" method="post">
 							<input type="text" name="name" id="name" value="">
-							<br> Sport: <br> 
-							<input type="text" name="sport" id="sport" value=""> 
-							<br><br> 
-							<input type="submit" name="submitBtn" value="Create" id="CreateBtn"> 
-							<input type="submit" form = "CancelForm" name="submitBtn" value="Cancel" id="CancelBtn"> 
-							<input name="operation" value="Create" type="hidden">
-							</form>
-							<form action="/ClientProject/MainServlet" method="post" id="CancelForm">
-							<input name="operation" value="Home" type="hidden">
-							</form>
-						</fieldset>
-					</article>
+							<input type="submit" name="submitBtn" value="Add" id="AddBtn"> 
+							<input name="operation" value="Add" type="hidden">
+						</form>
+					</fieldset>
+				</article>
+				<fieldset id="allTeams">
+			<legend>Added teams:</legend>
+			<ul>
+				<li><a>Team1</a></li>
+				<li><a>Team2</a></li>
+				<li><a>Team3</a></li>
+				<li><a>Team4</a></li>
+			</ul>
+			</fieldset>
 			</section>
+			<form action="/ClientProject/MainServlet" method="post" id="CancelForm">
+				<input type="submit" form="CancelForm" name="submitBtn" value="Cancel" id="CancelBtn"> 
+				<input name="operation" value="Home" type="hidden">
+			</form>
 		</section>
 	</section>
 	<footer>
