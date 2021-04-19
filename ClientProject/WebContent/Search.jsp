@@ -15,10 +15,13 @@
 				<td><h2>Search</h2></td>
 			</tr>
 			<tr>
-				<td><input type="text" name="txtID" size="25" maxlength="25">
-					<input type="submit" name="submit" value="Skicka fråga"
-					id="FindBtn" /></td>
-				<td></td>
+				<td>
+				<input type="text" name="txtID" size="25" maxlength="25">
+				<input type="submit" name="submit" value="Skicka fråga" id="FindBtn" />
+				</td>
+			</tr>
+			<tr>
+				
 			</tr>
 		</table>
 		<input name="operation" value="Show" type="hidden">
