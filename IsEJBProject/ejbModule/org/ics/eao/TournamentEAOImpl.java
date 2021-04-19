@@ -7,7 +7,6 @@ import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.interceptor.LogInterceptor;

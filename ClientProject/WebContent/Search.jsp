@@ -4,25 +4,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/searchStyle.css">
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<title>Insert title here</title>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<title>Search</title>
 </head>
 <body>
-	<form action="/ClientProject/MainServlet" method="get">
-		<table cellspacing="0" cellpadding="0" border="0" align="left">
-			<tr>
-				<td><h2>Search</h2></td>
-			</tr>
-			<tr>
-				<td>
-				<input type="text" name="txtID" size="25" maxlength="25">
-				<input type="submit" name="submit" value="Skicka fråga" id="FindBtn" />
-				</td>
-			</tr>
-			<tr>
-				
-			</tr>
+	<h2>Search</h2>
+	<form action="/ClientProject/MainServlet" method="post">
+		<h3>Select category</h3>
+		<div class="radio-toolbar">
+			<input type="radio" id="tournament" name="select" value="Tournament"
+				checked> <label for="tournament">Tournament</label> <input
+				type="radio" id="team" name="select" value="Team">
+			<label for="team">Team</label>
+		</div>
+		<table>
+			<td><input type="text" name="txtID"
+				placeholder="ID number.."> <input type="submit"
+				name="submit" value="Search" id="FindBtn" /></td>
 		</table>
 		<input name="operation" value="Show" type="hidden">
 	</form>
