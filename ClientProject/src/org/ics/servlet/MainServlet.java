@@ -1,12 +1,12 @@
 package org.ics.servlet;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
 import javax.ejb.EJB;
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
 
@@ -102,9 +103,35 @@ public class MainServlet extends HttpServlet {
 			tournament.setTournamentID(tmpId);
 			tournament.setTournamentName(request.getParameter("name"));
 			tournament.setSport(request.getParameter("sport"));
-			tournament.setVersion(1);
+			tournament.setVersion(0);
 			tournament = facade.createTournament(tournament);
-			request.setAttribute("newTournament", tournament);
+			List<String> tmpList = new ArrayList<String>();
+			request.setAttribute("tournamentId", tmpId);
+			request.setAttribute("teamName", "");
+			request.setAttribute("teamList", tmpList);
+			url = "/AddParticipants.jsp";
+		}
+		else if (operation.equals("Add")) {
+			Team team = new Team();
+			String tmpId = facade.generateID("TEAM");
+			String teamName = request.getParameter("name");
+			team.setTeamID(tmpId);
+			team.setTeamName(teamName);
+			team.setVersion(1);
+			facade.createTeam(team);
+			
+			String tourId = request.getParameter("tourId").toString();
+			facade.addParticipant(tourId, tmpId);
+			
+			
+			List<String> list = new ArrayList<String>();
+			List<String> oldList = (ArrayList<String>) request.getAttribute("teamList");
+			list.addAll(oldList);
+			list.add(teamName);
+			
+			request.setAttribute("teamList", list);
+			request.setAttribute("tournamentId", tourId);
+			request.setAttribute("teamName", team.getTeamName());
 			url = "/AddParticipants.jsp";
 		}
 		else if (operation.equals("Home")) {

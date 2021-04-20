@@ -1,28 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import="org.ics.ejb.Team"%>
+<%@ page import="org.ics.ejb.Tournament"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-	
 </script>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/addStyle.css">
+<script src="js/add.js"></script>
 <title>BracketGenerator</title>
 </head>
-<body>
+<body onload="populateList()">
+<%String teamName = request.getAttribute("teamName").toString();%>
+<%String tournamentId = request.getAttribute("tournamentId").toString();%> 
+<%List<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
 	<header>
 		<p>Add your participants</p>
 	</header>
-	<section id="row">
+	<script>
+	function populateList(){
+		//var i;
+		<%for(String s : teamList){%>
+			document.getElementById("list").append(<%=s%>);
+			<%}%>
+		alert("Its happening");
+	//document.getElementById("list").append($("#teamName").val());
+	}</script>
+	<section id="row" onload="populateList(<%=teamList%>)">
 		<nav>
 			<ul>
-				<li><a>Home</a></li>
+				<li><a href ="Home.jsp">Home</a></li>
 				<li class="active"><a>Create</a></li>
-				<li><a>Find</a></li>
-				<li><a>About</a></li>
+				<li><a href ="Search.jsp">Find</a></li>
+				<li><a href ="About.jsp">About</a></li>
 			</ul>
 		</nav>
 
@@ -58,17 +74,16 @@
 						<form action="/ClientProject/MainServlet" method="post">
 							<input type="text" name="name" id="name" value="">
 							<input type="submit" name="submitBtn" value="Add" id="AddBtn"> 
+							<input name="tourId" value="<%=tournamentId%>" type="hidden">
+							<input name="teamName" value="<%=teamName%>" id="teamName" type="hidden">
+							<input name="teamList" value="<%=teamList%>" id="teamList" type="hidden">
 							<input name="operation" value="Add" type="hidden">
 						</form>
 					</fieldset>
 				</article>
 				<fieldset id="allTeams">
 			<legend>Added teams:</legend>
-			<ul>
-				<li><a>Team1</a></li>
-				<li><a>Team2</a></li>
-				<li><a>Team3</a></li>
-				<li><a>Team4</a></li>
+			<ul id="list">
 			</ul>
 			</fieldset>
 			</section>
