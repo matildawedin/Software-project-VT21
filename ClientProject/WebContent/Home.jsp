@@ -46,13 +46,13 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <tr>
  <td colspan="4"><span id="sunset"></span></td>
  </tr>
- </table><img border="0" src="file:///C:/Users/leohu/Pictures/41hzbXlmykL.png" alt="Pulpit rock" style="width: 250px; height: 159px; ">
+ </table><img border="0" src="https://images-na.ssl-images-amazon.com/images/I/41hzbXlmykL.png" alt="Pulpit rock" style="width: 250px; height: 159px; ">
 </aside>
  <section id="main" style="height: 320px; width: 343px">
  <H2> Welcome to BracketGenerator</H2>
  <p> On this website you can create and edit tournaments and teams.</p>
  
- <img border="0" src="file:///C:/Users/leohu/Pictures/depositphotos_104671164-stock-illustration-tournament-bracket-on-school-board.jpg"
+ <img border="0" src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4"
      alt="Pulpit rock" style="width: 324px; height: 158px; ">
  
 <article>
