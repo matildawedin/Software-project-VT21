@@ -17,9 +17,8 @@
 <title>BracketGenerator</title>
 </head>
 <body onload="populateList()">
-<%String teamName = request.getAttribute("teamName").toString();%>
 <%String tournamentId = request.getAttribute("tournamentId").toString();%> 
-<%List<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
+<%ArrayList<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
 	<header>
 		<p>Add your participants</p>
 	</header>
@@ -32,7 +31,7 @@
 		alert("Its happening");
 	//document.getElementById("list").append($("#teamName").val());
 	}</script>
-	<section id="row" onload="populateList(<%=teamList%>)">
+	<section id="row" onload="populateList()">
 		<nav>
 			<ul>
 				<li><a href ="Home.jsp">Home</a></li>
@@ -75,8 +74,16 @@
 							<input type="text" name="name" id="name" value="">
 							<input type="submit" name="submitBtn" value="Add" id="AddBtn"> 
 							<input name="tourId" value="<%=tournamentId%>" type="hidden">
-							<input name="teamName" value="<%=teamName%>" id="teamName" type="hidden">
-							<input name="teamList" value="<%=teamList%>" id="teamList" type="hidden">
+							
+							<input name="teamName" value="<%=teamList.get(0)%>" id="teamName1" type="hidden">
+							<input name="teamName" value="<%=teamList.get(1)%>" id="teamName2" type="hidden">
+							<input name="teamName" value="<%=teamList.get(2)%>" id="teamName3" type="hidden">
+							<input name="teamName" value="<%=teamList.get(3)%>" id="teamName4" type="hidden">
+							<input name="teamName" value="<%=teamList.get(4)%>" id="teamName5" type="hidden">
+							<input name="teamName" value="<%=teamList.get(5)%>" id="teamName6" type="hidden">
+							<input name="teamName" value="<%=teamList.get(6)%>" id="teamName7" type="hidden">
+							<input name="teamName" value="<%=teamList.get(7)%>" id="teamName8" type="hidden">
+							
 							<input name="operation" value="Add" type="hidden">
 						</form>
 					</fieldset>

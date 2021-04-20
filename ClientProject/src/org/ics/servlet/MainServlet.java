@@ -105,9 +105,8 @@ public class MainServlet extends HttpServlet {
 			tournament.setSport(request.getParameter("sport"));
 			tournament.setVersion(0);
 			tournament = facade.createTournament(tournament);
-			List<String> tmpList = new ArrayList<String>();
+			ArrayList<String> tmpList = new ArrayList<String>();
 			request.setAttribute("tournamentId", tmpId);
-			request.setAttribute("teamName", "");
 			request.setAttribute("teamList", tmpList);
 			url = "/AddParticipants.jsp";
 		}
@@ -117,21 +116,18 @@ public class MainServlet extends HttpServlet {
 			String teamName = request.getParameter("name");
 			team.setTeamID(tmpId);
 			team.setTeamName(teamName);
-			team.setVersion(1);
+			team.setVersion(0);
 			facade.createTeam(team);
 			
 			String tourId = request.getParameter("tourId").toString();
 			facade.addParticipant(tourId, tmpId);
-			
-			
-			List<String> list = new ArrayList<String>();
-			List<String> oldList = (ArrayList<String>) request.getAttribute("teamList");
-			list.addAll(oldList);
-			list.add(teamName);
+
+			ArrayList<String> list = (ArrayList<String>) request.getAttribute("teamName");
+			list.add(teamName); //Bör lägga till en fixed size array och använda set-metod för att lägga till
+			//Kolla List<String> fixedSizeList = Arrays.asList(new String[100]);
 			
 			request.setAttribute("teamList", list);
 			request.setAttribute("tournamentId", tourId);
-			request.setAttribute("teamName", team.getTeamName());
 			url = "/AddParticipants.jsp";
 		}
 		else if (operation.equals("Home")) {
