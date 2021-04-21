@@ -23,6 +23,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				<li ><a href ="Create.jsp">Create</a></li>
 				<li><a href ="Search.jsp">Find</a></li>
 				<li><a href ="About.jsp">About</a></li>
+				<li><a href ="FindTourTeamRest.jsp">Update</a></li>
 				</ul>
 </nav>
 

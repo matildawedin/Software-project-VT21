@@ -1,0 +1,92 @@
+@media screen and (max-width:600px) {
+	.column {
+		width: 100%;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	padding: 10px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-size: 35px;
+	background-color: 	#2eb82e;
+	color: #000000;
+}
+body {
+	 background-color:	#5cd65c;
+}
+section#row {
+	padding: 10px 0px 10px 0px;
+	display: block;
+}
+
+section#row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+section#TournamentFind {
+	float: left;
+	width: 60%;
+	margin-left: 100px;
+	margin-right: 50px;
+	padding: 15px 10px 10px 10px;
+	background-color: 	#2eb82e	;
+	color: #000000;
+}
+
+footer {
+	bottom: 0;
+ 	width: 100%;
+	text-align: center;
+	padding: 1px;
+	color: #000000;
+	background-color: 	#2eb82e	;
+	clear: both;
+}
+
+nav {
+	float: left;
+	width: 20%;
+	color: #000000;
+	background-color: 	#2eb82e;
+	padding: 0px 0px 0px 0px;
+}nav a {
+	display: block;
+	color: #000000;
+	padding: 10px 10px;
+	text-decoration: none;
+}
+/* Change color on hover */
+nav a:hover {
+	background-color: 	#248f24;
+	color:#000000 ;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li:hover, nav li:focus {
+	color: #c0c0c0;
+	background-color: #c0c0c0;
+}nav li.active {
+	background: #248f24;
+	color: #000000!important;
+	font-weight: bold;
+}
+aside {
+	float: right;
+	width: 30%;
+	background-color: 	#2eb82e	;
+	color: #000000;
+	
+}

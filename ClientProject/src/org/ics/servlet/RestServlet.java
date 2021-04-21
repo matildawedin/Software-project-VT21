@@ -1,9 +1,13 @@
 package org.ics.servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.ejb.EJB;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ics.ejb.Team;
+import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
 
 /**
@@ -46,48 +51,40 @@ public class RestServlet extends HttpServlet {
 		 return;
 		}
 		String id = splits[1];
-		Team team = facade.findTeam(id);
-		sendAsJson(response, team);
-		
-		
+		Tournament tour = facade.findTournament(id);
+		sendAsJson(response, tour);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
+	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
-
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
 	 */
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-	private void sendAsJson(HttpServletResponse response, Team team)
+	
+
+	private void sendAsJson(HttpServletResponse response, Tournament tour)
 			 throws IOException {
 
 			PrintWriter out = response.getWriter();
 			response.setContentType("application/json");
-			if (team != null) {
-			out.print("{\"Team name\":");
-			out.print("\"" + team.getTeamName() + "\"");
-			out.print(",\" Team id\":");
-			out.print("\"" +team.getTeamID()+"\"");
+			if (tour != null) {
+			out.print("{\"txtID\":");
+			out.print("\"" + tour.getTournamentName() + "\"");
+			out.print(",\"txtName\":");
+			out.print("\"" +tour.getTournamentID()+"\"");
+			out.print(",\"txtSport\":");
+			out.print("\"" +tour.getSport()+"\"");
+			out.print(",\"txtVersion\":");
+			out.print("\"" +tour.getVersion()+"\"");
+			
 			} else {
 			out.print("{ }");
 			}
 			out.flush();
 			}
-
 
 }
