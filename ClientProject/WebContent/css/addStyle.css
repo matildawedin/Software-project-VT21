@@ -34,29 +34,31 @@ section#row:after {
 section#main {
 	float: inherit;
 	width: 55%;
+	height: 350px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0px 10px 0px 15px;
+	margin-top: 25px;
+	padding: 10px 10px 0px 15px;
 	background-color: #434345;
 	color: #f0f0fa;
 }
 
 section#content {
-	width: 32%;
+	width: 40%;
 	padding: 10px 10px 10px 10px;
+	height: 300px;
 	background-color: #434345;
 	color: #f0f0fa;
+	display: inline-block;
 }
-/*
-#PersonalFS {
-	width: 350px;
-}*/
-/*
-#CancelForm {
-    position: relative;
-    bottom: 25px;
-    left: 55px;
-}*/
+section#allTeams{
+	width: 55%;
+	padding: 10px 10px 10px 30px;
+	height: 300px;
+	background-color: #434345;
+	color: #f0f0fa;
+	display: inline-block;
+}
 footer {
 	position: absolute;
 	bottom: 0;
@@ -71,14 +73,14 @@ footer {
 nav {
 	float: left;
 	width: 20%;
-	color: #f0f0fa;
+	color: #ffffff;
 	background-color: #434345	;
 	padding: 0px 10px 0px 0px;
 }
 
 nav a {
 	display: block;
-	color: ffffff;
+	color: #f0f0fa;;
 	padding: 10px 10px;
 	text-decoration: none;
 }
@@ -104,9 +106,40 @@ nav li.active {
 	color: #ffffff !important;
 	font-weight: bold;
 }
-
+li.listPadding{
+	margin: 0 0 8px 0;
+}
 aside {
 	float: right;
 	width: 20%;
 	background-color: #434345;
+}
+fieldset {
+	display: block;
+	width: 100%;
+	height: 120px;
+	padding-left: 30px;
+	margin-bottom: 40px;
+}
+fieldset.allTeam {
+	display: block;
+	width: 100%;
+	height: 300px;
+}
+p#feedback{
+	display: table;
+    margin:auto;
+    text-align:center;
+}
+.finishBtn {
+	position: absolute;
+	top: 450px;
+}
+.cancelBtn {
+	position: absolute;
+	top: 450px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  margin-left: 30px;
 }

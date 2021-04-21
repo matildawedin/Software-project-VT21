@@ -67,9 +67,12 @@ public class IsServlet extends HttpServlet {
 		String id3 = facade.generateID("TOURNAMENT");
 		tour.setTournamentID(id3);
 		facade.createTournament(tour);
+		//facade.addParticipantFromTeam(id2, tour);
+		facade.addParticipant(id3, id2);
 		out.println("<h3>New Tournament with ID: "+tour.getTournamentID());
 		out.println("Name: "+ tour.getTournamentName()+"</h3>");
 		
+		/*
 		Game game = new Game();
 		String id4 = facade.generateID("GAME");
 		game.setGameID(id4);

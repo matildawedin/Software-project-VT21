@@ -24,4 +24,6 @@ public interface FacadeLocal{
 	 public Game createGame(Game game);
 	 public void updateGame(Game game);
 	 public String generateID(String type);
+	 public void addParticipant(String tournamentId, String teamId);
+	 public void addParticipantFromTeam(String teamId, Tournament tournament);
 }

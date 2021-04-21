@@ -52,14 +52,7 @@ public class Team implements Serializable{
 	}
 	
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)  
-	@JoinTable(name="TournamentTeam",
-		joinColumns= 
-				@JoinColumn(name="teamID",
-				referencedColumnName="teamID"),
-			inverseJoinColumns= 
-					@JoinColumn(name="tournamentID",
-					referencedColumnName="tournamentID"))
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy="teams", cascade = CascadeType.PERSIST)
 	public Set<Tournament> getTournaments() {
 		return tournaments;
 	}

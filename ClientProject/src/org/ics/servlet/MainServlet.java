@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
-
 import javax.ejb.EJB;
 import javax.interceptor.Interceptors;
 import javax.servlet.RequestDispatcher;
@@ -97,13 +96,48 @@ public class MainServlet extends HttpServlet {
 			tournament.setTournamentID(tmpId);
 			tournament.setTournamentName(request.getParameter("name"));
 			tournament.setSport(request.getParameter("sport"));
-			tournament.setVersion(1);
+			tournament.setVersion(0);
 			tournament = facade.createTournament(tournament);
-			request.setAttribute("newTournament", tournament);
+			ArrayList<String> tmpList = new ArrayList<String>();
+			request.setAttribute("teamList", tmpList);
+			request.setAttribute("tournamentId", tmpId);
+			request.setAttribute("response", "");
 			url = "/AddParticipants.jsp";
 		}
+		else if (operation.equals("Add")) {
+			Team team = new Team();
+			String tmpId = facade.generateID("TEAM");
+			String teamName = request.getParameter("name");
+			team.setTeamID(tmpId);
+			team.setTeamName(teamName);
+			team.setVersion(0);
+			
+			String tourId = request.getParameter("tourId").toString();
+			Tournament tmpTour = facade.findTournament(tourId);
+			Set<Team> teamSet = tmpTour.getTeams();
+			if(teamSet.size() < 8) {
+				facade.createTeam(team);
+				facade.addParticipant(tourId, tmpId);
+			}
+			tmpTour = facade.findTournament(tourId);
+			teamSet = tmpTour.getTeams();
+			ArrayList<String> nameList = new ArrayList<String>();
+			for(Team t : teamSet) {
+				nameList.add(t.getTeamName());
+			}
+			
+			request.setAttribute("teamList", nameList);
+			request.setAttribute("tournamentId", tourId);
+			url = "/AddParticipants.jsp";
+			if(nameList.size() == 8) {
+				request.setAttribute("response", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
+			}
+			else {
+				request.setAttribute("response", "");
+			}
+		}
 		else if (operation.equals("Home")) {
-			url = "/Search.jsp";
+			url = "/Home.jsp";
 		}
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
