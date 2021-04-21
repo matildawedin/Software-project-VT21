@@ -14,11 +14,11 @@ header {
 	margin-left: 0px;
 	margin-right: 0px;
 	font-size: 35px;
-	background-color: 	#2eb82e;
-	color: #000000;
+	background-color: #434345;
+	color: #f0f0fa;
 }
 body {
-	 background-color:	#5cd65c;
+	 background-color: #dedede;
 }
 section#row {
 	padding: 10px 0px 10px 0px;
@@ -31,47 +31,47 @@ section#row:after {
 	clear: both;
 }
 
-section#main {
+section#main2 {
 	float: inherit;
 	width: 35%;
-	margin-left: 300px;
+	margin-left: 400px;
 	margin-right: auto;
 	padding: 15px 10px 10px 10px;
-	background-color: 	#2eb82e	;
-	color: #000000;
+	background-color: #434345;
+	color: #f0f0fa;
 }
 
 section#content {
 	padding: 10px 10px 10px 10px;
-	background-color: 	#2eb82e	;
-	color: #000000;
+	background-color: #434345;
+	color: #f0f0fa;
 }footer {
 	position: absolute;
 	bottom: 0;
  	width: 100%;
 	text-align: center;
 	padding: 1px;
-	color: #000000;
-	background-color: 	#2eb82e	;
+	color: #f0f0fa;
+	background-color: #434345;
 	clear: both;
 }
 
 nav {
 	float: left;
 	width: 20%;
-	color: #000000;
-	background-color: 	#2eb82e;
-	padding: 0px 0px 0px 0px;
+	color: white;
+	background-color: #434345	;
+	padding: 0px 10px 0px 0px;
 }nav a {
 	display: block;
-	color: #000000;
+	color: white;
 	padding: 10px 10px;
 	text-decoration: none;
 }
 /* Change color on hover */
 nav a:hover {
-	background-color: 	#248f24;
-	color:#000000 ;
+	background-color: #ddd;
+	color: black;
 }
 
 
@@ -83,18 +83,22 @@ nav ul {
 }
 
 nav li:hover, nav li:focus {
-	color: #c0c0c0;
-	background-color: #c0c0c0;
+	color: #666;
+	background-color: #d6d6d6;
 }nav li.active {
-	background: #248f24;
-	color: #000000!important;
+	background: #555;
+	color: #ffffff !important;
 	font-weight: bold;
 }
 
 aside {
 	float: right;
-	width: 30%;
-	background-color: 	#2eb82e	;
-	color: #000000;
+	width: 30%; 
+	margin-left: 100px;
+	margin-right: auto;
+	padding: 15px 10px 10px 10px;
+	background-color: #434345;
+	color: white;
+
 	
 }

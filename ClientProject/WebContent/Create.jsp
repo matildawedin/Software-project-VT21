@@ -19,10 +19,10 @@
 	<section id="row">
 		<nav>
 			<ul>
-				<li><a>Home</a></li>
+				<li ><a href ="Home.jsp">Home</a></li>
 				<li class="active"><a>Create</a></li>
-				<li><a>Find</a></li>
-				<li><a>About</a></li>
+				<li><a href ="Search.jsp">Find</a></li>
+				<li><a href ="About.jsp">About</a></li>
 			</ul>
 		</nav>
 
