@@ -19,6 +19,7 @@
 	<section id="row">
 		<nav>
 			<ul>
+
 				<li><a href ="Home.jsp">Home</a></li>
 				<li class="active"><a>Create</a></li>
 				<li><a href ="Search.jsp">Find</a></li>

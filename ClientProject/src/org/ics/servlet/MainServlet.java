@@ -2,12 +2,11 @@ package org.ics.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+import java.util.logging.Logger;
 import javax.ejb.EJB;
+import javax.interceptor.Interceptors;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
+import org.ics.interceptor.LogInterceptor;
 
-
-@WebServlet("/MainServlet/*")
+//@Interceptors(LogInterceptor.class)   // funkar ej 
+@WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -29,74 +29,66 @@ public class MainServlet extends HttpServlet {
    
     public MainServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		System.out.println("inne i doGet");
-
 		String url = null;
-		
 		String operation = request.getParameter("operation");
-		
-		if(operation.equals("Show")) {  
-			String id = request.getParameter("txtID");
-			Tournament tournament = facade.findTournament(id);
-			request.setAttribute("tournament", tournament);
-			url ="/Show.jsp";
-		}
-		else {
-			url = "/Search.jsp";
+		if( operation == null || operation.equals("get") ) {
+			ArrayList<Team> teams = (ArrayList<Team>) facade.findAllTeams();
+			request.setAttribute("teams", teams);
+			ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
+			request.setAttribute("tournaments", tournaments);
+			System.out.println(teams);
+			System.out.println(tournaments);
+			url="/Search.jsp";
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
-		
-		//Med jQuery i separat js fil                      (FUNGERAR INTE JUST NU!!!)
-		/*System.out.println("Inne i doget");
-
-		String pathInfo= request.getPathInfo();
-		System.out.println(pathInfo);
-		
-		if(pathInfo== null|| pathInfo.equals("/")){
-			System.out.println("1 error" + pathInfo);
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-			return;
-		}
-		String[] splits= pathInfo.split("/");
-		if(splits.length!= 2) {
-			System.out.println("2 error" + pathInfo);
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-			return;
-		}
-		String id= splits[1];
-		
-		System.out.println(id);
-		Tournament tournament= facade.findTournament(id);
-		System.out.println(tournament.getTournamentName() + tournament.getSport() + tournament.getVersion());
-		sendAsJson(response, tournament);
-		
-		*/
-		
-				
+		System.out.println("ute ur doget");
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("inne i doPost");
+		
 		String url = null;
-
 		String operation = request.getParameter("operation");
-		if(operation.equals("Show")) {
+		
+		if(operation.equals("Show")) {  
+			char c = request.getParameter("selectedID").charAt(0);
+			if(c == 'I') {
+				String id = request.getParameter("selectedID");
+				Tournament tournament = facade.findTournament(id);
+				request.setAttribute("tournament", tournament);
+				Set<Team> teams = tournament.getTeams();
+				System.out.println(teams);
+				request.setAttribute("teams", teams);
+				url ="/ShowTournament.jsp";
+			}
+			else if(c == 'T') {
+				String id = request.getParameter("selectedID");
+				Team team = facade.findTeam(id);
+				request.setAttribute("team", team);
+				url="/ShowTeam.jsp";
+			}
+			
+		}
+		else if(operation.equals("UpdateTournament")) {
 			Tournament tournament = facade.findTournament(request.getParameter("txtID"));
 			tournament.setTournamentName(request.getParameter("txtName"));
 			tournament.setSport(request.getParameter("txtSport"));
-
 			facade.updateTournament(tournament);
 			request.setAttribute("tournament", tournament);
-			url ="/Show.jsp";
+			url ="/ShowTournament.jsp";
+		}
+		else if(operation.equals("UpdateTeam")) {
+			Team team = facade.findTeam(request.getParameter("txtID"));
+			team.setTeamName(request.getParameter("txtName"));
+			facade.updateTeam(team);
+			request.setAttribute("team", team);
+			url="/ShowTeam.jsp";
 		}
 		else if (operation.equals("Create")) {
 			Tournament tournament = new Tournament();
@@ -147,6 +139,7 @@ public class MainServlet extends HttpServlet {
 		else if (operation.equals("Home")) {
 			url = "/Home.jsp";
 		}
+
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
@@ -158,43 +151,7 @@ public class MainServlet extends HttpServlet {
 	}
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//delete metod 
-	}
-	
-	
-	/*
-	private void sendAsJson(HttpServletResponse response, Tournament tournament) throws IOException {
-		System.out.println("inne i sendasjson");
-		PrintWriter out= response.getWriter();
-		response.setContentType("application/json");
-		if(tournament!= null) {
-			out.print("{\"txtID\":");
-			out.print("\""+tournament.getTournamentID() + "\"");
-			out.print(",\"txtName\":");
-			out.print("\""+tournament.getTournamentName()+"\"");
-			out.print(",\"txtSport\":");
-			out.print("\""+tournament.getSport()+"\"");
-			out.print(",\"txtVersion\":");
-			out.print("\""+tournament.getVersion()+"\"}");
-		} 
-		else{
-			out.print("{ }");
-		}
-		out.flush();
-	}
-	private Tournament parseJsonTournament(BufferedReader br){
-		JsonReader jsonReader= null;
-		JsonObject jsonRoot= null;
-		jsonReader= Json.createReader(br);
-		jsonRoot= jsonReader.readObject();
-		System.out.println("JsonRoot: "+jsonRoot);
-		Tournament tournament = new Tournament();
-		tournament.setTournamentID(jsonRoot.getString("txtID"));
-		tournament.setTournamentName(jsonRoot.getString("txtName"));
-		tournament.setSport(jsonRoot.getString("txtSport"));
-		tournament.setVersion(Integer.parseInt(jsonRoot.getString("txtVersion")));
 		
-		return tournament;
-		}
-*/
+	}
+	
 }
