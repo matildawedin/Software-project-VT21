@@ -22,9 +22,7 @@
 		<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
 		<input name="operation" value="UpdateTeam" type="hidden">
 	</form>
-	<form action="/ClientProject/MainServlet" method="post">
-		<input type="submit" name="submit" value="Tillbaka"> 
-		<input name="operation" value="Home" type="hidden">
-	</form>
+	<input type="submit" name="submit" value="Tillbaka" onclick="location.href='/ClientProject/MainServlet'"> 
+
 </body>
 </html>
