@@ -34,6 +34,7 @@ section#row:after {
 section#main {
 	float: inherit;
 	width: 35%;
+	height: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0px 10px 0px 15px;

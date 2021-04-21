@@ -3,6 +3,7 @@ package org.ics.servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -106,8 +107,9 @@ public class MainServlet extends HttpServlet {
 			tournament.setVersion(0);
 			tournament = facade.createTournament(tournament);
 			ArrayList<String> tmpList = new ArrayList<String>();
-			request.setAttribute("tournamentId", tmpId);
 			request.setAttribute("teamList", tmpList);
+			request.setAttribute("tournamentId", tmpId);
+			request.setAttribute("response", "");
 			url = "/AddParticipants.jsp";
 		}
 		else if (operation.equals("Add")) {
@@ -117,21 +119,33 @@ public class MainServlet extends HttpServlet {
 			team.setTeamID(tmpId);
 			team.setTeamName(teamName);
 			team.setVersion(0);
-			facade.createTeam(team);
 			
 			String tourId = request.getParameter("tourId").toString();
-			facade.addParticipant(tourId, tmpId);
-
-			ArrayList<String> list = (ArrayList<String>) request.getAttribute("teamName");
-			list.add(teamName); //Bör lägga till en fixed size array och använda set-metod för att lägga till
-			//Kolla List<String> fixedSizeList = Arrays.asList(new String[100]);
+			Tournament tmpTour = facade.findTournament(tourId);
+			Set<Team> teamSet = tmpTour.getTeams();
+			if(teamSet.size() < 8) {
+				facade.createTeam(team);
+				facade.addParticipant(tourId, tmpId);
+			}
+			tmpTour = facade.findTournament(tourId);
+			teamSet = tmpTour.getTeams();
+			ArrayList<String> nameList = new ArrayList<String>();
+			for(Team t : teamSet) {
+				nameList.add(t.getTeamName());
+			}
 			
-			request.setAttribute("teamList", list);
+			request.setAttribute("teamList", nameList);
 			request.setAttribute("tournamentId", tourId);
 			url = "/AddParticipants.jsp";
+			if(nameList.size() == 8) {
+				request.setAttribute("response", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
+			}
+			else {
+				request.setAttribute("response", "");
+			}
 		}
 		else if (operation.equals("Home")) {
-			url = "/Search.jsp";
+			url = "/Home.jsp";
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);

@@ -13,25 +13,26 @@
 </script>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/addStyle.css">
-<script src="js/add.js"></script>
 <title>BracketGenerator</title>
 </head>
-<body onload="populateList()">
+<body  onload="populateList()">
 <%String tournamentId = request.getAttribute("tournamentId").toString();%> 
+<%String feedback = request.getAttribute("response").toString();%>
 <%ArrayList<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
 	<header>
 		<p>Add your participants</p>
 	</header>
 	<script>
 	function populateList(){
-		//var i;
 		<%for(String s : teamList){%>
-			document.getElementById("list").append(<%=s%>);
+		var name = "<%=s%>";
+		var li = document.createElement('li');
+		li.setAttribute("class", "listPadding");
+		li.innerHTML = name; 
+		document.getElementById("list").appendChild(li);
 			<%}%>
-		alert("Its happening");
-	//document.getElementById("list").append($("#teamName").val());
 	}</script>
-	<section id="row" onload="populateList()">
+	<section id="row">
 		<nav>
 			<ul>
 				<li><a href ="Home.jsp">Home</a></li>
@@ -66,38 +67,33 @@
 
 		<section id="main">
 			<section id="content">
-				<article>
-					<fieldset id="addTeam">
+					<fieldset>
 						<legend>New Team:</legend>
-						Name: <br>
+						<br>Name: <br>
 						<form action="/ClientProject/MainServlet" method="post">
 							<input type="text" name="name" id="name" value="">
 							<input type="submit" name="submitBtn" value="Add" id="AddBtn"> 
 							<input name="tourId" value="<%=tournamentId%>" type="hidden">
 							
-							<input name="teamName" value="<%=teamList.get(0)%>" id="teamName1" type="hidden">
-							<input name="teamName" value="<%=teamList.get(1)%>" id="teamName2" type="hidden">
-							<input name="teamName" value="<%=teamList.get(2)%>" id="teamName3" type="hidden">
-							<input name="teamName" value="<%=teamList.get(3)%>" id="teamName4" type="hidden">
-							<input name="teamName" value="<%=teamList.get(4)%>" id="teamName5" type="hidden">
-							<input name="teamName" value="<%=teamList.get(5)%>" id="teamName6" type="hidden">
-							<input name="teamName" value="<%=teamList.get(6)%>" id="teamName7" type="hidden">
-							<input name="teamName" value="<%=teamList.get(7)%>" id="teamName8" type="hidden">
-							
 							<input name="operation" value="Add" type="hidden">
 						</form>
 					</fieldset>
-				</article>
-				<fieldset id="allTeams">
+					<p id ="feedback"><%=feedback%></p>
+			</section>
+			<section id="allTeams">
+			<fieldset class="allTeam">
 			<legend>Added teams:</legend>
-			<ul id="list">
-			</ul>
+			<ol id="list">
+			</ol>
 			</fieldset>
 			</section>
-			<form action="/ClientProject/MainServlet" method="post" id="CancelForm">
-				<input type="submit" form="CancelForm" name="submitBtn" value="Cancel" id="CancelBtn"> 
+			<div class="cancelBtn">
+			<form action="/ClientProject/MainServlet" method="post" id="FinishForm">
+				<input type="submit" form="FinishForm" name="submitBtn" value="Finish" id="FinishBtn"> 
+				<input type="submit" form="FinishForm" name="submitBtn" value="Cancel" id="CancelBtn"> 
 				<input name="operation" value="Home" type="hidden">
 			</form>
+			</div>
 		</section>
 	</section>
 	<footer>
