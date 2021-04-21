@@ -33,10 +33,9 @@ public class MainServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("inne i doGet");
 		String url = null;
 		String operation = request.getParameter("operation");
-		if( operation == null || operation.equals("get") ) {
+		if( operation == null || operation.equals("get")) {
 			ArrayList<Team> teams = (ArrayList<Team>) facade.findAllTeams();
 			request.setAttribute("teams", teams);
 			ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
@@ -47,12 +46,11 @@ public class MainServlet extends HttpServlet {
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		System.out.println("ute ur doget");
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("inne i dopost");
 		String url = null;
 		String operation = request.getParameter("operation");
 		
@@ -63,7 +61,6 @@ public class MainServlet extends HttpServlet {
 				Tournament tournament = facade.findTournament(id);
 				request.setAttribute("tournament", tournament);
 				Set<Team> teams = tournament.getTeams();
-				System.out.println(teams);
 				request.setAttribute("teams", teams);
 				url ="/ShowTournament.jsp";
 			}
@@ -81,6 +78,8 @@ public class MainServlet extends HttpServlet {
 			tournament.setSport(request.getParameter("txtSport"));
 			facade.updateTournament(tournament);
 			request.setAttribute("tournament", tournament);
+			Set<Team> teams = tournament.getTeams();
+			request.setAttribute("teams", teams);
 			url ="/ShowTournament.jsp";
 		}
 		else if(operation.equals("UpdateTeam")) {

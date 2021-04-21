@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/show.css">
 <title>Tournament</title>
 <script src="js/show.js"></script>
 </head>
@@ -29,15 +30,12 @@
 		</p>
 		<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
 		<input name="operation" value="UpdateTournament" type="hidden">
-		<select name="teamList">
+		<ul id="teamList">
 		<%for(Team t : teams){ %>
-		<option value="<%=t.getTeamID()%>" ><%=t.getTeamName()%></option>
+		<li><a value="<%=t.getTeamID()%>"><%=t.getTeamName()%></a>
 		<% } %>
-		</select>
+		</ul>
 	</form>
-	<form action="/ClientProject/MainServlet" method="post">
-		<input type="submit" name="submit" value="Tillbaka"> 
-		<input name="operation" value="Home" type="hidden">
-	</form>
+	<input type="submit" name="submit" value="Tillbaka" onclick="location.href='/ClientProject/MainServlet'"/> 
 </body>
 </html>
