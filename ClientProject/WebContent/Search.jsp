@@ -13,8 +13,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
 <title>Search</title>
-</head>
 <script src="js/Search.js"></script>
+</head>
 <body>
     <%ArrayList<Team> teams = (ArrayList<Team>) request.getAttribute("teams");%>
     <%ArrayList<Tournament> tournaments = (ArrayList<Tournament>) request.getAttribute("tournaments");%>
@@ -28,20 +28,22 @@
 	<tb>
 	<form action="/ClientProject/MainServlet" method="post">
 		<div>
-			<select name="select" id="teamList" onchange="onTeamChange()"
-				style="display: none">
+			<select name="select" id="teamList" onchange="onTeamChange()" style="display: none">
+			<option value ="startOption">-- select one --</option>
 				<%for (Team t : teams) {%>
 				<option value="<%=t.getTeamID()%>"><%=t.getTeamName()%></option>
 				<%}%>
 			</select> <select name="select" id="tournamentList"
 				onchange="onTournamentChange()" style="display: none">
+				<option value="startOption">-- select one --</option>
 				<%for (Tournament t : tournaments) {%>
 				<option value="<%=t.getTournamentID()%>"><%=t.getTournamentName()%></option>
 				<%}%>
-			</select> <input type="submit" name="submit" value="Search" id="FindBtn" />
+			</select> 
+			<input type="submit" name="submit" value="Search" id="FindBtn" style="display: none" />
 		</div>
 	</tb>
-	<input type="text" id="selectedID" name="selectedID">
+	<input type="hidden" id="selectedID" name="selectedID">
 	<input name="operation" value="Show" type="hidden">
 	</form>
 </body>
