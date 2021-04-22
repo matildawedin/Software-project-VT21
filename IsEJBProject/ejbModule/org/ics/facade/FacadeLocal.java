@@ -14,10 +14,10 @@ public interface FacadeLocal{
 	
 	 public Tournament findTournament(String tournamentID);
 	 public Tournament createTournament(Tournament tournament);
-	 public void updateTournament(Tournament tournament);
+	 public Tournament updateTournament(Tournament tournament);
 	 public Team findTeam(String teamID);
 	 public Team createTeam(Team team);
-	 public void updateTeam(Team team);
+	 public Team updateTeam(Team team);
 	 public List<Team> findAllTeams();
 	 public List<Tournament> findAllTournaments();
 	 public Game findGame(String gameID);
