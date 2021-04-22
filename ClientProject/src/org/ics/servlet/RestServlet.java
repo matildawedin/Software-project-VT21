@@ -73,18 +73,18 @@ public class RestServlet extends HttpServlet {
 			response.setContentType("application/json");
 			if (tour != null) {
 			out.print("{\"txtID\":");
-			out.print("\"" + tour.getTournamentName() + "\"");
+			out.print("\"" +tour.getTournamentID()+ "\"");
 			out.print(",\"txtName\":");
-			out.print("\"" +tour.getTournamentID()+"\"");
+			out.print("\"" +tour.getTournamentName()+"\"");
 			out.print(",\"txtSport\":");
 			out.print("\"" +tour.getSport()+"\"");
 			out.print(",\"txtVersion\":");
-			out.print("\"" +tour.getVersion()+"\"");
+			out.print("\"" +tour.getVersion()+"\"}");
 			
 			} else {
 			out.print("{ }");
 			}
 			out.flush();
 			}
-
+	
 }
