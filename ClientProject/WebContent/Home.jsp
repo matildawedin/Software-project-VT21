@@ -51,7 +51,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 </aside>
  <section id="main" style="height: 320px; width: 343px">
  <H2> Welcome to BracketGenerator</H2>
- <p> On this website you can create and edit tournaments and teams.</p>
+ <p> On this website you can create and edit tournaments and teams asd.</p>
  
  <img border="0" src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4"
      alt="Pulpit rock" style="width: 324px; height: 158px; ">
