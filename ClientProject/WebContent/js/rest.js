@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#FindBtn").click(function() {
+	$("#FindBtnTour").click(function() {
 		var strValue = $("#txtID").val();
 		if (strValue != "") {
 			$.ajax({
@@ -17,7 +17,7 @@ $(document).ready(function() {
 			}
 		}
 	})
-	$("#UpdateBtn").click(function(){
+	$("#UpdateBtnTour").click(function(){
 		var strId = $("#txtID").val();
 		var strName = $("#txtName").val();
 		var strSport = $("#txtSport").val();
