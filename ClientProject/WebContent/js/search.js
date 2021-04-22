@@ -1,32 +1,43 @@
-$(document).ready(function() {
-	function xx() {
-		var teamSelect = $("#teamList");
-		var selectedID = $("selectedID").val();
-		selectedID = teamSelect.options[teamSelect.selectedIndex].text;
-	}
 
-
-});
 function onTeamChange(){
 	var teamSelect = document.getElementById("teamList");
-	var tournamentSelect = document.getElementById("tournamentList");
-	document.getElementById("selectedID").value = teamSelect.options[teamSelect.selectedIndex].value;
+	var findBtn = document.getElementById("FindBtn");
 	
+	if(teamSelect.options[teamSelect.selectedIndex].value != "startOption"){
+		document.getElementById("selectedID").value = teamSelect.options[teamSelect.selectedIndex].value;
+		findBtn.style.display = "inline";
+	}
+	else{
+		findBtn.disabled = true;
+	}
 }
 function onTournamentChange(){
-	var teamSelect = document.getElementById("teamList");
 	var tournamentSelect = document.getElementById("tournamentList");
-	document.getElementById("selectedID").value = tournamentSelect.options[tournamentSelect.selectedIndex].value;
+	var findBtn = document.getElementById("FindBtn");
+	
+	if(tournamentSelect.options[tournamentSelect.selectedIndex].value != "startOption"){
+		document.getElementById("selectedID").value = tournamentSelect.options[tournamentSelect.selectedIndex].value;
+		findBtn.style.display = "inline";
+	}
+	else{
+		findBtn.disabled = true;
+	}
+	
+	
 }
 function radioFunction()
 {
 	var radioTeam =document.getElementById("teamRadio");
 	var radioTournament =document.getElementById("tournamentRadio");
 	document.getElementById("selectedID").value = "";
+	document.getElementById("FindBtn").style.display = "none";
+	document.getElementById("teamList").selectedIndex = 0;
+	document.getElementById("tournamentList").selectedIndex = 0;
 
 	if(radioTeam.checked == true){
 		document.getElementById("teamList").style.display = "inline";
 		document.getElementById("tournamentList").style.display = "none";
+		
 		
 	}
 	else if(radioTournament.checked == true){
@@ -34,6 +45,3 @@ function radioFunction()
 		document.getElementById("teamList").style.display = "none";
 	}
 }
-
-
-
