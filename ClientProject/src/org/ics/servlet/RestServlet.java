@@ -39,12 +39,14 @@ public class RestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pathInfo = request.getPathInfo();
+		System.out.println(pathInfo);
 		if(pathInfo == null || pathInfo.equals("/")){
 		 System.out.println("Alla");
 		 System.out.println(pathInfo);
 		 return;
 		}
 		String[] splits = pathInfo.split("/");
+		System.out.println(splits.length);
 		if(splits.length != 2) {
 		 System.out.println("Alla2");
 		 response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -73,13 +75,13 @@ public class RestServlet extends HttpServlet {
 			response.setContentType("application/json");
 			if (tour != null) {
 			out.print("{\"txtID\":");
-			out.print("\"" + tour.getTournamentName() + "\"");
+			out.print("\"" + tour.getTournamentID() + "\"");
 			out.print(",\"txtName\":");
-			out.print("\"" +tour.getTournamentID()+"\"");
+			out.print("\"" +tour.getTournamentName()+"\"");
 			out.print(",\"txtSport\":");
 			out.print("\"" +tour.getSport()+"\"");
 			out.print(",\"txtVersion\":");
-			out.print("\"" +tour.getVersion()+"\"");
+			out.print("\"" +tour.getVersion()+"\"}");
 			
 			} else {
 			out.print("{ }");

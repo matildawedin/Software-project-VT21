@@ -134,6 +134,7 @@ public class MainServlet extends HttpServlet {
 			else {
 				request.setAttribute("response", "");
 			}
+			//Kolla på att disabla knappen när 8 lag lagts till. Skapa games också!!!
 		}
 		else if (operation.equals("Home")) {
 			url = "/Home.jsp";
