@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -59,7 +61,14 @@ public class Tournament implements Serializable {
 		this.sport = sport;
 	}
 
-	@ManyToMany(fetch = FetchType.EAGER, mappedBy="tournaments", cascade = CascadeType.PERSIST)
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)  
+	@JoinTable(name="TournamentTeam",
+		joinColumns= 
+				@JoinColumn(name="tournamentID",
+				referencedColumnName="tournamentID"),
+			inverseJoinColumns= 
+					@JoinColumn(name="teamID",
+					referencedColumnName="teamID"))
 	public Set<Team> getTeams() {
 		return teams;
 	}

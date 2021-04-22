@@ -86,7 +86,12 @@ public class Facade implements FacadeLocal {
 	 public String generateID(String type){
 		 return this.id.generateID(type);
 	 }
-	 
+	 public void addParticipant(String tournamentId, String teamId) {
+		 this.tournament.addParticipant(tournamentId, teamId);
+	 }
+	 public void addParticipantFromTeam(String teamId, Tournament tournament) {
+		 this.team.addParticipantFromTeam(teamId, tournament);
+	 }
 
 	
 	
