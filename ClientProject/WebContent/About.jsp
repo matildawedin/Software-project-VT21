@@ -9,7 +9,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  </script>
  <meta charset="ISO-8859-1">
  <link rel="stylesheet" type="text/css" href="css/about.css">
- <script src="js/API.js"></script> <!-- Ska denna ändras? -->
+ <script src="js/rest.js"></script> <!-- Ska denna ändras? -->
  <title>BracketGenerator</title>
 </head>
 <body>
@@ -26,16 +26,20 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				</ul>
 </nav>
   <aside> <!-- Detta är aside rutan, där det är tänkt att vi ska göra själva loggningen. Hur kommer det sig att denna hamnar högt upp när den ligger mellan sections? -->
- <table id="asideTable">
+ <table id="asideTable1">
  <tr>
- <p>Test</p>
+ <H2>Currently active Tournaments!</H2>
+ <p> Have a quick look to see all the tournaments we have active at the moment </p>
+ <input type="button" name="ViewButton" value="View" id="ViewBtn">
  </tr>
  </table>
 </aside>
 
  <section id="main2" style="height: 320px; width: 343px"> <!-- Detta är mittenrutan där about-infon ska finnas  -->
  <H2> About BracketGenerator</H2>
- <p> The creators of this page is...</p>
+ <p> Our aim is to make it easy for everyone to create a tournament. 
+ That's why we created BracketGenerator. The creators of this page are Leo, Ellen, Ludvig, Matilda & Cecilia. 
+ Enjoy making the best tournaments for you and your teams.</p>
  </section>
 
  </section>
