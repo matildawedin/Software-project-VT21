@@ -31,24 +31,17 @@ section#row:after {
 	clear: both;
 }
 
-section#main2 {
-	float: inherit;
-	width: 35%;
-	margin-left: 400px;
-	margin-right: auto;
+section#TournamentFind {
+	float: left;
+	width: 60%;
+	margin-left: 100px;
+	margin-right: 50px;
 	padding: 15px 10px 10px 10px;
 	background-color: 	#2eb82e	;
 	color: #000000;
 }
 
-section#content {
-	padding: 10px 10px 10px 10px;
-	background-color: 	#2eb82e	;
-	color: #000000;
-}
-
 footer {
-	position: absolute;
 	bottom: 0;
  	width: 100%;
 	text-align: center;
@@ -76,8 +69,6 @@ nav a:hover {
 	color:#000000 ;
 }
 
-
-
 nav ul {
 	list-style-type: none;
 	margin: 0;
@@ -92,21 +83,10 @@ nav li:hover, nav li:focus {
 	color: #000000!important;
 	font-weight: bold;
 }
-
 aside {
 	float: right;
-	width: 40%;
+	width: 30%;
 	background-color: 	#2eb82e	;
 	color: #000000;
 	
-}
-button#ViewBtn {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
 }

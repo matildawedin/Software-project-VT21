@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.ics.ejb.Team;
+import org.ics.ejb.Tournament;
 import org.ics.interceptor.LogInterceptor;
 
 /**
@@ -59,6 +60,12 @@ public class TeamEAOImpl implements TeamEAOLocal {
     		
     		return null;
     	}
+    }
+    public void addParticipantFromTeam(String teamId, Tournament tournament) {
+		Team tmpTeam = this.findTeam(teamId);
+		if (tmpTeam != null && tournament != null) {
+			tmpTeam.getTournaments().add(tournament);
+		}
     }
    
 }

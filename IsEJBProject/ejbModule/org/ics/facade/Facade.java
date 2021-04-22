@@ -45,8 +45,9 @@ public class Facade implements FacadeLocal {
 		return tournament;
 	}
 	
-	public void updateTournament(Tournament tournament) {
+	public Tournament updateTournament(Tournament tournament) {
     	this.tournament.updateTournament(tournament);
+		return tournament;
     
     }
 	public List<Tournament> findAllTournaments() {
@@ -61,8 +62,9 @@ public class Facade implements FacadeLocal {
 		team = this.team.createTeam(team);
 		return team;
 	}
-	public void updateTeam(Team team) {
+	public Team updateTeam(Team team) {
     	this.team.updateTeam(team);
+		return team;
     }
 
 	public List<Team> findAllTeams() {
@@ -84,7 +86,12 @@ public class Facade implements FacadeLocal {
 	 public String generateID(String type){
 		 return this.id.generateID(type);
 	 }
-	 
+	 public void addParticipant(String tournamentId, String teamId) {
+		 this.tournament.addParticipant(tournamentId, teamId);
+	 }
+	 public void addParticipantFromTeam(String teamId, Tournament tournament) {
+		 this.team.addParticipantFromTeam(teamId, tournament);
+	 }
 
 	
 	
