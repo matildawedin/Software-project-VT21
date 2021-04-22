@@ -32,13 +32,15 @@
 			<article>
 				<fieldset id="PersonalFS1 " style="width: 230px; height: 236px; ">
 					<legend>Find tournament:</legend>
-					TournamentID:<br> <input type="text" name="txtID" id="txtID" value=""><br> 
-						Tournament name:<br> <input type="text" name="txtName" id="txtName" value=""> <br>
-					Tournament sport:<br> <input type="text" name="txtSport"
-						id="txtSport" value=""> <br>
-					<br> <input type="button" name="submitBtn" value="Find"
-						id="FindBtnTour"> <input type="button" name="submitBtn"
-						value="Update" id="UpdateBtnTour">
+					TournamentID:<br> 
+					<input type="text" name="txtID" id="txtID" value=""><br> 
+					Tournament name:<br> 
+					<input type="text" name="txtName" id="txtName" value=""> <br>
+					Tournament sport:<br> 
+					<input type="text" name="txtSport" id="txtSport" value=""> <br><br> 
+					
+					<input type="button" name="submitBtn" value="Find" id="FindBtnTour"> 
+					<input type="button" name="submitBtn" value="Update" id="UpdateBtnTour">
 				</fieldset>
 			</article><fieldset id="PersonalFS" style="width: 232px; height: 167px;">
 							<legend>Find team:</legend>
