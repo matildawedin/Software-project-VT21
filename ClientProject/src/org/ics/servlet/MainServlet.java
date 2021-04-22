@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.interceptor.Interceptors;
+import javax.json.JsonObjectBuilder;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,12 +28,57 @@ public class MainServlet extends HttpServlet {
         super();
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
+		
 	}
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String pathInfo= request.getPathInfo();
+		if(pathInfo== null|| pathInfo.equals("/")){
+			System.out.println("Tournament");
+			System.out.println(pathInfo);
+			
+			List<examples.ejb.ics.Tournament> allTournaments= facade.findAllTournaments();
+			sendAsJson(response, allTournaments);
+			
+			return;
+		}
+		String[] splits= pathInfo.split("/");if(splits.length!= 2) {
+			System.out.println("Tournament");
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+		return;
+		}
+		String id= splits[1];
+		Tournament tournament = facade.findTournament(String(tournamentID));
+		sendAsJson(response, tournament);	
+	}
 	
+	private void sendAsJson(HttpServletResponse response, List<Tournament> torunaments) throwsIOException {
+		
+		PrintWriter out= response.getWriter();
+		
+		response.setContentType("application/json");
+		
+		if(torunaments != null) {
+			JsonArrayBuilder array= Json.createArrayBuilder();
+			for(examples.ejb.ics.Tournament t: torunaments) {
+				JsonObjectBuilder o = Json.createObjectBuilder();
+				//o.add("id", String.valueOf(t.getTournamentID()));
+				o.add("tournament", t.getTournamentName());
+				o.add("sport", t.getSport());
+				array.add(o);
+				}
+			JsonArray jsonArray= array.build();
+			System.out.println("Tournaments: "+jsonArray);
+			out.print(jsonArray);
+			} else{
+				out.print("[]");
+				}
+		out.flush();
+		} 
+	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String url = null;

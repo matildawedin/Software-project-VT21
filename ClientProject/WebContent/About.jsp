@@ -27,14 +27,17 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 </nav>
 <aside>
  <table id="asideTable">
+  <H2>Tournaments</H2>
  <tr>
- <p>Test</p>
+ <td><span id="tournament"></span></td>
+ <td><span id="sport"></span></td>
  </tr>
+
  </table>
 </aside>
  <section id="main2" style="height: 320px; width: 343px">
  <H2> About BracketGenerator</H2>
- <p> The creators of this page is...</p>
+ <p>The creators behind this page are students form Lund University. The system developers have worked together since the beginning of 2021. The team is know for their creative work and their use of new innovations when building websites. </p>
  </section>
  </section>
  <footer>

@@ -17,6 +17,28 @@ $(document).ready(function() {
 			}
 		}
 	})
+	
+	$("#ViewBtnTour").click( function() {  
+		var strValue = $("#id").val();
+		if(strValue != "") {
+		$.ajax({
+		method: "GET",
+		url: "http://localhost:8080/ClientProject/MainServlet/" + strValue, 
+		error: ajaxFindReturnError, 
+		success: ajaxFindReturnSuccess
+		})
+		function ajaxFindReturnSuccess(result, status, xhr) {
+		ParseJsonFileMovie(result);
+		}
+		function ajaxFindReturnError(result, status, xhr) {
+		alert("Error");
+		console.log("Ajax-find movie: "+status);
+		}
+	  }
+	})//TOURNAMENT LISTAN
+	
+	
+	
 	$("#UpdateBtn").click(function(){
 		var strId = $("#txtID").val();
 		var strName = $("#txtName").val();
@@ -40,8 +62,8 @@ $(document).ready(function() {
 					console.log("Ajax-find: " + status);
 				}
 		}
-		
 	})
+	
 });
 function ParseJsonFileTournamnet(result) {
 	$("#txtID").val(result.txtID);
