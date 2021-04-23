@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ page import="org.ics.ejb.Tournament"%>
+<%@ page import="java.util.ArrayList"%>
 <html>
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +11,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  </script>
  <meta charset="ISO-8859-1">
  <link rel="stylesheet" type="text/css" href="css/about.css">
- <script src="js/rest.js"></script> <!-- Ska denna ändras? -->
+ <script src="js/about.js"></script> <!-- Ska denna ändras? >
  <title>BracketGenerator</title>
 </head>
 <body>
@@ -30,7 +32,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <tr>
  <H2>Currently active Tournaments!</H2>
  <p> Have a quick look to see all the tournaments we have active at the moment </p>
- <input type="button" name="ViewButton" value="View" id="ViewBtnTour">
+ <input type="button" name="ViewTournaments" value="View" id="ViewTournaments">
  </tr>
  </table>
 </aside>
