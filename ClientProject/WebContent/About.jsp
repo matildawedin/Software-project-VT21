@@ -30,7 +30,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <tr>
  <H2>Currently active Tournaments!</H2>
  <p> Have a quick look to see all the tournaments we have active at the moment </p>
- <input type="button" name="ViewButton" value="View" id="ViewBtn">
+ <input type="button" name="ViewButton" value="View" id="ViewBtnTour">
  </tr>
  </table>
 </aside>
