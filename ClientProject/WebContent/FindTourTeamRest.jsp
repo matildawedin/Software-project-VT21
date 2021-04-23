@@ -27,8 +27,7 @@
 				<li><a class="active">Update</a></li>
 			</ul>
 		</nav>
-		<section id="TournamentFind" style="height: 547px; width: 343px">
-			
+		<section id="TournamentFind" style="height: 273px; width: 500px">
 			<article>
 				<fieldset id="PersonalFS1 " style="width: 230px; height: 236px; ">
 					<legend>Find tournament:</legend>
@@ -38,21 +37,12 @@
 					<input type="text" name="txtName" id="txtName" value=""> <br>
 					Tournament sport:<br> 
 					<input type="text" name="txtSport" id="txtSport" value=""> <br><br> 
-					
 					<input type="button" name="submitBtn" value="Find" id="FindBtnTour"> 
 					<input type="button" name="submitBtn" value="Update" id="UpdateBtnTour">
 				</fieldset>
-			</article><fieldset id="PersonalFS" style="width: 232px; height: 167px;">
-							<legend>Find team:</legend>
-							TeamID:<br> <input type="text" name="id" id="id" value=""><br>
-							Team Name:<br> <input type="text" name="title" id="title" value=""> <br> <br> <input type="button" name="submitBtn" value="Find" id="FindBtnTeam"> <input type="button" name="submitBtn" value="Update" id="UpdateBtnTour">
-						</fieldset>
-			<article>
-						
-					</article>
+			</article>
 			</section>
 			</section>
-			
 			<footer>
 				<p>&copy; BracketGenerator</p>
 			</footer>
