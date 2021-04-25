@@ -2,7 +2,6 @@
  pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ page import="org.ics.ejb.Tournament"%>
-<%@ page import="org.ics.facade.FacadeLocal"%>
 <%@ page import="java.util.ArrayList"%>
 <html>
 <head>
@@ -16,7 +15,6 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <title>BracketGenerator</title>
 </head>
 <body>
-  <%ArrayList<Tournament> tournaments = (ArrayList<Tournament>) request.getAttribute("tournaments");%>
  <header>
 <p>About</p>
  </header>
@@ -30,18 +28,22 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				</ul>
 </nav>
   <aside>
+  <form action="/ClientProject/MainServlet" method="getTournaments()">
+		<%ArrayList<Tournament> tournaments= (ArrayList<Tournament>) request.getAttribute("tournaments");%>
+		
  <table id="asideTable1" style="width: 15px; ">
  <tr style="height: 23px; width: 428px">
  <H2>Currently active Tournaments!</H2>
  <p> Have a quick look to see all the tournaments we have active at the moment </p>
  </tr>
- <input type="button" name="viewBtn" value="View " id="viewTournaments" onclick="getTournaments()">
- 		<ul id="tournamentList">
+ <input type="button" name="viewBtn" value="View Tournaments" id="viewTournaments" onclick="getTournaments()">
+ 		<ul id="tournamentList" type="hidden">
 		<%for(Tournament t : tournaments){ %>
 		<li><a value="<%=t.getTournamentID()%>"><%=t.getTournamentName()%></a>
 		<% } %>
 		</ul>
  </table>
+ </form>
 </aside>
 
  <section id="main2" style="height: 320px; width: 343px"> 
@@ -55,5 +57,6 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <p>&copy; BracketGenerator</p>
  </footer>
 </section>
+<input type="submit" name="submit" value="Tillbaka" onclick="location.href='/ClientProject/MainServlet'"/> 
 </body>
 </html>

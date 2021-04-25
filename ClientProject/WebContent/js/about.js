@@ -1,3 +1,1 @@
-function getTournaments(){
-
-	}
+function getTournaments()
