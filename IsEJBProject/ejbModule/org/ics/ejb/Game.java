@@ -1,13 +1,21 @@
 package org.ics.ejb;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @NamedQueries({
@@ -22,9 +30,8 @@ public class Game implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String gameID;
 	private int round;
-	private String participantOne;
-	private String participantTwo;
-	private String tournamentID;
+	private Set<Team> teams;
+	private Tournament tournament;
 	private int version;
 	
 	@Id
@@ -42,32 +49,53 @@ public class Game implements Serializable {
 	public void setRound(int round) {
 		this.round = round;
 	}
-	@Column(name = "participantOne")
-	public String getParticipantOne() {
+	/*
+	@ManyToOne
+	@JoinColumn(name = "participantOne", referencedColumnName="teamID")
+	public Team getParticipantOne() {
 		return participantOne;
 	}
-	public void setParticipantOne(String participantOne) {
+	public void setParticipantOne(Team participantOne) {
 		this.participantOne = participantOne;
-	}
-	@Column(name = "participantTwo")
-	public String getParticipantTwo() {
+	}	
+	@ManyToOne
+	@JoinColumn(name = "participantTwo", referencedColumnName="teamID")
+	public Team getParticipantTwo() {
 		return participantTwo;
 	}
-	public void setParticipantTwo(String participantTwo) {
+	public void setParticipantTwo(Team participantTwo) {
 		this.participantTwo = participantTwo;
+	}*/
+	@ManyToOne
+	@JoinColumn(name = "tournamentID", referencedColumnName="tournamentID")
+	public Tournament getTournament() {
+		return tournament;
 	}
-	@Column(name = "tournamentID")
-	public String getTournamentID() {
-		return tournamentID;
+	public void setTournament(Tournament tournament) {
+		this.tournament = tournament;
 	}
-	public void setTournamentID(String tournamentID) {
-		this.tournamentID = tournamentID;
-	}
+	@Version
 	@Column(name = "version")
 	public int getVersion() {
 		return version;
 	}
 	public void setVersion(int version) {
 		this.version = version;
+	}
+
+	
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)  
+	@JoinTable(name="GameTeam",
+		joinColumns= 
+				@JoinColumn(name="gameID",
+				referencedColumnName="gameID"),
+			 inverseJoinColumns= 
+					 @JoinColumn(name="team",
+								referencedColumnName="teamID"))
+	public Set<Team> getTeams() {
+		return teams;
+	}
+	public void setTeams(Set<Team> teams) {
+		this.teams = teams;
 	}
 }

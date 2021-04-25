@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.ics.ejb.Game;
+import org.ics.ejb.Team;
+import org.ics.ejb.Tournament;
 import org.ics.interceptor.LogInterceptor;
 
 @Stateless
@@ -31,5 +33,13 @@ public class GameEAOImpl implements GameEAOLocal {
 	public void updateGame(Game game) {
 		em.merge(game);
 	}
+	
+	public void addTeam(String gameId, String teamId) {
+		Game tmpGame = this.findGame(gameId);
+		Team tmpTeam = em.find(Team.class, teamId);
+		if (tmpGame != null && tmpTeam != null) {
+			tmpGame.getTeams().add(tmpTeam);
 
+		}
+	}
 }
