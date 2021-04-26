@@ -21,7 +21,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <ul>
 				<li><a href ="Home.jsp">Home</a></li>
 				<li ><a href ="Create.jsp">Create</a></li>
-				<li><a href ="Search.jsp">Find</a></li>
+				<li><a href ="MainServlet">Find</a></li>
 				<li class="active"><a>About</a></li>
 				</ul>
 </nav>

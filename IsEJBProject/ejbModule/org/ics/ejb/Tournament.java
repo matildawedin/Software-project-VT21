@@ -89,7 +89,6 @@ public class Tournament implements Serializable {
 		this.version = version;
 	} 
 
-	}
 	
 	@OneToMany(mappedBy = "tournament", fetch=FetchType.EAGER)
 	public Set<Game> getGames() {

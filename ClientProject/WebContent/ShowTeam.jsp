@@ -16,19 +16,20 @@
 	<nav>
 		<ul class="navul">
 			<a href="Home.jsp">Home</a>
-			<a href="AddParticipants.jsp">Create</a>
+			<a href="Create.jsp">Create</a>
 			<a class="active">Find</a>
-			<a>About</a>
+			<a href="About.jsp">About</a>
 		</ul>
 	</nav>
 	<section class="section">
 		<form action="/ClientProject/MainServlet" method="post">
 			<%Team team = (Team) request.getAttribute("team");%>
+			<%String feedback = request.getAttribute("response").toString();%>
 			<p>
 				<input type="hidden" name="txtID" id="txtID"
 					value="<%=team.getTeamID()%>">
 			</p>
-			<p id="responseText"></p>
+			<p><%=feedback%></p>
 			<label>Name</label>
 			<p>
 				<input onchange="onTeamUpdate()" type="text" name="txtName" id="txtName"
