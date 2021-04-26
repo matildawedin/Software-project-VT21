@@ -87,6 +87,8 @@ public class Tournament implements Serializable {
 
 	public void setVersion(int version) {
 		this.version = version;
+	} 
+
 	}
 	
 	@OneToMany(mappedBy = "tournament", fetch=FetchType.EAGER)
@@ -97,4 +99,5 @@ public class Tournament implements Serializable {
 	public void setGames(Set<Game> games) {
 		this.games = games;
 	}
+
 }
