@@ -63,12 +63,14 @@ public class MainServlet extends HttpServlet {
 				request.setAttribute("tournament", tournament);
 				Set<Team> teams = tournament.getTeams();
 				request.setAttribute("teams", teams);
+				request.setAttribute("response", "Tournament name is updated!");
 				url ="/ShowTournament.jsp";
 			}
 			else if(c == 'T') {
 				String id = request.getParameter("selectedID");
 				Team team = facade.findTeam(id);
 				request.setAttribute("team", team);
+				request.setAttribute("response", "Team name is updated!");
 				url="/ShowTeam.jsp";
 			}
 			

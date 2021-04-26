@@ -20,7 +20,7 @@
 			<a href="Home.jsp">Home</a>
 			<a href="AddParticipants.jsp">Create</a>
 			<a class="active">Find</a>
-			<a>About</a>
+			<a href="About.jsp">About</a>
 		</ul>
 	</nav>
 	<h2>Tournament</h2>
@@ -28,11 +28,12 @@
 		<form action="/ClientProject/MainServlet" method="post">
 			<%Tournament tournament = (Tournament) request.getAttribute("tournament");%>
 			<%Set<Team> teams = (Set<Team>) request.getAttribute("teams");%>
+			<%String feedback = request.getAttribute("response").toString();%>
 			<p>
 				<input type="hidden" name="txtID" id="txtID"
 					value="<%=tournament.getTournamentID()%>">
 			</p>
-			<p id="response"></p>
+			<p><%=feedback%></p>
 			<label>Name</label>
 			<aside>
 				<label id="participantLable">Participants</label>

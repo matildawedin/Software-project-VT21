@@ -27,7 +27,7 @@
 	<nav class="navbar">
 		<ul>
 			<a href="Home.jsp">Home</a>
-			<a href="AddParticipants.jsp">Create</a>
+			<a href="Create.jsp">Create</a>
 			<a  class="active">Find</a>
 			<a href ="About.jsp">About</a>
 		</ul>

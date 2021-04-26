@@ -10,10 +10,4 @@
       <context-root>ClientProject</context-root>
     </web>
   </module>
-  <module>
-    <web>
-      <web-uri>ClientProjectRestServer.war</web-uri>
-      <context-root>ClientProjectRestServer</context-root>
-    </web>
-  </module>
 </application>
