@@ -85,5 +85,5 @@ public class Tournament implements Serializable {
 
 	public void setVersion(int version) {
 		this.version = version;
-	}
+	} 
 }
