@@ -16,16 +16,15 @@ header h1 {
 h2{
 	font-size: 20px;
 	text-align:center;
+	padding-top: 50px;
 }
-
-
-/* meny*/
+/* meny */
 nav {
 	overflow:hidden;
 	background-color: #333;
 	
 }
-ul{
+.navul{
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -64,18 +63,12 @@ footer{
 }
 
 
-/* */
+/* Main */
 
-form{
-	padding-top:100px;
-	padding-bottom: 200px;
-	
-}
 section{
-	padding-left: 700px;
-}
-.section{
-	padding-left:850px;
+	padding-top:40px;
+	padding-bottom: 200px;
+	padding-left: 750px;
 }
 aside{
 	width:30%;
@@ -92,9 +85,7 @@ p input{
 	height:30px;
 	font-size:14px;
 }
-#participantLable{
-	padding:50px;
-}
+
 #UpdateBtn{
 	width:100%;
 	max-width:100px;
@@ -107,6 +98,7 @@ p input{
 	cursor:pointer;
 	position:relative;
 	transition: all 0.1s ease-in-out;
+	visibility: disabled;
 }
 #backBtn{
 	width:100%;
@@ -121,13 +113,14 @@ p input{
 	position:relative;
 	transition: all 0.1s ease-in-out;
 }
-
 #teamList{
 	list-style-type: none;
-	padding: 0;
+	padding-top: 20px;
+	padding-left:0;
 	margin: 0;
 }
 #teamList li a{
+	width:80px;
 	border:1px solid #ddd;
 	margin-top:-1px;
 	background-color:#f6f6f6;
