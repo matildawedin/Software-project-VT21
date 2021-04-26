@@ -8,17 +8,60 @@
 	box-sizing: border-box;
 }
 
-header {
-	padding: 10px;
+/*Header/title*/
+header{
+	padding:80px;
+	text-align:center;
+	background-color:black;
+	color: white;
+}
+header h1 {
+	font-size: 40px;
+}
+/* meny */
+nav {
+	overflow:hidden;
+	background-color: #333;
+	
+}
+.navul{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	max-width:720px;
+	margin: 0 auto;
+	height:50px;
+}
+
+nav a {
+	width:125px;
+	display:block;
+	color:white;
+	text-align:center;
+	padding: 14px 20px;
+	transition:background-posiotion-x 0.9s linear;
+	font-size:22px;
+	text-decoration:none;
+	transition:all 0.45s;
+}
+
+nav a.active{
+	background-color:black;
+}
+nav a:hover{
+	background-color:#ddd;
+	color:black;
+}
+/* Footer */
+
+footer{
+	padding:20px;
 	text-align: center;
-	margin-left: 0px;
-	margin-right: 0px;
-	font-size: 35px;
-	background-color: 	#2eb82e;
-	color: #000000;
+	background:#ddd;
 }
 body {
-	 background-color:	#5cd65c;
+	font-family:Montserrat;
+	margin:0;
 }
 section#row {
 	padding: 10px 0px 10px 0px;
@@ -37,64 +80,17 @@ section#main {
 	margin-left: 300px;
 	margin-right: auto;
 	padding: 15px 10px 10px 10px;
-	background-color: 	#2eb82e	;
 	color: #000000;
 }
 
 section#content {
 	padding: 10px 10px 10px 10px;
-	background-color: 	#2eb82e	;
 	color: #000000;
-}footer {
-	position: absolute;
-	bottom: 0;
- 	width: 100%;
-	text-align: center;
-	padding: 1px;
-	color: #000000;
-	background-color: 	#2eb82e	;
-	clear: both;
-}
-
-nav {
-	float: left;
-	width: 20%;
-	color: #000000;
-	background-color: 	#2eb82e;
-	padding: 0px 0px 0px 0px;
-}nav a {
-	display: block;
-	color: #000000;
-	padding: 10px 10px;
-	text-decoration: none;
-}
-/* Change color on hover */
-nav a:hover {
-	background-color: 	#248f24;
-	color:#000000 ;
-}
-
-
-
-nav ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav li:hover, nav li:focus {
-	color: #c0c0c0;
-	background-color: #c0c0c0;
-}nav li.active {
-	background: #248f24;
-	color: #000000!important;
-	font-weight: bold;
 }
 
 aside {
 	float: right;
 	width: 30%;
-	background-color: 	#2eb82e	;
 	color: #000000;
 	
 }

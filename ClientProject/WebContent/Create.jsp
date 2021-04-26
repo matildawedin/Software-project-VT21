@@ -14,19 +14,17 @@
 </head>
 <body>
 	<header>
-		<p>Create a new Tournament</p>
+		<h1>Create a new Tournament</h1>
 	</header>
-	<section id="row">
 		<nav>
-			<ul>
-
-				<li><a href ="Home.jsp">Home</a></li>
-				<li class="active"><a>Create</a></li>
-				<li><a href ="MainServlet">Find</a></li>
-				<li><a href ="About.jsp">About</a></li>
+			<ul class="navul">
+				<a href ="Home.jsp">Home</a>
+				<a class="active">Create</a>
+				<a href ="MainServlet">Find</a>
+				<a href ="About.jsp">About</a>
 			</ul>
 		</nav>
-
+		<section id="row">
 		<aside>
 			<table id="asideTable">
 				<tr>
@@ -49,7 +47,6 @@
 				</tr>
 			</table>
 		</aside>
-
 		<section id="main">
 			<section id="content">
 					<article>
