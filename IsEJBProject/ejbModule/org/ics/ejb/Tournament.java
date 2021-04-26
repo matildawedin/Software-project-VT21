@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -31,6 +32,7 @@ public class Tournament implements Serializable {
 	private String tournamentName;
 	private String sport;
 	private Set<Team> teams;
+	private Set<Game> games;
 	private int version;
 	
 	@Id
@@ -85,5 +87,14 @@ public class Tournament implements Serializable {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+	
+	@OneToMany(mappedBy = "tournament", fetch=FetchType.EAGER)
+	public Set<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(Set<Game> games) {
+		this.games = games;
 	}
 }
