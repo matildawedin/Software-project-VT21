@@ -26,16 +26,14 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				</ul>
 </nav>
   <aside> <!-- Detta är aside rutan, där det är tänkt att vi ska göra själva loggningen. Hur kommer det sig att denna hamnar högt upp när den ligger mellan sections? -->
- <table id="asideTable1">
- <tr>
- <H2>Currently active Tournaments!</H2>
- <p> Have a quick look to see all the tournaments we have active at the moment </p>
- <input type="button" name="ViewButton" value="View" id="ViewBtn">
- </tr>
+   <H2>Currently active Tournaments!</H2>
+   <p> Have a quick look to see all the tournaments we have active at the moment </p>
+ <table id="asideTable1" style="width: 39px; height: 179px; ">
  </table>
+ <input type="button" name="ViewButton" value="View" id="ViewBtn">
 </aside>
 
- <section id="main2" style="height: 320px; width: 343px"> <!-- Detta är mittenrutan där about-infon ska finnas  -->
+ <section id="main2" style="height: 306px; width: 343px"> <!-- Detta är mittenrutan där about-infon ska finnas  -->
  <H2> About BracketGenerator</H2>
  <p> Our aim is to make it easy for everyone to create a tournament. 
  That's why we created BracketGenerator. The creators of this page are Leo, Ellen, Ludvig, Matilda & Cecilia. 
