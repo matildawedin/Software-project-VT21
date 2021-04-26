@@ -18,7 +18,7 @@
 	<nav>
 		<ul class="navul">
 			<a href="Home.jsp">Home</a>
-			<a href="AddParticipants.jsp">Create</a>
+			<a href="Create.jsp">Create</a>
 			<a class="active">Find</a>
 			<a href="About.jsp">About</a>
 		</ul>
@@ -33,7 +33,7 @@
 				<input type="hidden" name="txtID" id="txtID"
 					value="<%=tournament.getTournamentID()%>">
 			</p>
-			<p><%=feedback%></p>
+			<p class="response"><%=feedback%></p>
 			<label>Name</label>
 			<aside>
 				<label id="participantLable">Participants</label>

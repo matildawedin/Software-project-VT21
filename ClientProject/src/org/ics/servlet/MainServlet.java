@@ -63,14 +63,14 @@ public class MainServlet extends HttpServlet {
 				request.setAttribute("tournament", tournament);
 				Set<Team> teams = tournament.getTeams();
 				request.setAttribute("teams", teams);
-				request.setAttribute("response", "Tournament name is updated!");
+				request.setAttribute("response", "");
 				url ="/ShowTournament.jsp";
 			}
 			else if(c == 'T') {
 				String id = request.getParameter("selectedID");
 				Team team = facade.findTeam(id);
 				request.setAttribute("team", team);
-				request.setAttribute("response", "Team name is updated!");
+				request.setAttribute("response", "");
 				url="/ShowTeam.jsp";
 			}
 			
@@ -83,6 +83,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournament", tournament);
 			Set<Team> teams = tournament.getTeams();
 			request.setAttribute("teams", teams);
+			request.setAttribute("response", "Tournament name is updated!");
 			url ="/ShowTournament.jsp";
 		}
 		else if(operation.equals("UpdateTeam")) {
@@ -90,6 +91,7 @@ public class MainServlet extends HttpServlet {
 			team.setTeamName(request.getParameter("txtName"));
 			facade.updateTeam(team);
 			request.setAttribute("team", team);
+			request.setAttribute("response", "Team name is updated!");
 			url="/ShowTeam.jsp";
 		}
 		else if (operation.equals("Create")) {

@@ -29,7 +29,7 @@
 				<input type="hidden" name="txtID" id="txtID"
 					value="<%=team.getTeamID()%>">
 			</p>
-			<p><%=feedback%></p>
+			<p class="response"><%=feedback%></p>
 			<label>Name</label>
 			<p>
 				<input onchange="onTeamUpdate()" type="text" name="txtName" id="txtName"
