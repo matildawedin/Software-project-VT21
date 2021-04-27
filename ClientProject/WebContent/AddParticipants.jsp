@@ -43,7 +43,7 @@
 		</nav>
 		<section id="row">
 		<section id="main">
-			<section id="content">
+			<section class="content">
 					<fieldset>
 						<legend>New Team:</legend>
 						<br>Name: <br>
@@ -57,7 +57,7 @@
 					</fieldset>
 					<p id ="feedback"><%=feedback%></p>
 			</section>
-			<section id="allTeams">
+			<section class="content">
 			<fieldset class="allTeam">
 			<legend>Added teams:</legend>
 			<ol id="list">

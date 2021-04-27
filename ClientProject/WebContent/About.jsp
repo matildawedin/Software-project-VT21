@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ page import="org.ics.ejb.Tournament"%>
+<%@ page import="java.util.ArrayList"%>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +11,11 @@
  </script>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/about.css">
-<script src="js/rest.js"></script>
-<!-- Ska denna ändras? -->
-<title>BracketGenerator</title>
+<title>About</title>
 </head>
 <body>
 	<header>
-		<h1>About</h1>
+		<h1>About Us</h1>
 	</header>
 		<nav>
 			<ul class="navul">
@@ -26,29 +26,51 @@
 				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
-		<section id="row">
-		<!--Början på den första section, måste de övriga sections + aside vara inuti denna?  -->
-		<aside>
-			<!-- Detta är aside rutan, där det är tänkt att vi ska göra själva loggningen. Hur kommer det sig att denna hamnar högt upp när den ligger mellan sections? -->
-			<h2>Currently active Tournaments!</h2>
-			<p>Have a quick look to see all the tournaments we have active at
-				the moment</p>
-			<table id="asideTable1">
-			</table>
-			<input type="button" name="ViewButton" value="View" id="ViewBtn">
-		</aside>
-
-		<section id="main2">
-			<!-- Detta är mittenrutan där about-infon ska finnas  -->
-			<H2>About BracketGenerator</H2>
-			<p>Our aim is to make it easy for everyone to create a
-				tournament. That's why we created BracketGenerator. The creators of
-				this page are Leo, Ellen, Ludvig, Matilda & Cecilia. Enjoy making
+		<div class="row">
+		<div class="column">
+		<h2>Our Team</h2>
+		<div class="row2">
+		<div class="column2">
+		<img src="images/Matilda.jpg">
+		<div class="card">
+		<h3>Matilda Wedin</h3>
+		</div>
+		</div>
+		<div class="column2">
+		<img src="images/Ludvig.jpg">
+		<div class="card">
+		<h3>Ludvig Karsten</h3>
+		</div>
+		</div>
+		<div class="column2">
+		<img src="images/Ellen.jpg">
+		<div class="card">
+		<h3>Ellen Nordgren</h3>
+		</div>
+		</div>
+		<div class="column2">
+		<img src="images/Leo.jpg">
+		<div class="card">
+		<h3>Leo Rasmusson</h3>
+		</div>
+		</div>
+		<div class="column2">
+		<img src="images/Cissi.jpg">
+		<div class="card">
+		<h3>Cecilia Minder</h3>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="column">
+		<h2>About BracketGenerator</h2>
+		<img id="bracketImg" src="images/icon.png">
+			<p id="bracketInfo">Our aim is to make it easy for everyone to create a
+				tournament. That's why we created BracketGenerator. Enjoy making
 				the best tournaments for you and your teams.</p>
-		</section>
-
-	</section>
-
+		</div>
+		</div>
+		
 	<footer>
 		<p>&copy; BracketGenerator</p>
 	</footer>

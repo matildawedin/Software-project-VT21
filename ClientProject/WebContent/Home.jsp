@@ -25,8 +25,14 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
-		<section id="row">
-		<aside>
+		<div class="row">
+		<div class="column">
+			<h2>Welcome to BracketGenerator</h2>
+			<p>On this website you can create and edit tournaments and teams
+				asd.</p>
+			<img id="bracketImg" src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4"">
+		</div>
+		<div class="column" >
 			<table id="asideTable">
 				<tr>
 					<th><span id="city"></span></th>
@@ -47,22 +53,9 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 					<td colspan="4"><span id="sunset"></span></td>
 				</tr>
 			</table>
-			<img border="0"
-				src="https://images-na.ssl-images-amazon.com/images/I/41hzbXlmykL.png"
-				alt="Pulpit rock" style="width: 250px; height: 159px;">
-		</aside>
-		<section id="main" style="height: 320px; width: 343px">
-			<H2>Welcome to BracketGenerator</H2>
-			<p>On this website you can create and edit tournaments and teams
-				asd.</p>
-
-			<img border="0"
-				src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4"
-				alt="Pulpit rock" style="width: 324px; height: 158px;">
-
-			<article></article>
-		</section>
-	</section>
+			<img id="weatherImg" src="https://images-na.ssl-images-amazon.com/images/I/41hzbXlmykL.png">
+		</div>
+	</div>
 	<footer>
 		<p>&copy; BracketGenerator</p>
 	</footer>
