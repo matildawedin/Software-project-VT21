@@ -30,7 +30,7 @@ public class TournamentBeanTest extends TestCase {
 //		tournament=(Tournament)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
 		facade=(FacadeLocal)context.lookup("java:app/IsEJBProject/Facade!org.ics.facade.FacadeLocal");
 		
-		expectedId = facade.generateID("tournament");
+		expectedId = "I500";
 		expectedTournamentName = "Allsvenskan";
 		expectedSport = "Fotball";
 		

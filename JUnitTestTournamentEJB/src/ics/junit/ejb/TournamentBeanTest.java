@@ -37,12 +37,7 @@ public class TournamentBeanTest extends TestCase {
 		tournament = new Tournament(expectedId, expectedTournamentName, expectedSport);
 	}
 
-	protected void tearDown() throws Exception { //Ha med metod som tar bort i databasen ocks�, 
-		super.tearDown();
-		facade.removeTournament(tournament);
-		facade = null;
-		tournament = null;
-	}
+	
 	public void testTournamentMethods() throws Exception { //�r inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
 	
 	tournament = facade.createTournament(tournament);
@@ -52,6 +47,12 @@ public class TournamentBeanTest extends TestCase {
 	
 		
 		
+	}
+	protected void tearDown() throws Exception { //Ha med metod som tar bort i databasen ocks�, 
+		super.tearDown();
+		facade.removeTournament(tournament);
+		facade = null;
+		tournament = null;
 	}
 	
 }
