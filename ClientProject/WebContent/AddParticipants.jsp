@@ -38,34 +38,12 @@
 				<a class="active">Create</a>
 				<a href ="MainServlet.java">Find</a>
 				<a href ="About.jsp">About</a>
+				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
 		<section id="row">
-		<aside>
-			<table id="asideTable">
-				<tr>
-					<th><span id="city"></span></th>
-					<th><span></span></th>
-					<th><span></span></th>
-					<th><span id="ipNbr"></span></th>
-				</tr>
-				<tr>
-					<td><span id="degree"></span></td>
-					<td><span id="weather"></span></td>
-					<td><span></span></td>
-					<td><span></span></td>
-				</tr>
-				<tr>
-					<td colspan="4"><span id="sunrise"></span></td>
-				</tr>
-				<tr>
-					<td colspan="4"><span id="sunset"> </span></td>
-				</tr>
-			</table>
-		</aside>
-
 		<section id="main">
-			<section id="content">
+			<section class="content">
 					<fieldset>
 						<legend>New Team:</legend>
 						<br>Name: <br>
@@ -79,7 +57,7 @@
 					</fieldset>
 					<p id ="feedback"><%=feedback%></p>
 			</section>
-			<section id="allTeams">
+			<section class="content">
 			<fieldset class="allTeam">
 			<legend>Added teams:</legend>
 			<ol id="list">

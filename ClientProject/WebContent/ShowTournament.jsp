@@ -21,6 +21,7 @@
 			<a href="Create.jsp">Create</a>
 			<a class="active">Find</a>
 			<a href="About.jsp">About</a>
+			<a href="Testing.jsp">Test</a>
 		</ul>
 	</nav>
 	<h2>Tournament</h2>

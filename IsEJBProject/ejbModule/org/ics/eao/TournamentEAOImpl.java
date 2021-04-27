@@ -36,6 +36,10 @@ public class TournamentEAOImpl implements TournamentEAOLocal {
 	public Tournament updateTournament(Tournament tournament) {
 		return em.merge(tournament);
 	}
+	public void removeTestTournament(String tournamentID) {
+		Tournament tmpTour = this.findTournament(tournamentID);
+				em.remove(tmpTour);
+	}
 
 	public List<Tournament> findAllTournaments() {
 
