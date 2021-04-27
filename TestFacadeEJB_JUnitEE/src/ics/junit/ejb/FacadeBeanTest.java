@@ -26,7 +26,7 @@ public class FacadeBeanTest extends TestCase {
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		facade = null;
+		facade = null; //Test
 	}
 	public void testFacadeMethods() throws Exception { //Är inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
 		
