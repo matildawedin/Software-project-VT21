@@ -20,7 +20,7 @@ public class FacadeBeanTest extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		Context context = new InitialContext();
-		
+		   
 		facade=(FacadeLocal)context.lookup("java:app/IsEJBProject/Facade!org.ics.facade.FacadeLocal");
 	}
 
@@ -28,7 +28,7 @@ public class FacadeBeanTest extends TestCase {
 		super.tearDown();
 		facade = null; //Test
 	}
-	public void testFacadeMethods() throws Exception { //Är inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
+	public void testFacadeMethods() throws Exception { //ï¿½r inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
 		
 	}
 	
