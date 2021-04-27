@@ -22,12 +22,15 @@
 				<a class="active">Create</a>
 				<a href ="MainServlet">Find</a>
 				<a href ="About.jsp">About</a>
+				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
-		<section id="row">
+		<br><br><br><br>
+		<section>
 		<section id="main">
-			<section id="content">
+			<section>
 					<article>
+					<br>
 						<fieldset id="createNew">
 							<legend>Create new:</legend>
 							Name: <br> 

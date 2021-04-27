@@ -38,6 +38,7 @@
 				<a class="active">Create</a>
 				<a href ="MainServlet.java">Find</a>
 				<a href ="About.jsp">About</a>
+				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
 		<section id="row">

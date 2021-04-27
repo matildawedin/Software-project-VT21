@@ -15,6 +15,7 @@ public interface FacadeLocal{
 	 public Tournament findTournament(String tournamentID);
 	 public Tournament createTournament(Tournament tournament);
 	 public Tournament updateTournament(Tournament tournament);
+	 public void removeTestTournament(String tournamentID);
 	 public Team findTeam(String teamID);
 	 public Team createTeam(Team team);
 	 public Team updateTeam(Team team);
