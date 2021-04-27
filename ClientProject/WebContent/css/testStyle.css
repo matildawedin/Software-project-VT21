@@ -15,6 +15,26 @@ header{
 	background-color:black;
 	color: white;
 }
+p#title {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+input#button{
+	margin-left: 230px;
+	margin-right: auto;
+	margin-bottom: 50px;
+	padding: 8px 32px;
+	text-align: center;
+	font-size: 16px;
+	transition-duration: 0.4s;
+	 box-shadow: 0 8px 16px 0 black;
+}
+input#button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
 header h1 {
 	font-size: 40px;
 }
@@ -43,8 +63,6 @@ nav a {
 	font-size:22px;
 	text-decoration:none;
 	transition:all 0.45s;
-	
-	
 }
 
 nav a.active{
@@ -65,7 +83,6 @@ footer{
 	text-align: center;
 	background:#ddd;
 }
-
 body {
 	font-family:Montserrat;
 	margin:0;
@@ -84,32 +101,16 @@ section#row:after {
 section#main {
 	float: inherit;
 	width: 35%;
-	height: 200px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0px 10px 0px 15px;
+	padding: 15px 10px 10px 10px;
+	color: #000000;
 	background-color: #434345;
-	color: #f0f0fa;
+	border-style: groove;
+	box-shadow: 0 8px 16px 0 black;
 }
 
 section#content {
 	padding: 10px 10px 10px 10px;
-	background-color: #434345;
-	color: #f0f0fa;
-}
-/*
-#PersonalFS {
-	width: 350px;
-}*/
-/*
-#CancelForm {
-    position: relative;
-    bottom: 25px;
-    left: 55px;
-}*/
-
-aside {
-	float: right;
-	width: 20%;
-	background-color: #434345;
+	color: #000000;
 }

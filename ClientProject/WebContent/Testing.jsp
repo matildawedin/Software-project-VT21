@@ -1,23 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<title>My Test Page</title>
+	<link rel="stylesheet" type="text/css" href="css/testStyle.css">
+<title>BracketGenerator Test</title>
 </head>
 <body>
-
-<hr>
-<p>Här kan du välja en eller flera av följande test:<br></p>
-<form action="TestServlet"method="get"name="youPickItForm">
-<select name="suite"size="2"multiple>
-<option value="ics.junit.ejb.TournamentBeanTest">
-ics.junit.ejb.TournamentBeanTest</option>
-</select>
-<input type="submit"value="Run"/>
-</form>
+	<header>
+		<h1>JUnit Test</h1>
+	</header>
+	<nav>
+		<ul class="navul">
+			<a href="Home.jsp">Home</a>
+			<a href="Create.jsp">Create</a>
+			<a href="MainServlet">Find</a>
+			<a href="About.jsp">About</a>
+			<a class="active">Test</a>
+		</ul>
+	</nav>
+	<br><br><br><br>
+	<section id=main>
+	<br>
+		<p id=title>Press the button below to run test</p>
+		 <br>
+		<form action="TestServlet" method="get" name="youPickItForm">
+				<input type="hidden" name= "suite" value="ics.junit.ejb.TournamentBeanTest">
+			 <input type="submit" value="Run" id="button"/>
+		</form>
+	</section>
+	<br><br>
+	<footer>
+		<p>&copy; BracketGenerator</p>
+	</footer>
 </body>
 </html>

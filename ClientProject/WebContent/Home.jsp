@@ -22,6 +22,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				<a href="Create.jsp">Create</a>
 				<a href="MainServlet">Find</a>
 				<a href="About.jsp">About</a>
+				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
 		<section id="row">
