@@ -5,58 +5,55 @@
 <%@ page import="java.util.ArrayList"%>
 <html>
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <script
-src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  </script>
- <meta charset="ISO-8859-1">
- <link rel="stylesheet" type="text/css" href="css/about.css">
- <script src="js/about.js"></script> 
- <title>BracketGenerator</title>
+
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/about.css">
+<script src="js/rest.js"></script>
+<!-- Ska denna ändras? -->
+<title>BracketGenerator</title>
 </head>
 <body>
- <header>
-<p>About</p>
- </header>
- <section id="row"> 
-<nav>
- <ul>
-				<li><a href ="Home.jsp">Home</a></li>
-				<li ><a href ="Create.jsp">Create</a></li>
-				<li><a href ="Search.jsp">Find</a></li>
-				<li class="active"><a>About</a></li>
-				</ul>
-</nav>
-  <aside>
-  <form action="/ClientProject/MainServlet" method="getTournaments()">
-		<%ArrayList<Tournament> tournaments= (ArrayList<Tournament>) request.getAttribute("tournaments");%>
-		
- <table id="asideTable1" style="width: 15px; ">
- <tr style="height: 23px; width: 428px">
- <H2>Currently active Tournaments!</H2>
- <p> Have a quick look to see all the tournaments we have active at the moment </p>
- </tr>
- <input type="button" name="viewBtn" value="View Tournaments" id="viewTournaments" onclick="getTournaments()">
- 		<ul id="tournamentList" type="hidden">
-		<%for(Tournament t : tournaments){ %>
-		<li><a value="<%=t.getTournamentID()%>"><%=t.getTournamentName()%></a>
-		<% } %>
-		</ul>
- </table>
- </form>
-</aside>
+	<header>
+		<h1>About</h1>
+	</header>
+		<nav>
+			<ul class="navul">
+				<a href="Home.jsp">Home</a>
+				<a href="Create.jsp">Create</a>
+				<a href="MainServlet">Find</a>
+				<a class="active">About</a>
+			</ul>
+		</nav>
+		<section id="row">
+		<!--Början på den första section, måste de övriga sections + aside vara inuti denna?  -->
+		<aside>
+			<!-- Detta är aside rutan, där det är tänkt att vi ska göra själva loggningen. Hur kommer det sig att denna hamnar högt upp när den ligger mellan sections? -->
+			<h2>Currently active Tournaments!</h2>
+			<p>Have a quick look to see all the tournaments we have active at
+				the moment</p>
+			<table id="asideTable1">
+			</table>
+			<input type="button" name="ViewButton" value="View" id="ViewBtn">
+		</aside>
 
- <section id="main2" style="height: 320px; width: 343px"> 
- <H2> About BracketGenerator</H2>
- <p> Our aim is to make it easy for everyone to create a tournament. 
- That's why we created BracketGenerator. The creators of this page are Leo, Ellen, Ludvig, Matilda & Cecilia. 
- Enjoy making the best tournaments for you and your teams.</p>
- </section>
+		<section id="main2">
+			<!-- Detta är mittenrutan där about-infon ska finnas  -->
+			<H2>About BracketGenerator</H2>
+			<p>Our aim is to make it easy for everyone to create a
+				tournament. That's why we created BracketGenerator. The creators of
+				this page are Leo, Ellen, Ludvig, Matilda & Cecilia. Enjoy making
+				the best tournaments for you and your teams.</p>
+		</section>
 
- <footer>
- <p>&copy; BracketGenerator</p>
- </footer>
-</section>
-<input type="submit" name="submit" value="Tillbaka" onclick="location.href='/ClientProject/MainServlet'"/> 
+	</section>
+
+	<footer>
+		<p>&copy; BracketGenerator</p>
+	</footer>
+
 </body>
 </html>

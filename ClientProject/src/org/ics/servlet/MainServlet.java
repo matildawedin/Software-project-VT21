@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ics.ejb.Game;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
@@ -82,12 +83,14 @@ public class MainServlet extends HttpServlet {
 				request.setAttribute("tournament", tournament);
 				Set<Team> teams = tournament.getTeams();
 				request.setAttribute("teams", teams);
+				request.setAttribute("response", "");
 				url ="/ShowTournament.jsp";
 			}
 			else if(c == 'T') {
 				String id = request.getParameter("selectedID");
 				Team team = facade.findTeam(id);
 				request.setAttribute("team", team);
+				request.setAttribute("response", "");
 				url="/ShowTeam.jsp";
 			}
 			
@@ -100,6 +103,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournament", tournament);
 			Set<Team> teams = tournament.getTeams();
 			request.setAttribute("teams", teams);
+			request.setAttribute("response", "Tournament name is updated!");
 			url ="/ShowTournament.jsp";
 		}
 		else if(operation.equals("UpdateTeam")) {
@@ -107,6 +111,7 @@ public class MainServlet extends HttpServlet {
 			team.setTeamName(request.getParameter("txtName"));
 			facade.updateTeam(team);
 			request.setAttribute("team", team);
+			request.setAttribute("response", "Team name is updated!");
 			url="/ShowTeam.jsp";
 		}
 		else if (operation.equals("Create")) {
@@ -150,11 +155,29 @@ public class MainServlet extends HttpServlet {
 			url = "/AddParticipants.jsp";
 			if(nameList.size() == 8) {
 				request.setAttribute("response", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
+				Set<Game> games = tmpTour.getGames();
+				if(games.size() == 0) {
+					ArrayList<String> tmpList = new ArrayList<String>();
+					for(Team t : teamSet) {
+						tmpList.add(t.getTeamID());
+					}
+					
+					for(int i = 0; i < tmpList.size(); i+=2) {
+						Game game = new Game();
+						String gameID = facade.generateID("GAME");
+						game.setGameID(gameID);
+						game.setTournament(tmpTour);
+						game.setRound(1);
+						game.setVersion(0);
+						facade.createGame(game);
+						facade.addTeam(gameID, tmpList.get(i));
+						facade.addTeam(gameID, tmpList.get(i+1));
+					}
+				}
 			}
 			else {
 				request.setAttribute("response", "");
 			}
-			//Kolla på att disabla knappen när 8 lag lagts till. Skapa games också!!!
 		}
 		else if (operation.equals("Home")) {
 			url = "/Home.jsp";

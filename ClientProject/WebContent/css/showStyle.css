@@ -1,0 +1,132 @@
+body{
+	font-family:Montserrat;
+	margin:0;
+}
+
+/*Header/title*/
+header{
+	padding:80px;
+	text-align:center;
+	background-color:black;
+	color: white;
+}
+header h1 {
+	font-size: 40px;
+}
+h2{
+	font-size: 20px;
+	text-align:center;
+	padding-top: 50px;
+}
+/* meny */
+nav {
+	overflow:hidden;
+	background-color: #333;
+	
+}
+.navul{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	max-width:720px;
+	margin: 0 auto;
+	height:50px;
+}
+
+nav a {
+	width:125px;
+	display:block;
+	color:white;
+	text-align:center;
+	padding: 14px 20px;
+	transition:background-posiotion-x 0.9s linear;
+	font-size:22px;
+	text-decoration:none;
+	transition:all 0.45s;
+	
+	
+}
+
+nav a.active{
+	background-color:black;
+}
+nav a:hover{
+	background-color:#ddd;
+	color:black;
+}
+/* Footer */
+
+footer{
+	padding:20px;
+	text-align: center;
+	background:#ddd;
+}
+
+
+/* Main */
+
+section{
+	padding-top:40px;
+	padding-bottom: 200px;
+	padding-left: 750px;
+}
+aside{
+	width:30%;
+	padding-right:500px;
+	float:right;
+}
+label{
+	font-size:17px;
+}
+p input{
+	border-radius:4px;
+	width:100%;
+	max-width:140px;
+	height:30px;
+	font-size:14px;
+}
+
+#UpdateBtn{
+	width:100%;
+	max-width:100px;
+	height:40px;
+	font-size:16px;
+	font-family:Montserrat;
+	background-color: #747474;
+	color:white;
+	border-radius:4px;
+	cursor:pointer;
+	position:relative;
+	transition: all 0.1s ease-in-out;
+	visibility: disabled;
+}
+#backBtn{
+	width:100%;
+	max-width:100px;
+	height:40px;
+	font-size:16px;
+	font-family:Montserrat;
+	background-color: #747474;
+	color:white;
+	border-radius:4px;
+	cursor:pointer;
+	position:relative;
+	transition: all 0.1s ease-in-out;
+}
+#teamList{
+	list-style-type: none;
+	padding-top: 20px;
+	padding-left:0;
+	margin: 0;
+}
+#teamList li a{
+	width:80px;
+	border:1px solid #ddd;
+	margin-top:-1px;
+	background-color:#f6f6f6;
+	padding:12px;
+	text-decoration:none;
+	font-size:18px;
+	color:black;
+	display: block;
+}
