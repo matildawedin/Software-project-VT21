@@ -15,4 +15,6 @@ public interface TournamentEAOLocal {
 	public Tournament updateTournament(Tournament tournament);
 	public List<Tournament> findAllTournaments();
 	public void addParticipant(String tournamentId, String teamId);
+	public void removeTournament(Tournament tournament);
+
 }

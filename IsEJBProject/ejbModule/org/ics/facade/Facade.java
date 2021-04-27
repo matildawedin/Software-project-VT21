@@ -53,6 +53,9 @@ public class Facade implements FacadeLocal {
 	public List<Tournament> findAllTournaments() {
 		return tournament.findAllTournaments();
 	}
+	public void removeTournament(Tournament tournament) {
+		this.tournament.removeTournament(tournament);
+}
 	//---------- Team ---------\\
 	public Team findTeam(String teamID) {
 		return team.findTeam(teamID);

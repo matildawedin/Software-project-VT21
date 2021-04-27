@@ -3,17 +3,21 @@ package ics.junit.ejb;
 import javax.naming.InitialContext;
 import javax.naming.Context;
 
-import org.ics.eao.TournamentEAOLocal;
 import org.ics.ejb.Tournament;
-
-
-
+//import org.ics.ejb.Tournament;
+import org.ics.facade.FacadeLocal;
 
 import junit.framework.TestCase;
 
 public class TournamentBeanTest extends TestCase {
 	
-	TournamentEAOLocal tournament;
+	
+	FacadeLocal facade;
+	String expectedId;
+	String expectedTournamentName;
+	String expectedSport;
+	Tournament tournament;
+
 
 	public TournamentBeanTest(String name) {
 		super(name);
@@ -23,25 +27,31 @@ public class TournamentBeanTest extends TestCase {
 		super.setUp();
 		Context context = new InitialContext();
 		   
-		tournament=(TournamentEAOLocal)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
+//		tournament=(Tournament)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
+		facade=(FacadeLocal)context.lookup("java:app/IsEJBProject/Facade!org.ics.facade.FacadeLocal");
+		
+		expectedId = facade.generateID("tournament");
+		expectedTournamentName = "Allsvenskan";
+		expectedSport = "Fotball";
+		
+		tournament = new Tournament(expectedId, expectedTournamentName, expectedSport);
 	}
 
-	protected void tearDown() throws Exception {
+	protected void tearDown() throws Exception { //Ha med metod som tar bort i databasen också, 
 		super.tearDown();
-		tournament = null; //Test
+		facade.removeTournament(tournament);
+		facade = null;
+		tournament = null;
 	}
 	public void testTournamentMethods() throws Exception { //ï¿½r inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
-		tournament.setTournamentName("Giro D'italia");
-		tournament.setSport("Cycling");
-		assertEquals(tournament.getTournamentName(),"Giro D'italia");
-		assertEquals(tournament.getSport(),"Cycling");
+	
+	tournament = facade.createTournament(tournament);
+	assertEquals(tournament.getTournamentID(), expectedId);
+	assertEquals(tournament.getTournamentName(),expectedTournamentName);
+	assertEquals(tournament.getSport(), expectedSport);
+	
+		
+		
 	}
 	
-	public void testTournamentMethods2() throws Exception {
-		tournament.setSport("Tennis");
-		assertEquals(tournament.getSport(), "Tennis");
-	}
-	
-	//WHAT METHODS TO PUT HERE? ALL METHODS IN FacadeLocal's...?
-
 }
