@@ -3,6 +3,7 @@ package ics.junit.ejb;
 import javax.naming.InitialContext;
 import javax.naming.Context;
 
+import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
 
 
@@ -11,7 +12,7 @@ import junit.framework.TestCase;
 
 public class TournamentBeanTest extends TestCase {
 	
-	FacadeLocal facade;
+	Tournament tournament;
 
 	public TournamentBeanTest(String name) {
 		super(name);
@@ -21,14 +22,21 @@ public class TournamentBeanTest extends TestCase {
 		super.setUp();
 		Context context = new InitialContext();
 		   
-		facade=(FacadeLocal)context.lookup("java:app/IsEJBProject/Facade!org.ics.facade.FacadeLocal");
+		tournament=(Tournament)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
 	}
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		facade = null; //Test
+		tournament = null; //Test
 	}
-	public void testFacadeMethods() throws Exception { //�r inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
+	public void testTournamentMethods() throws Exception { //�r inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
+		tournament.setTournamentName("Giro D'italia");
+		tournament.setSport("Cycling");
+		assertEquals(tournament.getTournamentName(),"Giro D'italia");
+		assertEquals(tournament.getSport(),"Cycling");
+	}
+	
+	public void testTournamentMethods2() throws Exception {
 		
 	}
 	

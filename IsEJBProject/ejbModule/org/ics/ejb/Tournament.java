@@ -35,7 +35,7 @@ public class Tournament implements Serializable {
 	private Set<Game> games;
 	private int version;
 	
-	@Id
+	@Id 
 	@Column(name = "tournamentID")
 	public String getTournamentID() {
 		return tournamentID;
