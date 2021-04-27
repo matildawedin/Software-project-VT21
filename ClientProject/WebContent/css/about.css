@@ -10,7 +10,7 @@
 
 body{
 	font-family:Montserrat;
-	margin:0;
+	margin:0
 }
 /*Header/title*/
 header{
@@ -63,58 +63,65 @@ nav a:hover{
 	background-color:#ddd;
 	color:black;
 }
+/* Main */
+
+.column{
+	float:left;
+	width:50%;
+	padding:0 50px 50px 50px;
+}
+.row{
+	padding:80px 200px 100px 200px;
+}
+.row:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* about us */
+.column2{
+	
+	width:100%;
+	padding: 0 8px;
+	box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
+
+}
+.card{
+	
+	margin:8px;
+	padding: 0 16px 0 16px;
+
+}
+.row2{
+	display:grid;
+	grid-template-columns: 200px 200px 200px;
+	grid-auto-rows:250px;
+
+}
+img{
+	width:100%;
+	padding: 10px;
+
+}
+#bracketImg{
+	width:60%;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:auto;
+}
+#bracketInfo{
+	padding-left: 70px;
+	font-size: 16px;
+}
+
+
+
 /* Footer */
 
 footer{
 	padding:20px;
 	text-align: center;
 	background:#ddd;
-}
-
-section#row {
-	padding: 10px 0px 10px 0px;
-	display: block;
-}
-
-section#row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-section#main2 {
-	float: inherit;
-	width: 35%;
-	margin-left: 400px;
-	margin-right: auto;
-	padding: 15px 10px 10px 10px;
-	color: #000000;
-	height: 306px;
-	
-}
-
-section#content {
-	padding: 10px 10px 10px 10px;
-	color: #000000;
-}
-
-
-aside {
-	float: right;
-	width: 40%;
-	color: #000000;
-	
-}
-#asideTable1{
-	width: 39px; 
-	height: 179px;
-}
-button#ViewBtn {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
 }

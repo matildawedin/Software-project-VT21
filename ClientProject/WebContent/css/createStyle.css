@@ -67,7 +67,7 @@ body {
 	margin:0;
 }
 section#row {
-	padding: 10px 0px 10px 0px;
+	padding: 100px 0px 280px 0px;
 	display: block;
 }
 
@@ -93,19 +93,4 @@ section#content {
 	background-color: #434345;
 	color: #f0f0fa;
 }
-/*
-#PersonalFS {
-	width: 350px;
-}*/
-/*
-#CancelForm {
-    position: relative;
-    bottom: 25px;
-    left: 55px;
-}*/
 
-aside {
-	float: right;
-	width: 20%;
-	background-color: #434345;
-}
