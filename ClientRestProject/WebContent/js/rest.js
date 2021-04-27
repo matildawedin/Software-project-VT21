@@ -4,7 +4,7 @@ $(document).ready(function() {
 		if (strValue != "") {
 			$.ajax({
 				method: "GET",
-				url: "http://localhost:8080/ClientProject/RestServlet/" + strValue,
+				url: "http://localhost:8080/ClientRestProject/RestServlet/" + strValue,
 				error: ajaxFindReturnError,
 				success: ajaxFindReturnSuccess
 			})
@@ -21,24 +21,24 @@ $(document).ready(function() {
 		var strId = $("#txtID").val();
 		var strName = $("#txtName").val();
 		var strSport = $("#txtSport").val();
-		var strVersion = $("#txtVersion").val();
-		var obj = { id: strId, name: strName, sport: strSport, version: strVersion};
+		var obj = { id: strId, name: strName, sport: strSport};
 		var jsonString = JSON.stringify(obj);
 		if  (strId != "") {
 			$.ajax(
 				{
 					method: "PUT",
-					url: "http://localhost:8080/ClientProject/RestServlet/" +  strId,
+					url: "http://localhost:8080/ClientRestProject/RestServlet/" +  strId,
 					data: jsonString, dataType: 'json', error: ajaxUpdateReturnError, success: ajaxUpdateReturnSuccess
 					})
 				function ajaxUpdateReturnSuccess(result, status, xhr) {
-					//clearFields();
+					clearFields();
 					$("#txtName").attr("placeholder", "Tournament updated");
 				}
 				function ajaxUpdateReturnError(result, status, xhr) {
 					alert("Error Update");
 					console.log("Ajax-find: " + status);
 				}
+				
 		}
 		
 	})
@@ -47,11 +47,11 @@ function ParseJsonFileTournament(result) {
 	$("#txtID").val(result.txtID);
 	$("#txtName").val(result.txtName);
 	$("#txtSport").val(result.txtSport);
-	$("#txtVersion").val(result.txtVersion);
+	
 }
 function clearFields() {
 $("#txtID").val("");
 $("#txtName").val("");
 $("#txtSport").val("");
-$("#txtVersion").val("");
+
 }

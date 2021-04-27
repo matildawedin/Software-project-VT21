@@ -1,4 +1,4 @@
-package org.ics.servlet;
+package org.ics.servlets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -62,7 +62,6 @@ public class RestServlet extends HttpServlet {
 	 */
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("hejehejhej");
 		String pathInfo = request.getPathInfo();
 		if(pathInfo == null || pathInfo.equals("/")){
 		response.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -80,7 +79,7 @@ public class RestServlet extends HttpServlet {
 		System.out.println(tour.getTournamentID());
 		try {
 			
-			 tour = facade.updateTournament(tour);
+			 facade.updateTournament(tour);
 			}catch(Exception e) {
 			 System.out.println("facade Update Error");
 			}
@@ -105,9 +104,9 @@ public class RestServlet extends HttpServlet {
 			out.print(",\"txtName\":");
 			out.print("\"" +tour.getTournamentName()+"\"");
 			out.print(",\"txtSport\":");
-			out.print("\"" +tour.getSport()+"\"");
-			out.print(",\"txtVersion\":");
-			out.print("\"" +tour.getVersion()+"\"}");
+			out.print("\"" +tour.getSport()+"\"}");
+			/*out.print(",\"txtVersion\":");
+			out.print("\"" +tour.getVersion()+"\"}"); */
 			
 			} else {
 			out.print("{ }");
@@ -120,10 +119,11 @@ public class RestServlet extends HttpServlet {
 		 jsonReader = Json.createReader(br);
 		 jsonRoot = jsonReader.readObject();
 		 System.out.println("JsonRoot: "+jsonRoot);
-		 Tournament tour = new Tournament();
-		 tour.setTournamentID(jsonRoot.getString("id"));
+		 Tournament tour = facade.findTournament(jsonRoot.getString("id"));
+		 //tour.setTournamentID(jsonRoot.getString("id"));
 		 tour.setTournamentName(jsonRoot.getString("name"));
 		 tour.setSport(jsonRoot.getString("sport"));
+		 
 		 return tour;
 		}
 
