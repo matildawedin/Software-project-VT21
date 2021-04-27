@@ -9,11 +9,11 @@ import org.ics.facade.FacadeLocal;
 
 import junit.framework.TestCase;
 
-public class FacadeBeanTest extends TestCase {
+public class TournamentBeanTest extends TestCase {
 	
 	FacadeLocal facade;
 
-	public FacadeBeanTest(String name) {
+	public TournamentBeanTest(String name) {
 		super(name);
 	}
 
