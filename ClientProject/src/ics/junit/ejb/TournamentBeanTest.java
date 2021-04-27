@@ -36,10 +36,9 @@ public class TournamentBeanTest extends TestCase {
 		
 		tournament = new Tournament(expectedId, expectedTournamentName, expectedSport);
 	}
-
 	protected void tearDown() throws Exception { //Ha med metod som tar bort i databasen ocks�, 
 		super.tearDown();
-		facade.removeTournament(tournament);
+		facade.removeTestTournament(expectedId);
 		facade = null;
 		tournament = null;
 	}
@@ -49,9 +48,5 @@ public class TournamentBeanTest extends TestCase {
 	assertEquals(tournament.getTournamentID(), expectedId);
 	assertEquals(tournament.getTournamentName(),expectedTournamentName);
 	assertEquals(tournament.getSport(), expectedSport);
-	
-		
-		
 	}
-	
 }
