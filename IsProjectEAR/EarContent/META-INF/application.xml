@@ -10,4 +10,10 @@
       <context-root>ClientProject</context-root>
     </web>
   </module>
+  <module>
+    <web>
+      <web-uri>TestFacadeEJB_JUnitEE.war</web-uri>
+      <context-root>TestFacadeEJB_JUnitEE</context-root>
+    </web>
+  </module>
 </application>
