@@ -20,7 +20,7 @@
 <%String feedback = request.getAttribute("response").toString();%>
 <%ArrayList<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
 	<header>
-		<p>Add your participants</p>
+		<h1>Add your participants</h1>
 	</header>
 	<script>
 	function populateList(){
@@ -32,16 +32,15 @@
 		document.getElementById("list").appendChild(li);
 			<%}%>
 	}</script>
-	<section id="row">
 		<nav>
-			<ul>
-				<li><a href ="Home.jsp">Home</a></li>
-				<li class="active"><a>Create</a></li>
-				<li><a href ="Search.jsp">Find</a></li>
-				<li><a href ="About.jsp">About</a></li>
+			<ul class="navul">
+				<a href ="Home.jsp">Home</a>
+				<a class="active">Create</a>
+				<a href ="MainServlet.java">Find</a>
+				<a href ="About.jsp">About</a>
 			</ul>
 		</nav>
-
+		<section id="row">
 		<aside>
 			<table id="asideTable">
 				<tr>
