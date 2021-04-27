@@ -105,7 +105,7 @@ public class RestServlet extends HttpServlet {
 			out.print("\"" +tour.getTournamentName()+"\"");
 			out.print(",\"txtSport\":");
 			out.print("\"" +tour.getSport()+"\"}");
-			/*out.print(",\"txtVersion\":");
+			/*asdsaout.print(",\"txtVersion\":");
 			out.print("\"" +tour.getVersion()+"\"}"); */
 			
 			} else {
