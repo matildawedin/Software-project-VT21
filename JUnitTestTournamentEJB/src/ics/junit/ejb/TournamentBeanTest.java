@@ -3,8 +3,9 @@ package ics.junit.ejb;
 import javax.naming.InitialContext;
 import javax.naming.Context;
 
+import org.ics.eao.TournamentEAOLocal;
 import org.ics.ejb.Tournament;
-import org.ics.facade.FacadeLocal;
+
 
 
 
@@ -12,7 +13,7 @@ import junit.framework.TestCase;
 
 public class TournamentBeanTest extends TestCase {
 	
-	Tournament tournament;
+	TournamentEAOLocal tournament;
 
 	public TournamentBeanTest(String name) {
 		super(name);
@@ -22,7 +23,7 @@ public class TournamentBeanTest extends TestCase {
 		super.setUp();
 		Context context = new InitialContext();
 		   
-		tournament=(Tournament)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
+		tournament=(TournamentEAOLocal)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
 	}
 
 	protected void tearDown() throws Exception {
@@ -37,7 +38,8 @@ public class TournamentBeanTest extends TestCase {
 	}
 	
 	public void testTournamentMethods2() throws Exception {
-		
+		tournament.setSport("Tennis");
+		assertEquals(tournament.getSport(), "Tennis");
 	}
 	
 	//WHAT METHODS TO PUT HERE? ALL METHODS IN FacadeLocal's...?
