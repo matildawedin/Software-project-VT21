@@ -26,10 +26,10 @@
     </header>
 	<nav class="navbar">
 		<ul>
-			<a href="/Home.jsp">Home</a>
-			<a href="/AddParticipants.jsp">Create</a>
+			<a href="Home.jsp">Home</a>
+			<a href="Create.jsp">Create</a>
 			<a  class="active">Find</a>
-			<a>About</a>
+			<a href ="About.jsp">About</a>
 		</ul>
 	</nav>
 	<div class="main">
