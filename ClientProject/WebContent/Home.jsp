@@ -28,8 +28,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 		<div class="row">
 		<div class="column">
 			<h2>Welcome to BracketGenerator</h2>
-			<p>On this website you can create and edit tournaments and teams
-				asd.</p>
+			<p>On this website you can create and edit tournaments and teams.</p>
 			<img id="bracketImg" src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4"">
 		</div>
 		<div class="column" >
