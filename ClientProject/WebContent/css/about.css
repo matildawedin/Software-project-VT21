@@ -9,7 +9,7 @@
 }
 
 body{
-	font-family:Montserrat;
+	font-family:Arial;
 	margin:0
 }
 /*Header/title*/
@@ -18,9 +18,7 @@ header{
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-header h1 {
-	font-size: 40px;
+	font-size:45px;
 }
 h2{
 	font-size: 20px;
@@ -113,8 +111,9 @@ img{
 	margin-top:auto;
 }
 #bracketInfo{
-	padding-left: 70px;
+	padding-left: 40px;
 	font-size: 16px;
+	text-align:center;
 }
 
 

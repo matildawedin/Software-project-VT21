@@ -1,5 +1,5 @@
 body{
-	font-family:Montserrat;
+	font-family:Arial;
 	margin:0;
 }
 
@@ -9,9 +9,7 @@ header{
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-header h1 {
-	font-size: 40px;
+	font-size: 45px;
 }
 h2{
 	font-size: 20px;
@@ -91,7 +89,7 @@ p input{
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Montserrat;
+	font-family:Arial;
 	background-color: #747474;
 	color:white;
 	border-radius:4px;
@@ -100,12 +98,18 @@ p input{
 	transition: all 0.1s ease-in-out;
 	visibility: disabled;
 }
+#UpdateBtn:hover{
+	 background-color: #4CAF50; /* Green */
+}
+#backBtn:hover{
+	  background-color: #d43535;
+}
 #backBtn{
 	width:100%;
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Montserrat;
+	font-family:Arial;
 	background-color: #747474;
 	color:white;
 	border-radius:4px;

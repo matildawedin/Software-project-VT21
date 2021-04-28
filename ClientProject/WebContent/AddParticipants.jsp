@@ -19,9 +19,6 @@
 <%String tournamentId = request.getAttribute("tournamentId").toString();%> 
 <%String feedback = request.getAttribute("response").toString();%>
 <%ArrayList<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
-	<header>
-		<h1>Add your participants</h1>
-	</header>
 	<script>
 	function populateList(){
 		<%for(String s : teamList){%>
@@ -32,6 +29,9 @@
 		document.getElementById("list").appendChild(li);
 			<%}%>
 	}</script>
+	<header>
+		Add your participants
+	</header>
 		<nav>
 			<ul class="navul">
 				<a href ="Home.jsp">Home</a>
@@ -41,15 +41,15 @@
 				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
-		<section id="row">
 		<section id="main">
 			<section class="content">
 					<fieldset>
-						<legend>New Team:</legend>
-						<br>Name: <br>
+						<legend>New Team</legend>
+						<br>Name:
 						<form action="/ClientProject/MainServlet" method="post">
-							<input type="text" name="name" id="name" value="">
-							<input type="submit" name="submitBtn" value="Add" id="AddBtn"> 
+							<input type="text" name="name" id="name" value="" class="textField" placeholder="Enter the name">
+							<br><br>
+							<input type="submit" name="submitBtn" value="Add" id="AddBtn" class="button"> 
 							<input name="tourId" value="<%=tournamentId%>" type="hidden">
 							
 							<input name="operation" value="Add" type="hidden">
@@ -59,20 +59,20 @@
 			</section>
 			<section class="content">
 			<fieldset class="allTeam">
-			<legend>Added teams:</legend>
+			<legend>Added teams</legend>
 			<ol id="list">
 			</ol>
 			</fieldset>
 			</section>
 			<div class="cancelBtn">
 			<form action="/ClientProject/MainServlet" method="post" id="FinishForm">
-				<input type="submit" form="FinishForm" name="submitBtn" value="Finish" id="FinishBtn"> 
-				<input type="submit" form="FinishForm" name="submitBtn" value="Cancel" id="CancelBtn"> 
+				<input type="submit" form="FinishForm" name="submitBtn" value="Finish" id="FinishBtn" class="button"> 
+				<input type="submit" form="FinishForm" name="submitBtn" value="Cancel" id="CancelBtn" class="button"> 
 				<input name="operation" value="Home" type="hidden">
 			</form>
 			</div>
 		</section>
-	</section>
+
 	<footer>
 		<p>&copy; BracketGenerator</p>
 	</footer>

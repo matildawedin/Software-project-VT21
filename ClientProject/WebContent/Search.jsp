@@ -22,7 +22,7 @@
     <input name="operation" value="get" type="hidden">
 </form>
     <header>
-    <h1>Search for team or tournament</h1>
+    Search for team or tournament
     </header>
 	<nav class="navbar">
 		<ul>
