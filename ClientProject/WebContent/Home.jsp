@@ -14,7 +14,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 </head>
 <body>
 	<header>
-		<h1>Home</h1>
+		Home
 	</header>
 		<nav>
 			<ul class="navul">

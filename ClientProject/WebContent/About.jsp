@@ -15,7 +15,7 @@
 </head>
 <body>
 	<header>
-		<h1>About Us</h1>
+		About Us
 	</header>
 		<nav>
 			<ul class="navul">
@@ -33,31 +33,31 @@
 		<div class="column2">
 		<img src="images/Matilda.jpg">
 		<div class="card">
-		<h3>Matilda Wedin</h3>
+		<h4>Matilda Wedin</h4>
 		</div>
 		</div>
 		<div class="column2">
 		<img src="images/Ludvig.jpg">
 		<div class="card">
-		<h3>Ludvig Karsten</h3>
+		<h4>Ludvig Karsten</h4>
 		</div>
 		</div>
 		<div class="column2">
 		<img src="images/Ellen.jpg">
 		<div class="card">
-		<h3>Ellen Nordgren</h3>
+		<h4>Ellen Nordgren</h4>
 		</div>
 		</div>
 		<div class="column2">
 		<img src="images/Leo.jpg">
 		<div class="card">
-		<h3>Leo Rasmusson</h3>
+		<h4>Leo Rasmusson</h4>
 		</div>
 		</div>
 		<div class="column2">
 		<img src="images/Cissi.jpg">
 		<div class="card">
-		<h3>Cecilia Minder</h3>
+		<h4>Cecilia Minder</h4>
 		</div>
 		</div>
 		</div>

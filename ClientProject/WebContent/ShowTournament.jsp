@@ -13,7 +13,7 @@
 </head>
 <body>
 	<header>
-		<h1>Tournament</h1>
+		Tournament
 	</header>
 	<nav>
 		<ul class="navul">
@@ -56,6 +56,7 @@
 			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
 			<input name="operation" value="UpdateTournament" type="hidden">
 		</form>
+		<br>
 		<form action="/ClientProject/MainServlet" method="get">
 			<input id="backBtn" type="submit" name="submit" value="Back"/>
 		</form>

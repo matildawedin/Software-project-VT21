@@ -1,6 +1,6 @@
 /* Style body */
 body{
-	font-family:Montserrat;
+	font-family:Arial;
 	margin:0;
 }
 
@@ -10,10 +10,7 @@ header{
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-
-header h1 {
-	font-size: 40px;
+	font-size:45px;
 }
 h4{
 	font-size: 20px;
@@ -45,8 +42,6 @@ nav a {
 	font-size:22px;
 	text-decoration:none;
 	transition:all 0.45s;
-	
-	
 }
 
 nav a.active{
@@ -125,7 +120,7 @@ select{
 	padding: 0px 10px;
 	margin:0px;
 	position:relative;
-	font-family:Montserrat;
+	font-family:Arial;
 	background-color: #747474;
 	color:white;
 	width:100%;
@@ -170,7 +165,7 @@ option:hover{
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Montserrat;
+	font-family:Arial;
 	background-color: #747474;
 	color:white;
 	border-radius:4px;
@@ -179,7 +174,7 @@ option:hover{
 	transition: all 0.1s ease-in-out;
 }
 #FindBtn:hover{
-	background-color: #ACACB4;
+	background-color: #4CAF50;
 }
 
 /* Footer */

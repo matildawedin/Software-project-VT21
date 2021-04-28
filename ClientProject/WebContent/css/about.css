@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 }
 body{
-	font-family:Montserrat;
+	font-family:Arial;
 	margin:0
 }
 /*Header/title*/
@@ -12,9 +12,7 @@ header{
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-header h1 {
-	font-size: 40px;
+	font-size:45px;
 }
 h2{
 	font-size: 20px;
@@ -106,20 +104,21 @@ img{
 	margin-top:auto;
 }
 #bracketInfo{
-	padding-left: 70px;
+	padding-left: 40px;
 	font-size: 16px;
+	text-align:center;
 }
 
 
 /* Footer */
 footer{
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
 	padding:20px;
 	text-align: center;
 	background:#ddd;
+	
+	clear: both;
+    position: relative;
+    margin-top: -250px;
 }
 
 

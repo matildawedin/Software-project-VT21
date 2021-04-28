@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header>
-		<h1>JUnit Test</h1>
+		JUnit Test
 	</header>
 	<nav>
 		<ul class="navul">
