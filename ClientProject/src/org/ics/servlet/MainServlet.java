@@ -41,8 +41,6 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("teams", teams);
 			ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
 			request.setAttribute("tournaments", tournaments);
-			System.out.println(teams);
-			System.out.println(tournaments);
 			url="/Search.jsp";
 		}
 		else if(operation.equals("getTournaments")) {
@@ -93,6 +91,12 @@ public class MainServlet extends HttpServlet {
 				request.setAttribute("response", "");
 				url="/ShowTeam.jsp";
 			}
+			
+		}
+		else if(operation.equals("ShowAllTournament")) {
+			ArrayList<Tournament> allTournaments = (ArrayList<Tournament>)facade.findAllTournaments();
+			request.setAttribute("tournaments", allTournaments);
+			url="/About.jsp";
 			
 		}
 		else if(operation.equals("UpdateTournament")) {
