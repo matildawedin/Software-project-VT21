@@ -15,7 +15,7 @@
 </head>
 <body>
 	<header>
-		<p>Find and update Tournaments and Teams</p>
+		<p>Update Tournament name and sport</p>
 	</header>
 	<section id="row">
 		<nav>
@@ -23,12 +23,12 @@
 				<li><a class="active">Update</a></li>
 			</ul>
 		</nav>
-		<section id="TournamentFind" style="height: 273px; width: 500px">
+		<section id="TournamentFind" style="height: 273px; width: 250px">
 			<article>
-				<fieldset id="PersonalFS1 " style="width: 230px; height: 236px; ">
+				<fieldset id="PersonalFS1 " style="width: 230px; height: 250px; ">
 					<legend>Find tournament with ID:</legend>
 					TournamentID:<br> 
-					<input type="text" name="txtID" id="txtID" value=""><br> 
+					<input type="text" name="txtID" id="txtID" placeholder="Starting with I100"><br> 
 					Tournament name:<br> 
 					<input type="text" name="txtName" id="txtName" value=""> <br>
 					Tournament sport:<br> 
