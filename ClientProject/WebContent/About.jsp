@@ -23,6 +23,7 @@
 				<a href="Create.jsp">Create</a>
 				<a href="MainServlet">Find</a>
 				<a class="active">About</a>
+				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
 		<div class="row">

@@ -35,7 +35,15 @@ public class Tournament implements Serializable {
 	private Set<Game> games;
 	private int version;
 	
-	@Id
+	public Tournament (String tournamentID, String tournamentName, String sport) {
+		this.tournamentID = tournamentID;
+		this.tournamentName = tournamentName;
+		this.sport = sport;
+	}
+	public Tournament () {
+		
+	}
+	@Id  
 	@Column(name = "tournamentID")
 	public String getTournamentID() {
 		return tournamentID;

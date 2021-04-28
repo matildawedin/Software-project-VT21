@@ -59,6 +59,7 @@ nav a:hover{
 }
 /* Main */
 
+
 .column{
 	float:left;
 	max-width:50%;
@@ -111,12 +112,16 @@ img{
 
 
 /* Footer */
-
 footer{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
 	padding:20px;
 	text-align: center;
 	background:#ddd;
 }
+
 
 /*
 @media only screen and (max-witdh:600px){
@@ -127,3 +132,4 @@ footer{
 	
 	
 }*/
+
