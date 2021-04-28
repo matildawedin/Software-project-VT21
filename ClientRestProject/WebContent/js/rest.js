@@ -35,7 +35,7 @@ $(document).ready(function() {
 					$("#txtName").attr("placeholder", "Tournament updated");
 				}
 				function ajaxUpdateReturnError(result, status, xhr) {
-					alert("Error Update");
+					alert("You can not update the TournamentID only the name and sport");
 					console.log("Ajax-find: " + status);
 				}
 				
