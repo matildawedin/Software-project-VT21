@@ -43,12 +43,13 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournaments", tournaments);
 			url="/Search.jsp";
 		}
+		/*
 		else if(operation.equals("getTournaments")) {
 				ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
 				request.setAttribute("tournaments", tournaments);
 				System.out.println(tournaments);
 				url="/About.jsp";
-			}
+			}*/
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
