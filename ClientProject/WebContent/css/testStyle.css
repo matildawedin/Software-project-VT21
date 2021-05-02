@@ -1,9 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
+	
 }
-
 * {
 	box-sizing: border-box;
 }
@@ -83,7 +81,7 @@ footer{
 	background:#ddd;
 }
 body {
-	font-family:Arial;
+	font-family: 'Roboto', sans-serif;
 	margin:0;
 }
 section#row {

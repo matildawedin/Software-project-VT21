@@ -14,6 +14,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/addStyle.css">
 <title>BracketGenerator</title>
+<script src="js/add.js"></script>
 </head>
 <body  onload="populateList()">
 <%String tournamentId = request.getAttribute("tournamentId").toString();%> 
@@ -46,12 +47,12 @@
 					<fieldset>
 						<legend>New Team</legend>
 						<br>Name:
-						<form action="/ClientProject/MainServlet" method="post">
-							<input type="text" name="name" id="name" value="" class="textField" placeholder="Enter the name">
+						<form action="/ClientProject/MainServlet" method="post" id="AddForm">
+							<input type="text" name="name" id="name" value="" class="textField" placeholder="Enter the name" onchange="textOnChange()">
 							<br><br>
 							<input type="submit" name="submitBtn" value="Add" id="AddBtn" class="button"> 
-							<input name="tourId" value="<%=tournamentId%>" type="hidden">
 							
+							<input name="tourId" value="<%=tournamentId%>" type="hidden">
 							<input name="operation" value="Add" type="hidden">
 						</form>
 					</fieldset>
@@ -66,13 +67,13 @@
 			</section>
 			<div class="cancelBtn">
 			<form action="/ClientProject/MainServlet" method="post" id="FinishForm">
-				<input type="submit" form="FinishForm" name="submitBtn" value="Finish" id="FinishBtn" class="button"> 
-				<input type="submit" form="FinishForm" name="submitBtn" value="Cancel" id="CancelBtn" class="button"> 
+				<input type="submit" name="submitBtn" value="Finish" id="FinishBtn" class="button"> 
+				<input type="submit" name="submitBtn" value="Cancel" id="CancelBtn" class="button"> 
 				<input name="operation" value="Home" type="hidden">
 			</form>
 			</div>
 		</section>
-
+		<br><br>
 	<footer>
 		<p>&copy; BracketGenerator</p>
 	</footer>

@@ -62,7 +62,7 @@
 		</div>
 		</div>
 		</div>
-		<div class="column">
+		<div class="about">
 		<h2>About BracketGenerator</h2>
 		<img id="bracketImg" src="images/icon.png">
 			<p id="bracketInfo">Our aim is to make it easy for everyone to create a
