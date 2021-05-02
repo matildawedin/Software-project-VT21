@@ -65,13 +65,11 @@
 			</ol>
 			</fieldset>
 			</section>
-			<div class="cancelBtn">
 			<form action="/ClientProject/MainServlet" method="post" id="FinishForm">
 				<input type="submit" name="submitBtn" value="Finish" id="FinishBtn" class="button"> 
 				<input type="submit" name="submitBtn" value="Cancel" id="CancelBtn" class="button"> 
 				<input name="operation" value="Home" type="hidden">
 			</form>
-			</div>
 		</section>
 		<br><br>
 	<footer>

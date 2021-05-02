@@ -105,7 +105,7 @@ section#weatherSection {
 }
 #weatherImg{
 	position: absolute;
-	top: 420px;
+	top: 430px;
 	right: 270px;
 	max-width:120px;
 }
