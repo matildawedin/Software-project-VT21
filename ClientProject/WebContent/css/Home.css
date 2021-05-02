@@ -1,9 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
-}
 
+}
 * {
 	box-sizing: border-box;
 }
@@ -18,7 +16,7 @@ header{
 }
 
 h2{
-	font-size: 20px;
+	font-size: 35px;
 	text-align:center;
 }
 /* meny */
@@ -42,7 +40,7 @@ nav a {
 	color:white;
 	text-align:center;
 	padding: 14px 20px;
-	transition:background-posiotion-x 0.9s linear;
+	transition:background-position-x 0.9s linear;
 	font-size:22px;
 	text-decoration:none;
 	transition:all 0.45s;
@@ -68,45 +66,98 @@ footer{
 	background:#ddd;
 }
 body {
-	font-family:Arial;
+	font-family: 'Roboto', sans-serif;
 	margin:0;
+}
+section#welcome {
+	display: inline-block;
+	width: 40%;
+	height: 400px;
+	margin-left: 520px;
+	margin-right: auto;
+	margin-bottom: 40px;
+	padding: 10px 50px 10px 50px;
+	background-color: #434345;
+	color: #f0f0fa;
+	text-align: center;
+	border-style: groove;
+	box-shadow: 0 8px 16px 0 black;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+section#weatherSection {
+	float: right;
+	width: 25%;
+	height: 280px;
+	padding: 0px 5px 5px 15px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #a1dbff;
+	color: black;
+	box-shadow: 0 8px 16px 0 black;
 }
 
 /* Main*/
-.row{
-	padding:80px 200px 150px 200px;
+#bracketImg{
+	max-width:30%;
+	display: block;
+	margin-left: auto;
+	margin-right: 170px;
 }
-.column{
-	float:left;
-	width:50%;
-	padding:0 50px 50px 50px;
-	margin:auto;
-	
-}
-.row:after{
-	content:"";
-	display:table;
-	clear:both;
+#weatherImg{
+	position: absolute;
+	top: 420px;
+	right: 270px;
+	max-width:120px;
 }
 
-img{
-	max-width:30%;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
+#sunriseImg{
+	max-width:30px;
+	position: absolute;
+	top: 315px;
+	right: 100px;
+}
+#sunsetImg{
+	max-width:30px;
+	position: absolute;
+	top: 378px;
+	right: 100px;
+	
+}
+p{
+	display: inline-block;
+}
+#date{
+	 font-size: 14px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.5);
 }
 
 #city{
-	font-size: 20px;
-	text-align:center;
+	 font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.7);
 }
-
-#asideTable{
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-	padding-top:15px;
-	width:50%;
+#degree{
+	  font-size: 90px;
+  	color: rgba(0,0,0,0.9);
+  	font-weight: 100;
+  	margin-left: 190px;
 }
-
+#weather{
+	 text-transform: uppercase;
+	 font-weight: bold;
+}
+#sunrise{
+	float: right;
+	  font-weight: bold;
+	  margin-right: 5px;
+	  margin-left: 200px;
+}
+#sunset{
+	float: right;
+	  font-weight: bold;
+	   margin-right: 5px;
+	   margin-top: 10px;
+}
 

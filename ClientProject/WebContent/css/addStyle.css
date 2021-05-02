@@ -1,13 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
+	
 }
-
 * {
 	box-sizing: border-box;
 }
-
 /*Header/title*/
 header{
 	padding:80px;
@@ -52,17 +49,18 @@ nav a:hover{
 }
 
 body {
-	font-family:Arial;
+	font-family: 'Roboto', sans-serif;
 	margin:0;
 }
 
 section#main {
 	float: inherit;
 	width: 50%;
-	height: 400px;
+	height: 350px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 25px;
+	margin-bottom: 30px;
 	padding: 25px 25px 25px 25px;
 	background-color: #434345;
 	color: #000000;
@@ -73,7 +71,7 @@ section#main {
 }
 
 .content {
-	width: 49%;
+	width: 45%;
 	padding: 10px 10px 10px 10px;
 	height: 300px;
 	background-color: #434345;
@@ -124,6 +122,12 @@ p#feedback{
 input#CancelBtn:hover {
   background-color: #d43535;
   color: white;
+}
+.redPlaceHolder::placeholder {
+  color: #d43535;
+}
+.redPlaceHolder{
+	border: 2px solid #d43535;
 }
 /* Footer */
 #AddBtn{

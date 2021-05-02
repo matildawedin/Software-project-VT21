@@ -9,16 +9,14 @@ $(document).ready(function(){
  ParseJsonFile(result);
  }
  function ajaxReturn_Error(result, status, xhr) {
- console.log("Ajax-find movie: "+status);
+ console.log("Weather error: "+status);
  }
 
 function ParseJsonFile(result) {
  var lat = result.latitude;
 var long = result.longitude;
  var city = result.city;
- var ipNbr = result.ip
  $("#city").text(city);
- $("#ipNbr").text(ipNbr);
 $.ajax({
  method: "GET",
  url:
@@ -33,12 +31,41 @@ $.ajax({
  var timeStrSunrise = sunriseDate.toLocaleTimeString();
  var sunsetDate = new Date(sunset*1000);
  var timeStrSunset = sunsetDate.toLocaleTimeString();
- $("#sunrise").text("Sunrise: "+timeStrSunrise);
- $("#sunset").text("Sunset: "+timeStrSunset);
- $("#weather").text(result.weather[0].main);
+ var weather = result.weather[0].main;
 
- $("#degree").text(result.main.temp+" \u2103");
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth();
+	var y = today.getFullYear();
+	
+	var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+	var day = weekdays[today.getDay()];
+	today = day +", "+dd + " " + months[mm] + " "+y;
+ $("#date").text(today);
+ $("#sunrise").text(timeStrSunrise);
+ $("#sunset").text(timeStrSunset);
+ $("#weather").text(weather);
+
+ $("#degree").text(Math.round(result.main.temp)+"\u00B0");
+
+	if(weather == "Drizzle" || weather == "Rain"){
+		 document.getElementById("weatherImg").src = "https://cdn3.iconfinder.com/data/icons/weather-ios-11-1/50/Heavy_Rain_Night_Rain_Raindrops_Apple_iOS_Flat_Weather-512.png";
+	}
+	else if(weather == "Clear"){
+		 document.getElementById("weatherImg").src =  "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-sunny-512.png";
+	}
+	else if(weather == "Snow"){
+		 document.getElementById("weatherImg").src =  "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-snow-light-512.png";
+	}
+	else if(weather === "Clouds"){
+		document.getElementById("weatherImg").src = "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-partly-cloudy-512.png";
+	}
+	else{
+		 document.getElementById("weatherImg").src ="https://icon-library.com/images/cloudy-icon/cloudy-icon-15.jpg";
+	}
  }//ajaxWeatherReturn_Success
+
  function ajaxWeatherReturn_Error(result, status, xhr) {
  alert("Error i OpenWeaterMap Ajax");
  }

@@ -11,11 +11,10 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/createStyle.css">
 <title>BracketGenerator</title>
+<script src="js/create.js"></script>
 </head>
 <body>
-	<header>
-	Create a new Tournament
-	</header>
+	<header>Create a new Tournament</header>
 		<nav>
 			<ul class="navul">
 				<a href ="Home.jsp">Home</a>
@@ -32,10 +31,10 @@
 						<fieldset id="createNew">
 							<legend>New Tournament</legend>
 							Name: <br> 
-							<form action="/ClientProject/MainServlet" method="post">
-							<input type="text" name="name" value="" class="textField" placeholder="Enter the name">
+							<form action="/ClientProject/MainServlet" id="createForm" method="post">
+							<input type="text" name="name" value="" id="textName" class="textField" placeholder="Enter the name">
 							<br><br> Sport: <br> 
-							<input type="text" name="sport" value="" class="textField" placeholder="Enter the sport"> 
+							<input type="text" name="sport" value="" id="textSport" class="textField" placeholder="Enter the sport"> 
 							<br><br> 
 							<input type="submit" name="submitBtn" value="Create" class="button" id="createBtn"> 
 							<input type="submit" form = "CancelForm" name="submitBtn" value="Cancel" class="button"> 
