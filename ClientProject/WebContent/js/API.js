@@ -33,6 +33,20 @@ $.ajax({
  var timeStrSunset = sunsetDate.toLocaleTimeString();
  var weather = result.weather[0].main;
 
+	var today = returnToday();
+ $("#date").text(today);
+ $("#sunrise").text(timeStrSunrise);
+ $("#sunset").text(timeStrSunset);
+ $("#weather").text(weather);
+ $("#degree").text(Math.round(result.main.temp)+"\u00B0");
+	setWeatherImg(weather);
+ }//ajaxWeatherReturn_Success
+
+ function ajaxWeatherReturn_Error(result, status, xhr) {
+ alert("Error i OpenWeaterMap Ajax");
+ }
+ }
+function returnToday(){
 	var today = new Date();
 	var dd = today.getDate();
 	var mm = today.getMonth();
@@ -42,14 +56,10 @@ $.ajax({
 	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 	var day = weekdays[today.getDay()];
 	today = day +", "+dd + " " + months[mm] + " "+y;
- $("#date").text(today);
- $("#sunrise").text(timeStrSunrise);
- $("#sunset").text(timeStrSunset);
- $("#weather").text(weather);
-
- $("#degree").text(Math.round(result.main.temp)+"\u00B0");
-
-	if(weather == "Drizzle" || weather == "Rain"){
+	return today;
+}
+function setWeatherImg(weather){
+		if(weather == "Drizzle" || weather == "Rain"){
 		 document.getElementById("weatherImg").src = "https://cdn3.iconfinder.com/data/icons/weather-ios-11-1/50/Heavy_Rain_Night_Rain_Raindrops_Apple_iOS_Flat_Weather-512.png";
 	}
 	else if(weather == "Clear"){
@@ -64,10 +74,5 @@ $.ajax({
 	else{
 		 document.getElementById("weatherImg").src ="https://icon-library.com/images/cloudy-icon/cloudy-icon-15.jpg";
 	}
- }//ajaxWeatherReturn_Success
-
- function ajaxWeatherReturn_Error(result, status, xhr) {
- alert("Error i OpenWeaterMap Ajax");
- }
- }
+}
  })
