@@ -17,27 +17,21 @@
 	<header>
 		<p>Update Tournament name and sport</p>
 	</header>
+	<br><br>
 	<section id="row">
-		<nav>
-			<ul>
-				<li><a class="active">Update</a></li>
-			</ul>
-		</nav>
-		<section id="TournamentFind" style="height: 273px; width: 250px">
 			<article>
-				<fieldset id="PersonalFS1 " style="width: 230px; height: 250px; ">
+				<fieldset id="PersonalFS1 ">
 					<legend>Find tournament with ID:</legend>
-					TournamentID:<br> 
-					<input type="text" name="txtID" id="txtID" placeholder="Starting with I100"><br> 
-					Tournament name:<br> 
-					<input type="text" name="txtName" id="txtName" value=""> <br>
-					Tournament sport:<br> 
-					<input type="text" name="txtSport" id="txtSport" value=""> <br><br> 
-					<input type="button" name="submitBtn" value="Find" id="FindBtnTour"> 
-					<input type="button" name="submitBtn" value="Update" id="UpdateBtnTour">
+					<br> TournamentID:<br> 
+					<input type="text" name="txtID" id="txtID" placeholder="Starting with I100" class="textField">
+					<br><br>  Tournament name:<br> 
+					<input type="text" name="txtName" id="txtName" value="" class="textField">
+					<br><br> Tournament sport:<br> 
+					<input type="text" name="txtSport" id="txtSport" value="" class="textField"> <br><br> 
+					<input type="button" name="submitBtn" value="Find" id="FindBtnTour" class="button"> 
+					<input type="button" name="submitBtn" value="Update" id="UpdateBtnTour" class="button">
 					</fieldset>
 			</article>
-			</section>
 			</section>
 			<footer>
 				<p>&copy; BracketGenerator</p>
