@@ -16,6 +16,9 @@ $(document).ready(function() {
 				console.log("Ajax-find: " + status);
 			}
 		}
+		else{
+			$("#txtID").attr("placeholder", "Please type a tournamentID");
+		}
 	})
 	$("#UpdateBtnTour").click(function(){
 		var strId = $("#txtID").val();
@@ -32,7 +35,8 @@ $(document).ready(function() {
 					})
 				function ajaxUpdateReturnSuccess(result, status, xhr) {
 					clearFields();
-					$("#txtName").attr("placeholder", "Tournament updated");
+					disableFields();
+					$("#txtID").attr("placeholder", "Tournament updated");
 				}
 				function ajaxUpdateReturnError(result, status, xhr) {
 					alert("You can not update the TournamentID only the name and sport");
@@ -44,9 +48,12 @@ $(document).ready(function() {
 	})
 });
 function ParseJsonFileTournament(result) {
+	$("#txtName").removeAttr('disabled');
+	$("#txtSport").removeAttr('disabled');
 	$("#txtID").val(result.txtID);
 	$("#txtName").val(result.txtName);
 	$("#txtSport").val(result.txtSport);
+	$("#txtID").prop("disabled", true);
 	
 }
 function clearFields() {
@@ -54,4 +61,9 @@ $("#txtID").val("");
 $("#txtName").val("");
 $("#txtSport").val("");
 
+}
+function disableFields(){
+	$("#txtID").removeAttr('disabled');
+	$("#txtName").prop("disabled", true);
+	$("#txtSport").prop("disabled", true);
 }
