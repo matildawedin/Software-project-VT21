@@ -29,6 +29,7 @@ section#row {
 	border-style: groove;
 	box-shadow: 0 8px 16px 0 black;
 	text-align: center;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 section#row:after {
@@ -47,7 +48,6 @@ fieldset#PersonalFS1{
 	margin-right: 15px;
 	margin-bottom: 15px;
 	padding: 15px 15px 15px 15px;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	text-align: center;
 	
 }
