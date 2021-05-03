@@ -37,7 +37,7 @@
 			<ul class="navul">
 				<a href ="Home.jsp">Home</a>
 				<a class="active">Create</a>
-				<a href ="MainServlet.java">Find</a>
+				<a href ="MainServlet">Find</a>
 				<a href ="About.jsp">About</a>
 				<a href="Testing.jsp">Test</a>
 			</ul>

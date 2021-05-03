@@ -1,7 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
 }
 
 * {
@@ -9,20 +7,28 @@
 }
 
 header {
-	padding: 10px;
-	text-align: center;
-	margin-left: 0px;
-	margin-right: 0px;
-	font-size: 35px;
-	background-color: 	#2eb82e;
-	color: #000000;
+	padding:50px;
+	text-align:center;
+	background-color:black;
+	color: white;
+	font-size:45px;
 }
 body {
-	 background-color:	#5cd65c;
+	 font-family: 'Roboto', sans-serif;
+	 margin:0;
 }
 section#row {
-	padding: 10px 0px 10px 0px;
-	display: block;
+	float: inherit;
+	width: 35%;
+	height: 330px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 20px 20px 20px;
+	background-color: #434345;
+	color: #f0f0fa;
+	border-style: groove;
+	box-shadow: 0 8px 16px 0 black;
+	text-align: center;
 }
 
 section#row:after {
@@ -32,54 +38,49 @@ section#row:after {
 }
 
 section#TournamentFind {
-	float: left;
-	width: 60%;
-	margin-left: 100px;
-	margin-right: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 15px 10px 10px 10px;
-	background-color: 	#2eb82e	;
-	color: #000000;
 }
-
-footer {
-	bottom: 0;
- 	width: 100%;
+fieldset#PersonalFS1{
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	padding: 15px 15px 15px 15px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	text-align: center;
-	padding: 1px;
-	color: #000000;
-	background-color: 	#2eb82e	;
-	clear: both;
+	
+}
+.textField{
+	width: 50%;
+	padding: 5px 15px;
+	 border: 2px solid black;
+  border-radius: 4px;
+}
+input.button{
+	padding: 4px 16px;
+	margin-left: 7px;
+	margin-right: 7px;
+	text-align: center;
+	font-size: 14px;
+	transition-duration: 0.4s;
+	box-shadow: 0 8px 16px 0 black;
+	cursor:pointer;
+}
+input.button:hover {
+  background-color: #3d619c;
+  color: white;
+}
+#UpdateBtnTour:hover{
+	 background-color: #4CAF50;
+}
+footer{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding:20px;
+	text-align: center;
+	background:#ddd;
 }
 
-nav {
-	float: left;
-	width: 20%;
-	color: #000000;
-	background-color: 	#2eb82e;
-	padding: 0px 0px 0px 0px;
-}nav a {
-	display: block;
-	color: #000000;
-	padding: 10px 10px;
-	text-decoration: none;
-}
-/* Change color on hover */
-nav a:hover {
-	background-color: 	#248f24;
-	color:#000000 ;
-}
-
-nav ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav li:hover, nav li:focus {
-	color: #c0c0c0;
-	background-color: #c0c0c0;
-}nav li.active {
-	background: #248f24;
-	color: #000000!important;
-	font-weight: bold;
-}
