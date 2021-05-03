@@ -25,9 +25,9 @@
 					<br> TournamentID:<br> 
 					<input type="text" name="txtID" id="txtID" placeholder="Starting with I100" class="textField">
 					<br><br>  Tournament name:<br> 
-					<input type="text" name="txtName" id="txtName" value="" class="textField">
+					<input type="text" name="txtName" id="txtName" value="" class="textField" disabled>
 					<br><br> Tournament sport:<br> 
-					<input type="text" name="txtSport" id="txtSport" value="" class="textField"> <br><br> 
+					<input type="text" name="txtSport" id="txtSport" value="" class="textField" disabled> <br><br> 
 					<input type="button" name="submitBtn" value="Find" id="FindBtnTour" class="button"> 
 					<input type="button" name="submitBtn" value="Update" id="UpdateBtnTour" class="button">
 					</fieldset>
