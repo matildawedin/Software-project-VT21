@@ -21,7 +21,9 @@ public class GenerateIDImpl implements GenerateIDLocal {
 
 	public GenerateIDImpl() {
 	}
-
+	/*Method for returning new ID from a specified table. 
+	It selects the current top ID, breaks it down and adds to the number. 
+	Then sowing it back together and returning it as a string.*/
 	public String generateID(String type) {
 		TypedQuery<String> query = null;
 		if (type.toUpperCase() == "TEAM") {
