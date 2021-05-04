@@ -41,7 +41,6 @@ public class Tournament implements Serializable {
 		this.sport = sport;
 	}
 	public Tournament () {
-		
 	}
 	@Id  
 	@Column(name = "tournamentID")
@@ -92,12 +91,10 @@ public class Tournament implements Serializable {
 	public int getVersion() {
 		return version;
 	}
-
 	public void setVersion(int version) {
 		this.version = version;
 	} 
 
-	
 	@OneToMany(mappedBy = "tournament", fetch=FetchType.EAGER)
 	public Set<Game> getGames() {
 		return games;
