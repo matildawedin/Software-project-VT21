@@ -43,32 +43,11 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournaments", tournaments);
 			url="/Search.jsp";
 		}
-		/*
-		else if(operation.equals("getTournaments")) {
-				ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
-				request.setAttribute("tournaments", tournaments);
-				System.out.println(tournaments);
-				url="/About.jsp";
-			}*/
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
 
-	/*
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = null;
-		String operation = request.getParameter("operation");
-		if( operation == null || operation.equals("get")) {
-			ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
-			request.setAttribute("tournaments", tournaments);
-			System.out.println(tournaments);
-			url="/About.jsp";
-		}
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-		dispatcher.forward(request, response);
-	}*/
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("inne i dopost");
 		String url = null;
