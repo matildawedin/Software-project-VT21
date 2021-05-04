@@ -83,7 +83,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournament", tournament);
 			Set<Team> teams = tournament.getTeams();
 			request.setAttribute("teams", teams);
-			request.setAttribute("response", "Tournament name is updated!");
+			request.setAttribute("response", "Tournament is updated!");
 			url ="/ShowTournament.jsp";
 		}
 		else if(operation.equals("UpdateTeam")) {

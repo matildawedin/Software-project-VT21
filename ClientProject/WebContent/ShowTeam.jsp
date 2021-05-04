@@ -22,7 +22,8 @@
 			<a href="Testing.jsp">Test</a>
 		</ul>
 	</nav>
-	<section class="section">
+	<section>
+	<div class="teamSection">
 		<form action="/ClientProject/MainServlet" method="post">
 			<%Team team = (Team) request.getAttribute("team");%>
 			<%String feedback = request.getAttribute("response").toString();%>
@@ -44,6 +45,7 @@
 		<input id="backBtn" type="submit" name="submit" value="Back">
 		<input name="operation" value="get" type="hidden">
 		</form>
+		</div>
 	</section>
 	<footer>
 		<p>&copy; BracketGenerator</p>

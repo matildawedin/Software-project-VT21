@@ -60,48 +60,50 @@ nav a:hover{
 }
 /* Main */
 
+.mainSection{
+	padding:80px 200px 100px 200px;
 
-.column{
+}
+
+.leftColumn{
 	float:left;
 	max-width:50%;
 	padding:0 50px 50px 50px;
 }
-.row{
-	padding:80px 200px 100px 200px;
+.rightColumn{
+	float: right;
+	max-width: 45%;
 }
-.row:after{
+
+.mainSection:after{
 	content:"";
 	display:table;
 	clear:both;
 }
 
-/* about us */
-.column2{
+/* About us cards*/
+
+.innerSection{
+	display:grid;
+	grid-template-columns: 200px 200px 200px;
+	grid-auto-rows:250px;
+
+}
+.card{
 	
 	max-width:100%;
 	padding: 10px 15px 0 15px;
 	margin: 10px 10px 10px 10px;
 	box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
-
-}
-.card{
-	padding: 0 16px 0 16px;
-
-}
-.row2{
-	display:grid;
-	grid-template-columns: 200px 200px 200px;
-	grid-auto-rows:250px;
+	text-align:center;
 
 }
 img{
 	max-width:100%;
 
 }
-.about{
-	float: right;
-	max-width: 45%;
-}
+
+/* Bracket info */
 #bracketImg{
 	max-width:60%;
 	display:block;
