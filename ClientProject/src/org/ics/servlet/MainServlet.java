@@ -109,7 +109,7 @@ public class MainServlet extends HttpServlet {
 			ArrayList<String> tmpList = new ArrayList<String>();
 			request.setAttribute("teamList", tmpList);
 			request.setAttribute("tournamentId", tmpId);
-			request.setAttribute("response", "");
+			request.setAttribute("feedback", "");
 			url = "/AddParticipants.jsp";
 		}
 		else if (operation.equals("Add")) {
@@ -138,7 +138,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournamentId", tourId);
 			url = "/AddParticipants.jsp";
 			if(nameList.size() == 8) {
-				request.setAttribute("response", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
+				request.setAttribute("feedback", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
 				Set<Game> games = tmpTour.getGames();
 				if(games.size() == 0) {
 					ArrayList<String> tmpList = new ArrayList<String>();
@@ -160,7 +160,7 @@ public class MainServlet extends HttpServlet {
 				}
 			}
 			else {
-				request.setAttribute("response", "");
+				request.setAttribute("feedback", "");
 			}
 		}
 		else if (operation.equals("Home")) {
