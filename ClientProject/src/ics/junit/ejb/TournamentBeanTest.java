@@ -27,7 +27,7 @@ public class TournamentBeanTest extends TestCase {
 		super.setUp();
 		Context context = new InitialContext();
 		   
-//		tournament=(Tournament)context.lookup("java:app/IsEJBProject/TournamentEAOImpl!org.ics.eao.TournamentEAOLocal");
+		
 		facade=(FacadeLocal)context.lookup("java:app/IsEJBProject/Facade!org.ics.facade.FacadeLocal");
 		
 		expectedId = "I400";
@@ -36,13 +36,13 @@ public class TournamentBeanTest extends TestCase {
 		
 		tournament = new Tournament(expectedId, expectedTournamentName, expectedSport);
 	}
-	protected void tearDown() throws Exception { //Ha med metod som tar bort i databasen ocks�, 
+	protected void tearDown() throws Exception { 
 		super.tearDown();
 		facade.removeTestTournament(expectedId);
 		facade = null;
 		tournament = null;
 	}
-	public void testTournamentMethods() throws Exception { //�r inte tanken att vi ska skapa nya objekt som ska testas i denna metod? 
+	public void testTournamentMethods() throws Exception { 
 	
 	tournament = facade.createTournament(tournament);
 	assertEquals(tournament.getTournamentID(), expectedId);
