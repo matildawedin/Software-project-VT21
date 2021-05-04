@@ -26,43 +26,33 @@
 				<a href="Testing.jsp">Test</a>
 			</ul>
 		</nav>
-		<div class="row">
-		<div class="column">
+		<div class="mainSection">
+		<div class="leftColumn">
 		<h2>Our Team</h2>
-		<div class="row2">
-		<div class="column2">
-		<img src="images/Matilda.jpg">
+		<div class="innerSection">
 		<div class="card">
+		<img src="images/Matilda.jpg">
 		<h4>Matilda Wedin</h4>
 		</div>
-		</div>
-		<div class="column2">
-		<img src="images/Ludvig.jpg">
 		<div class="card">
+		<img src="images/Ludvig.jpg">
 		<h4>Ludvig Karsten</h4>
 		</div>
-		</div>
-		<div class="column2">
+		<div class="card">
 		<img src="images/Ellen.jpg">
+		<h4>Ellen Norgren</h4>
+		</div>
 		<div class="card">
-		<h4>Ellen Nordgren</h4>
-		</div>
-		</div>
-		<div class="column2">
 		<img src="images/Leo.jpg">
-		<div class="card">
 		<h4>Leo Rasmusson</h4>
 		</div>
-		</div>
-		<div class="column2">
-		<img src="images/Cissi.jpg">
 		<div class="card">
+		<img src="images/Cissi.jpg">
 		<h4>Cecilia Minder</h4>
 		</div>
 		</div>
 		</div>
-		</div>
-		<div class="about">
+		<div class="rightColumn">
 		<h2>About BracketGenerator</h2>
 		<img id="bracketImg" src="images/icon.png">
 			<p id="bracketInfo">Our aim is to make it easy for everyone to create a

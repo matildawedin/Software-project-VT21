@@ -10,7 +10,7 @@ body{
 	margin:0;
 }
 
-/*Header/title*/
+/* Header/title */
 header{
 	padding:80px;
 	text-align:center;
@@ -23,7 +23,7 @@ h2{
 	text-align:center;
 	padding-top: 50px;
 }
-/* meny */
+/* Meny */
 nav {
 	overflow:hidden;
 	background-color: #333;
@@ -71,18 +71,11 @@ footer{
 /* Main */
 
 section{
-	padding-top:40px;
-	padding-bottom: 200px;
-	padding-left: 750px;
+	padding:40px 700px 450px 700px;
 }
-aside{
-	width:30%;
-	padding-right:500px;
-	float:right;
-}
-label{
-	font-size:17px;
-}
+
+/* Info input */
+
 p input{
 	border-radius:4px;
 	width:100%;
@@ -90,6 +83,56 @@ p input{
 	height:30px;
 	font-size:14px;
 }
+
+/* Team main view */
+.teamSection{
+	max-width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	padding:0px 30% 30% 30%;
+	text-align:center;
+	
+}
+
+/* Participant list */
+.participantSection{
+	max-width:50%;
+	float:right;
+	padding:0px 50px 50px 50px;
+}
+.infoSection{
+	max-width:50%;
+	float:left;
+	padding:0px 50px 50px 50px;
+
+}
+
+#teamList{
+	list-style-type: none;
+	padding-top: 20px;
+	padding-left:0;
+	margin: 0;
+
+}
+#teamList li a{
+	width:100%;
+	border:1px solid #ddd;
+	margin-top:-1px;
+	background-color:#f6f6f6;
+	padding:12px;
+	text-decoration:none;
+	font-size:18px;
+	color:black;
+	display: block;
+	font-size:14px;
+
+}
+label{
+	font-size:17px;
+}
+
+
+/* Buttons */
 
 #UpdateBtn{
 	width:100%;
@@ -106,8 +149,9 @@ p input{
 	visibility: disabled;
 }
 #UpdateBtn:hover{
-	 background-color: #4CAF50; /* Green */
+	 background-color: #4CAF50; 
 }
+
 #backBtn:hover{
 	  background-color: #d43535;
 }
@@ -124,20 +168,4 @@ p input{
 	position:relative;
 	transition: all 0.1s ease-in-out;
 }
-#teamList{
-	list-style-type: none;
-	padding-top: 20px;
-	padding-left:0;
-	margin: 0;
-}
-#teamList li a{
-	width:80px;
-	border:1px solid #ddd;
-	margin-top:-1px;
-	background-color:#f6f6f6;
-	padding:12px;
-	text-decoration:none;
-	font-size:18px;
-	color:black;
-	display: block;
-}
+
