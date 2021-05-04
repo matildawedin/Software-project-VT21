@@ -18,20 +18,18 @@
 		<p>Update Tournament name and sport</p>
 	</header>
 	<br><br>
-	<section id="row">
-			<article>
-				<fieldset id="PersonalFS1 ">
+	<section id="content">
+				<fieldset id="find ">
 					<legend>Find tournament with ID:</legend>
 					<br> TournamentID:<br> 
-					<input type="text" name="txtID" id="txtID" placeholder="Starting with I100" class="textField">
+					<input type="text" id="txtID" placeholder="Starting with I100" class="textField">
 					<br><br>  Tournament name:<br> 
-					<input type="text" name="txtName" id="txtName" value="" class="textField" disabled>
+					<input type="text" id="txtName" value="" class="textField" disabled>
 					<br><br> Tournament sport:<br> 
-					<input type="text" name="txtSport" id="txtSport" value="" class="textField" disabled> <br><br> 
-					<input type="button" name="submitBtn" value="Find" id="FindBtnTour" class="button"> 
-					<input type="button" name="submitBtn" value="Update" id="UpdateBtnTour" class="button">
+					<input type="text" id="txtSport" value="" class="textField" disabled> <br><br> 
+					<input type="button"  value="Find" id="FindBtnTour" class="button"> 
+					<input type="button"  value="Update" id="UpdateBtnTour" class="button">
 					</fieldset>
-			</article>
 			</section>
 			<footer>
 				<p>&copy; BracketGenerator</p>

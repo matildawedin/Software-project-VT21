@@ -5,7 +5,7 @@
 * {
 	box-sizing: border-box;
 }
-
+/*Header/title*/
 header {
 	padding:50px;
 	text-align:center;
@@ -13,11 +13,12 @@ header {
 	color: white;
 	font-size:45px;
 }
+/* Content */
 body {
 	 font-family: 'Roboto', sans-serif;
 	 margin:0;
 }
-section#row {
+section#content {
 	float: inherit;
 	width: 35%;
 	height: 330px;
@@ -32,25 +33,19 @@ section#row {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-section#row:after {
+section#content:after {
 	content: "";
 	display: table;
 	clear: both;
 }
-
-section#TournamentFind {
-	margin-left: auto;
-	margin-right: auto;
-	padding: 15px 10px 10px 10px;
-}
-fieldset#PersonalFS1{
+fieldset#find{
 	margin-left: 15px;
 	margin-right: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	padding: 15px 15px 15px 15px;
 	text-align: center;
-	
 }
+/* Inputs */
 .textField{
 	width: 50%;
 	padding: 5px 15px;
@@ -74,6 +69,8 @@ input.button:hover {
 #UpdateBtnTour:hover{
 	 background-color: #4CAF50;
 }
+
+/* Footer */
 footer{
 	position: absolute;
 	bottom: 0;
