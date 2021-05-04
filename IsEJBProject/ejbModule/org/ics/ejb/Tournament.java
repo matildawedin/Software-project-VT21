@@ -35,13 +35,13 @@ public class Tournament implements Serializable {
 	private Set<Game> games;
 	private int version;
 	
+	public Tournament () {
+		
+	}
 	public Tournament (String tournamentID, String tournamentName, String sport) {
 		this.tournamentID = tournamentID;
 		this.tournamentName = tournamentName;
 		this.sport = sport;
-	}
-	public Tournament () {
-		
 	}
 	@Id  
 	@Column(name = "tournamentID")
@@ -92,12 +92,10 @@ public class Tournament implements Serializable {
 	public int getVersion() {
 		return version;
 	}
-
 	public void setVersion(int version) {
 		this.version = version;
 	} 
 
-	
 	@OneToMany(mappedBy = "tournament", fetch=FetchType.EAGER)
 	public Set<Game> getGames() {
 		return games;
