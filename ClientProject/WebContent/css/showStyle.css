@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@media screen and (max-width:600px) {
+	
+}
+* {
+	box-sizing: border-box;
+}
 body{
-	font-family:Montserrat;
+	font-family: 'Roboto', sans-serif;
 	margin:0;
 }
 
@@ -9,9 +16,7 @@ header{
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-header h1 {
-	font-size: 40px;
+	font-size: 45px;
 }
 h2{
 	font-size: 20px;
@@ -39,7 +44,7 @@ nav a {
 	color:white;
 	text-align:center;
 	padding: 14px 20px;
-	transition:background-posiotion-x 0.9s linear;
+	transition:background-position-x 0.9s linear;
 	font-size:22px;
 	text-decoration:none;
 	transition:all 0.45s;
@@ -91,7 +96,7 @@ p input{
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Montserrat;
+	font-family:Arial;
 	background-color: #747474;
 	color:white;
 	border-radius:4px;
@@ -100,12 +105,18 @@ p input{
 	transition: all 0.1s ease-in-out;
 	visibility: disabled;
 }
+#UpdateBtn:hover{
+	 background-color: #4CAF50; /* Green */
+}
+#backBtn:hover{
+	  background-color: #d43535;
+}
 #backBtn{
 	width:100%;
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Montserrat;
+	font-family:Arial;
 	background-color: #747474;
 	color:white;
 	border-radius:4px;

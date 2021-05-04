@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header>
-		<h1>JUnit Test</h1>
+		JUnit Test
 	</header>
 	<nav>
 		<ul class="navul">
@@ -23,11 +23,11 @@
 		</ul>
 	</nav>
 	<br><br><br><br>
-	<section id=main>
+	<section id=content>
 	<br>
 		<p id=title>Press the button below to run test</p>
 		 <br>
-		<form action="TestServlet" method="get" name="youPickItForm">
+		<form action="TestServlet" method="get">
 				<input type="hidden" name= "suite" value="ics.junit.ejb.TournamentBeanTest">
 			 <input type="submit" value="Run" id="button"/>
 		</form>
