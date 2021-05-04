@@ -1,15 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
+	
 }
-
 * {
 	box-sizing: border-box;
 }
-
 body{
-	font-family:Montserrat;
+	font-family: 'Roboto', sans-serif;
 	margin:0
 }
 /*Header/title*/
@@ -18,9 +15,7 @@ header{
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-header h1 {
-	font-size: 40px;
+	font-size:45px;
 }
 h2{
 	font-size: 20px;
@@ -48,7 +43,7 @@ nav a {
 	color:white;
 	text-align:center;
 	padding: 14px 20px;
-	transition:background-posiotion-x 0.9s linear;
+	transition:background-position-x 0.9s linear;
 	font-size:22px;
 	text-decoration:none;
 	transition:all 0.45s;
@@ -68,7 +63,7 @@ nav a:hover{
 
 .column{
 	float:left;
-	width:50%;
+	max-width:50%;
 	padding:0 50px 50px 50px;
 }
 .row{
@@ -83,14 +78,13 @@ nav a:hover{
 /* about us */
 .column2{
 	
-	width:100%;
-	padding: 0 8px;
+	max-width:100%;
+	padding: 10px 15px 0 15px;
+	margin: 10px 10px 10px 10px;
 	box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
 
 }
 .card{
-	
-	margin:8px;
 	padding: 0 16px 0 16px;
 
 }
@@ -101,32 +95,46 @@ nav a:hover{
 
 }
 img{
-	width:100%;
-	padding: 10px;
+	max-width:100%;
 
 }
+.about{
+	float: right;
+	max-width: 45%;
+}
 #bracketImg{
-	width:60%;
+	max-width:60%;
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:auto;
 }
 #bracketInfo{
-	padding-left: 70px;
+	padding-left: 40px;
 	font-size: 16px;
+	text-align:center;
 }
-
 
 
 /* Footer */
 footer{
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
 	padding:20px;
 	text-align: center;
 	background:#ddd;
+	
+	clear: both;
+    position: relative;
+    margin-top: -250px;
 }
+
+
+/*
+@media only screen and (max-witdh:600px){
+	.row2{
+	grid-template-columns: 50% 50% 50%;
+	grid-auto-rows:60%;
+	}
+	
+	
+}*/
 

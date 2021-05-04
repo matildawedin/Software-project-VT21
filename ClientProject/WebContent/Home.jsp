@@ -13,9 +13,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
  <title>BracketGenerator</title>
 </head>
 <body>
-	<header>
-		<h1>Home</h1>
-	</header>
+	<header>Home</header>
 		<nav>
 			<ul class="navul">
 				<a class="active">Home</a>
@@ -24,38 +22,33 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 				<a href="About.jsp">About</a>
 				<a href="Testing.jsp">Test</a>
 			</ul>
-		</nav>
-		<div class="row">
-		<div class="column">
+		</nav>	
+		<br><br>
+		<section id="welcome">
+		<article>
 			<h2>Welcome to BracketGenerator</h2>
-			<p>On this website you can create and edit tournaments and teams
-				asd.</p>
-			<img id="bracketImg" src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4"">
-		</div>
-		<div class="column" >
-			<table id="asideTable">
-				<tr>
-					<th><span id="city"></span></th>
-					<th><span></span></th>
-					<th><span></span></th>
-					<th><span id="ipNbr"></span></th>
-				</tr>
-				<tr>
-					<td><span id="degree"></span></td>
-					<td><span id="weather"></span></td>
-					<td><span></span></td>
-					<td><span></span></td>
-				</tr>
-				<tr>
-					<td colspan="4"><span id="sunrise"></span></td>
-				</tr>
-				<tr>
-					<td colspan="4"><span id="sunset"></span></td>
-				</tr>
-			</table>
-			<img id="weatherImg" src="https://images-na.ssl-images-amazon.com/images/I/41hzbXlmykL.png">
-		</div>
-	</div>
+			<p>On this website you can create and edit tournaments and teams. This service is connected to the larger BracketGenerator system that is mainly accessible through our desktop application.</p>
+			<img id="bracketImg" src="https://avatars.githubusercontent.com/u/4306614?s=400&v=4">
+		</article>
+		</section>
+		<section id= "weatherSection">
+		
+			<p> <span id= "date"></span>
+			<img id= "sunriseImg" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/sunrise-2311899-1920789.png">
+			<span id= "sunrise"></span>
+			<br>
+			<span id= "city"></span>
+			<br>
+			<img id="sunsetImg" src="https://image.flaticon.com/icons/png/512/116/116224.png">
+			<span id= "sunset"></span>
+			<br>
+			<br>	
+			<img id="weatherImg">
+			<br>
+			<span id= "degree"></span>
+			<span id= "weather"></span></p>
+			</section>	
+				<br>
 	<footer>
 		<p>&copy; BracketGenerator</p>
 	</footer>

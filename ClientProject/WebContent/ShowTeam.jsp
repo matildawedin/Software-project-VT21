@@ -11,7 +11,7 @@
 </head>
 <body onload="onloadFunction()">
 	<header>
-		<h1>Team</h1>
+		Team
 	</header>
 	<nav>
 		<ul class="navul">
@@ -39,6 +39,7 @@
 			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
 			<input name="operation" value="UpdateTeam" type="hidden">
 		</form>
+		<br>
 		<form  action="/ClientProject/MainServlet" method="get">
 		<input id="backBtn" type="submit" name="submit" value="Back">
 		<input name="operation" value="get" type="hidden">

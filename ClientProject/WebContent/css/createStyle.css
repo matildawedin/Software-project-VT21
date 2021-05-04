@@ -1,22 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
+	
 }
-
 * {
 	box-sizing: border-box;
 }
-
 /*Header/title*/
 header{
 	padding:80px;
 	text-align:center;
 	background-color:black;
 	color: white;
-}
-header h1 {
-	font-size: 40px;
+	font-size:45px;
 }
 /* meny */
 nav {
@@ -39,12 +34,10 @@ nav a {
 	color:white;
 	text-align:center;
 	padding: 14px 20px;
-	transition:background-posiotion-x 0.9s linear;
+	transition:background-position-x 0.9s linear;
 	font-size:22px;
 	text-decoration:none;
 	transition:all 0.45s;
-	
-	
 }
 
 nav a.active{
@@ -65,36 +58,58 @@ footer{
 	text-align: center;
 	background:#ddd;
 }
-
+input.button{
+	padding: 4px 16px;
+	margin-left: 7px;
+	margin-right: 7px;
+	text-align: center;
+	font-size: 14px;
+	transition-duration: 0.4s;
+	box-shadow: 0 8px 16px 0 black;
+	cursor:pointer;
+}
+input.button:hover {
+  background-color: #d43535; /* Green */
+  color: white;
+}
+#createBtn:hover{
+	 background-color: #4CAF50; /* Green */
+}
 body {
-	font-family:Montserrat;
+	font-family: 'Roboto', sans-serif;
 	margin:0;
 }
-section#row {
-	padding: 100px 0px 280px 0px;
-	display: block;
+.textField{
+	width: 50%;
+	padding: 5px 15px;
+	 border: 2px solid black;
+  border-radius: 4px;
 }
-
-section#row:after {
-	content: "";
-	display: table;
-	clear: both;
+.redPlaceHolder::placeholder {
+  color: #d43535;
 }
-
+.redPlaceHolder{
+	border: 2px solid #d43535;
+}
+fieldset#createNew{
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	padding: 15px 15px 15px 15px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-align: center;
+	
+}
 section#main {
 	float: inherit;
 	width: 35%;
-	height: 200px;
+	height: 260px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0px 10px 0px 15px;
+	padding: 0px 20px 0px 20px;
 	background-color: #434345;
 	color: #f0f0fa;
-}
-
-section#content {
-	padding: 10px 10px 10px 10px;
-	background-color: #434345;
-	color: #f0f0fa;
+	border-style: groove;
+	box-shadow: 0 8px 16px 0 black;
 }
 
