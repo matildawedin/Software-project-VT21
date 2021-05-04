@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap')
+	;
+
 @media screen and (max-width:600px) {
 }
 
@@ -7,17 +10,18 @@
 }
 /*Header/title*/
 header {
-	padding:50px;
-	text-align:center;
-	background-color:black;
+	padding: 50px;
+	text-align: center;
+	background-color: black;
 	color: white;
-	font-size:45px;
+	font-size: 45px;
 }
 /* Content */
 body {
-	 font-family: 'Roboto', sans-serif;
-	 margin:0;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
 }
+
 section#content {
 	float: inherit;
 	width: 35%;
@@ -38,7 +42,8 @@ section#content:after {
 	display: table;
 	clear: both;
 }
-fieldset#find{
+
+fieldset#find {
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-bottom: 30px;
@@ -46,13 +51,14 @@ fieldset#find{
 	text-align: center;
 }
 /* Inputs */
-.textField{
+.textField {
 	width: 50%;
 	padding: 5px 15px;
-	 border: 2px solid black;
-  border-radius: 4px;
+	border: 2px solid black;
+	border-radius: 4px;
 }
-input.button{
+
+input.button {
 	padding: 4px 16px;
 	margin-left: 7px;
 	margin-right: 7px;
@@ -60,24 +66,25 @@ input.button{
 	font-size: 14px;
 	transition-duration: 0.4s;
 	box-shadow: 0 8px 16px 0 black;
-	cursor:pointer;
+	cursor: pointer;
 }
+
 input.button:hover {
-  background-color: #3d619c;
-  color: white;
+	background-color: #3d619c;
+	color: white;
 }
-#UpdateBtnTour:hover{
-	 background-color: #4CAF50;
+
+#UpdateBtnTour:hover {
+	background-color: #4CAF50;
 }
 
 /* Footer */
-footer{
+footer {
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	padding:20px;
+	padding: 20px;
 	text-align: center;
-	background:#ddd;
+	background: #ddd;
 }
-
