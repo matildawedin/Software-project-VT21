@@ -18,7 +18,7 @@
 </head>
 <body  onload="populateList()">
 <%String tournamentId = request.getAttribute("tournamentId").toString();%> 
-<%String feedback = request.getAttribute("response").toString();%>
+<%String feedback = request.getAttribute("feedback").toString();%>
 <%ArrayList<String> teamList = (ArrayList<String>) request.getAttribute("teamList");%>
 	<script>
 	function populateList(){
@@ -48,26 +48,26 @@
 						<legend>New Team</legend>
 						<br>Name:
 						<form action="/ClientProject/MainServlet" method="post" id="AddForm">
-							<input type="text" name="name" id="name" value="" class="textField" placeholder="Enter the name" onchange="textOnChange()">
+							<input type="text" name="name" id="name" value="" class="textField" placeholder="Enter the name">
 							<br><br>
-							<input type="submit" name="submitBtn" value="Add" id="AddBtn" class="button"> 
+							<input type="submit" value="Add" id="AddBtn" class="button"> 
 							
 							<input name="tourId" value="<%=tournamentId%>" type="hidden">
 							<input name="operation" value="Add" type="hidden">
 						</form>
 					</fieldset>
-					<p id ="feedback"><%=feedback%></p>
+					<p id="feedback"><%=feedback%></p>
 			</section>
 			<section class="content">
-			<fieldset class="allTeam">
+			<fieldset id="allTeam">
 			<legend>Added teams</legend>
 			<ol id="list">
 			</ol>
 			</fieldset>
 			</section>
 			<form action="/ClientProject/MainServlet" method="post" id="FinishForm">
-				<input type="submit" name="submitBtn" value="Finish" id="FinishBtn" class="button"> 
-				<input type="submit" name="submitBtn" value="Cancel" id="CancelBtn" class="button"> 
+				<input type="submit" value="Finish" class="button"> 
+				<input type="submit" value="Cancel" id="CancelBtn" class="button"> 
 				<input name="operation" value="Home" type="hidden">
 			</form>
 		</section>
