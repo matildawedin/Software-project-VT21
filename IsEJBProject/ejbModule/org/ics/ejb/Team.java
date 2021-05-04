@@ -16,6 +16,8 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.persistence.JoinColumn;
 
+
+
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Team.findAllTeams()",
@@ -52,6 +54,7 @@ public class Team implements Serializable{
 		this.teamName = teamName;
 	}
 	
+	
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy="teams", cascade = CascadeType.PERSIST)
 	public Set<Tournament> getTournaments() {
 		return tournaments;
@@ -77,4 +80,9 @@ public class Team implements Serializable{
 	public void setGames(Set<Game> games) {
 		this.games = games;
 	}
+	
+
+	
+
+	
 }

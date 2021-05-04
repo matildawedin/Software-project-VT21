@@ -2,8 +2,11 @@ package org.ics.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
+import javax.interceptor.Interceptors;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +18,9 @@ import org.ics.ejb.Game;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
+import org.ics.interceptor.LogInterceptor;
 
+//@Interceptors(LogInterceptor.class)   // funkar ej 
 
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
@@ -83,7 +88,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournament", tournament);
 			Set<Team> teams = tournament.getTeams();
 			request.setAttribute("teams", teams);
-			request.setAttribute("response", "Tournament is updated!");
+			request.setAttribute("response", "Tournament name is updated!");
 			url ="/ShowTournament.jsp";
 		}
 		else if(operation.equals("UpdateTeam")) {
@@ -166,4 +171,16 @@ public class MainServlet extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
+	
+
+	protected void doPut(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+	
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+	}
+	
 }
