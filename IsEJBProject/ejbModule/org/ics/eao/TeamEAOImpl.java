@@ -32,40 +32,16 @@ public class TeamEAOImpl implements TeamEAOLocal {
     
     public Team createTeam(Team team) {
     	em.persist(team);
-    	
     	return team;
     }
     
     public void updateTeam(Team team) {
-    	
-    	try {
-    		em.merge(team);
-    	}
-    	catch(OptimisticLockException o) {
-    		//error hantering
-    	}
-    	
+    	em.merge(team);
     }
    
     public List<Team> findAllTeams(){
-    	
-    	try {
-    		TypedQuery<Team> query = em.createNamedQuery("Team.findAllTeams()", Team.class);
-    		List<Team> results = query.getResultList();
-    		return results;
-    	}
-    	catch(Exception e) {
-    		
-    		//error hantering???
-    		
-    		return null;
-    	}
+    	TypedQuery<Team> query = em.createNamedQuery("Team.findAllTeams()", Team.class);
+    	List<Team> results = query.getResultList();
+    	return results;
     }
-    public void addParticipantFromTeam(String teamId, Tournament tournament) {
-		Team tmpTeam = this.findTeam(teamId);
-		if (tmpTeam != null && tournament != null) {
-			tmpTeam.getTournaments().add(tournament);
-		}
-    }
-   
 }
