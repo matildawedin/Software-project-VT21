@@ -35,9 +35,7 @@ public class Tournament implements Serializable {
 	private Set<Game> games;
 	private int version;
 	
-	public Tournament () {
-		
-	}
+
 	public Tournament (String tournamentID, String tournamentName, String sport) {
 		this.tournamentID = tournamentID;
 		this.tournamentName = tournamentName;
