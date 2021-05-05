@@ -33,9 +33,9 @@
 	<div class="main">
 		<h4 for="radio-toolbar">Select category</h4>
 		<div class="radio-toolbar" onchange="radioFunction()">
-			<input type="radio" id="tournamentRadio" name="select"
+			<input type="radio" id="tournamentRadio" 
 				value="Tournament"> <label for="tournamentRadio">Tournament</label>
-			<input type="radio" id="teamRadio" name="select" value="Team">
+			<input type="radio" id="teamRadio" value="Team">
 			<label for="teamRadio">Team</label>
 		</div>
 		<tb>

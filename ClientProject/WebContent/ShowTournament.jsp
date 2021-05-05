@@ -55,12 +55,12 @@
 				<input type="text" name="txtSport" id="txtSport"
 					value="<%=tournament.getSport()%>" oninput="onUpdate();">
 			</p>
-			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn" disabled>
+			<input type="submit" value="Update" id="UpdateBtn" disabled>
 			<input name="operation" value="UpdateTournament" type="hidden">
 		</form>
 		<br>
 		<form action="/ClientProject/MainServlet" method="get">
-			<input id="backBtn" type="submit" name="submit" value="Back"/>
+			<input id="backBtn" type="submit" value="Back"/>
 		</form>
 		</div>
 	</section>
