@@ -80,10 +80,8 @@ section#welcome {
 section#weatherSection {
 	float: right;
 	width: 25%;
-	height: 280px;
+	height: 270px;
 	padding: 0px 5px 5px 15px;
-	margin-left: auto;
-	margin-right: auto;
 	background-color: #a1dbff;
 	color: black;
 	box-shadow: 0 8px 16px 0 black;
@@ -115,7 +113,7 @@ section#weatherSection {
 	float: right;
 	  font-weight: bold;
 	  margin-right: 5px;
-	  margin-left: 200px;
+	  margin-left: 180px;
 }
 #sunset{
 	float: right;
