@@ -81,7 +81,7 @@ input#button{
 	
 	font-size: 16px;
 	transition-duration: 0.4s;
-	 box-shadow: 0 8px 16px 0 black;*/
+	box-shadow: 0 8px 16px 0 black;
 }
 input#button:hover {
   background-color: #4CAF50; /* Green */
