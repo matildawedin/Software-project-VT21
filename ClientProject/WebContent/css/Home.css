@@ -19,7 +19,7 @@ h2{
 	font-size: 35px;
 	text-align:center;
 }
-/* meny */
+/* Menu */
 nav {
 	overflow:hidden;
 	background-color: #333;
@@ -53,21 +53,13 @@ nav a:hover{
 	background-color:#ddd;
 	color:black;
 }
-/* Footer */
-
-footer{
-	
-	position: relative;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	padding:20px;
-	text-align: center;
-	background:#ddd;
-}
+/* Content*/
 body {
 	font-family: 'Roboto', sans-serif;
 	margin:0;
+}
+p{
+	display: inline-block;
 }
 section#welcome {
 	display: inline-block;
@@ -84,6 +76,7 @@ section#welcome {
 	box-shadow: 0 8px 16px 0 black;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+/* Weather widget*/
 section#weatherSection {
 	float: right;
 	width: 25%;
@@ -96,36 +89,6 @@ section#weatherSection {
 	box-shadow: 0 8px 16px 0 black;
 }
 
-/* Main*/
-#bracketImg{
-	max-width:30%;
-	display: block;
-	margin-left: auto;
-	margin-right: 170px;
-}
-#weatherImg{
-	position: absolute;
-	top: 430px;
-	right: 270px;
-	max-width:120px;
-}
-
-#sunriseImg{
-	max-width:30px;
-	position: absolute;
-	top: 315px;
-	right: 100px;
-}
-#sunsetImg{
-	max-width:30px;
-	position: absolute;
-	top: 378px;
-	right: 100px;
-	
-}
-p{
-	display: inline-block;
-}
 #date{
 	 font-size: 14px;
   font-weight: bold;
@@ -159,5 +122,45 @@ p{
 	  font-weight: bold;
 	   margin-right: 5px;
 	   margin-top: 10px;
+}
+/* Images*/
+#bracketImg{
+	max-width:30%;
+	display: block;
+	margin-left: auto;
+	margin-right: 170px;
+}
+#weatherImg{
+	position: absolute;
+	top: 430px;
+	right: 270px;
+	max-width:120px;
+}
+
+#sunriseImg{
+	max-width:30px;
+	position: absolute;
+	top: 315px;
+	right: 100px;
+}
+#sunsetImg{
+	max-width:30px;
+	position: absolute;
+	top: 378px;
+	right: 100px;
+	
+}
+
+/* Footer */
+
+footer{
+	
+	position: relative;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding:20px;
+	text-align: center;
+	background:#ddd;
 }
 

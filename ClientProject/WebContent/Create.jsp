@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-	
 </script>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/createStyle.css">
@@ -25,8 +24,7 @@
 			</ul>
 		</nav>
 		<br><br><br><br>
-		<section id="main">
-					<article>
+		<section id="content">
 					<br>
 						<fieldset id="createNew">
 							<legend>New Tournament</legend>
@@ -36,15 +34,14 @@
 							<br><br> Sport: <br> 
 							<input type="text" name="sport" value="" id="textSport" class="textField" placeholder="Enter the sport"> 
 							<br><br> 
-							<input type="submit" name="submitBtn" value="Create" class="button" id="createBtn"> 
-							<input type="submit" form = "CancelForm" name="submitBtn" value="Cancel" class="button"> 
+							<input type="submit" value="Create" class="button" id="createBtn"> 
+							<input type="submit" value="Cancel" class="button" form ="CancelForm"> 
 							<input name="operation" value="Create" type="hidden">
 							</form>
-							<form action="/ClientProject/MainServlet" method="post" id="CancelForm">
+							<form action="/ClientProject/MainServlet" method="post">
 							<input name="operation" value="Home" type="hidden">
 							</form>
 						</fieldset>
-					</article>
 			</section>
 	<footer>
 		<p>&copy; BracketGenerator</p>

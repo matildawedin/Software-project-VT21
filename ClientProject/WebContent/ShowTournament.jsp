@@ -30,20 +30,21 @@
 			<%Tournament tournament = (Tournament) request.getAttribute("tournament");%>
 			<%Set<Team> teams = (Set<Team>) request.getAttribute("teams");%>
 			<%String feedback = request.getAttribute("response").toString();%>
+			<div class="participantSection">
+				<label>Participants</label>
+				<ul id="teamList">
+					<%for (Team t : teams) {%>
+					<li><a value="<%=t.getTeamID()%>"><%=t.getTeamName()%></a> 
+					<% }%>
+				</ul>
+			</div>
+			<div class="infoSection">
 			<p>
 				<input type="hidden" name="txtID" id="txtID"
 					value="<%=tournament.getTournamentID()%>">
 			</p>
 			<p class="response"><%=feedback%></p>
 			<label>Name</label>
-			<aside>
-				<label id="participantLable">Participants</label>
-				<ul id="teamList">
-					<%for (Team t : teams) {%>
-					<li><a value="<%=t.getTeamID()%>"><%=t.getTeamName()%></a> 
-					<% }%>
-				</ul>
-			</aside>
 			<p>
 				<input type="text" name="txtName" id="txtName"
 					value="<%=tournament.getTournamentName()%>">
@@ -55,11 +56,13 @@
 			</p>
 			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
 			<input name="operation" value="UpdateTournament" type="hidden">
+			
 		</form>
 		<br>
 		<form action="/ClientProject/MainServlet" method="get">
 			<input id="backBtn" type="submit" name="submit" value="Back"/>
 		</form>
+		</div>
 	</section>
 	<footer>
 		<p>&copy; BracketGenerator</p>

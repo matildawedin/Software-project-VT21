@@ -49,23 +49,7 @@ public class Game implements Serializable {
 	public void setRound(int round) {
 		this.round = round;
 	}
-	/*
-	@ManyToOne
-	@JoinColumn(name = "participantOne", referencedColumnName="teamID")
-	public Team getParticipantOne() {
-		return participantOne;
-	}
-	public void setParticipantOne(Team participantOne) {
-		this.participantOne = participantOne;
-	}	
-	@ManyToOne
-	@JoinColumn(name = "participantTwo", referencedColumnName="teamID")
-	public Team getParticipantTwo() {
-		return participantTwo;
-	}
-	public void setParticipantTwo(Team participantTwo) {
-		this.participantTwo = participantTwo;
-	}*/
+
 	@ManyToOne
 	@JoinColumn(name = "tournamentID", referencedColumnName="tournamentID")
 	public Tournament getTournament() {
@@ -83,7 +67,6 @@ public class Game implements Serializable {
 		this.version = version;
 	}
 
-	
 	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)  
 	@JoinTable(name="GameTeam",
 		joinColumns= 

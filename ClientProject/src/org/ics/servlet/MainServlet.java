@@ -2,11 +2,8 @@ package org.ics.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
-import java.util.logging.Logger;
 import javax.ejb.EJB;
-import javax.interceptor.Interceptors;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +15,8 @@ import org.ics.ejb.Game;
 import org.ics.ejb.Team;
 import org.ics.ejb.Tournament;
 import org.ics.facade.FacadeLocal;
-import org.ics.interceptor.LogInterceptor;
 
-//@Interceptors(LogInterceptor.class)   // funkar ej 
+
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -87,7 +83,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournament", tournament);
 			Set<Team> teams = tournament.getTeams();
 			request.setAttribute("teams", teams);
-			request.setAttribute("response", "Tournament name is updated!");
+			request.setAttribute("response", "Tournament is updated!");
 			url ="/ShowTournament.jsp";
 		}
 		else if(operation.equals("UpdateTeam")) {
@@ -109,7 +105,7 @@ public class MainServlet extends HttpServlet {
 			ArrayList<String> tmpList = new ArrayList<String>();
 			request.setAttribute("teamList", tmpList);
 			request.setAttribute("tournamentId", tmpId);
-			request.setAttribute("response", "");
+			request.setAttribute("feedback", "");
 			url = "/AddParticipants.jsp";
 		}
 		else if (operation.equals("Add")) {
@@ -138,7 +134,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("tournamentId", tourId);
 			url = "/AddParticipants.jsp";
 			if(nameList.size() == 8) {
-				request.setAttribute("response", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
+				request.setAttribute("feedback", "You have now reached the limit of teams to this tournament. Please select \"Finished\"");
 				Set<Game> games = tmpTour.getGames();
 				if(games.size() == 0) {
 					ArrayList<String> tmpList = new ArrayList<String>();
@@ -160,7 +156,7 @@ public class MainServlet extends HttpServlet {
 				}
 			}
 			else {
-				request.setAttribute("response", "");
+				request.setAttribute("feedback", "");
 			}
 		}
 		else if (operation.equals("Home")) {
@@ -170,15 +166,4 @@ public class MainServlet extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
-	
-
-	protected void doPut(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
-	
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-	
 }
