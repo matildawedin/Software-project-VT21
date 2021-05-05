@@ -2,8 +2,8 @@
  pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ page import="org.ics.ejb.Tournament"%>
-<%@ page import="java.util.ArrayList"%>
-<html>
+
+<%@page import="java.util.ArrayList"%><html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
