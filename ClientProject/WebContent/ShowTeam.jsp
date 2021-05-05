@@ -43,7 +43,6 @@
 		<br>
 		<form  action="/ClientProject/MainServlet" method="get">
 		<input id="backBtn" type="submit" name="submit" value="Back">
-		<input name="operation" value="get" type="hidden">
 		</form>
 		</div>
 	</section>

@@ -43,6 +43,9 @@ public class Tournament implements Serializable {
 		this.tournamentName = tournamentName;
 		this.sport = sport;
 	}
+	public Tournament() {
+		
+	}
 	@Id  
 	@Column(name = "tournamentID")
 	public String getTournamentID() {
