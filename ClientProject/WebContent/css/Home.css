@@ -79,7 +79,7 @@ section#welcome {
 /* Weather widget*/
 section#weatherSection {
 	float: right;
-	width: 450px; /*350px*/
+	width: 450px;
 	height: 270px;
 	padding: 0px 5px 5px 15px;
 	background-color: #a1dbff;
