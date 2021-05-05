@@ -135,18 +135,16 @@ label{
 /* Buttons */
 
 #UpdateBtn{
+	
 	width:100%;
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Arial;
-	background-color: #747474;
-	color:white;
 	border-radius:4px;
 	cursor:pointer;
 	position:relative;
 	transition: all 0.1s ease-in-out;
-	visibility: disabled;
+
 }
 #UpdateBtn:hover{
 	 background-color: #4CAF50; 
@@ -160,9 +158,6 @@ label{
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Arial;
-	background-color: #747474;
-	color:white;
 	border-radius:4px;
 	cursor:pointer;
 	position:relative;
