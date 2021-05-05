@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="images/icon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
@@ -37,9 +38,9 @@
 	</section>
 	<section id="weatherSection">
 		<p>
-			<span id="date"></span> <img id="sunriseImg"
+			<span id="date"></span><img id="sunriseImg"
 				src="https://cdn.iconscout.com/icon/premium/png-512-thumb/sunrise-2311899-1920789.png">
-			<span id="sunrise"></span> <br> <span id="city"></span> <br>
+			 <span id="sunrise"></span><br> <span id="city"></span> <br>
 			<img id="sunsetImg"
 				src="https://image.flaticon.com/icons/png/512/116/116224.png">
 			<span id="sunset"></span> <br> <br> <img id="weatherImg">

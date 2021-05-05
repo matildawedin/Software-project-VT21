@@ -35,22 +35,20 @@ public class MainServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String url = null;
-		String operation = request.getParameter("operation");
-		if( operation == null || operation.equals("get")) {
-			ArrayList<Team> teams = (ArrayList<Team>) facade.findAllTeams();
-			request.setAttribute("teams", teams);
-			ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
-			request.setAttribute("tournaments", tournaments);
-			url="/Search.jsp";
-		}
-		
+
+		ArrayList<Team> teams = (ArrayList<Team>) facade.findAllTeams();
+		request.setAttribute("teams", teams);
+		ArrayList<Tournament> tournaments = (ArrayList<Tournament>) facade.findAllTournaments();
+		request.setAttribute("tournaments", tournaments);
+		url = "/Search.jsp";
+
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("inne i dopost");
 		String url = null;
 		String operation = request.getParameter("operation");
 		

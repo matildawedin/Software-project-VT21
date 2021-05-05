@@ -4,12 +4,13 @@
 <%@ page import="org.ics.ejb.Team"%>
 <html>
 <head>
+<link rel="icon" type="image/png" href="images/icon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/showStyle.css">
 <script src="js/show.js"></script>
 <title>Team</title>
 </head>
-<body onload="onloadFunction()">
+<body>
 	<header>
 		Team
 	</header>
@@ -34,16 +35,15 @@
 			<p class="response"><%=feedback%></p>
 			<label>Name</label>
 			<p>
-				<input onchange="onTeamUpdate()" type="text" name="txtName" id="txtName"
-					value="<%=team.getTeamName()%>" >
+				<input type="text" name="txtName" id="txtName"
+					value="<%=team.getTeamName()%>" autocomplete='off' oninput="onUpdate();" >
 			</p>
-			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
+			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn" disabled>
 			<input name="operation" value="UpdateTeam" type="hidden">
 		</form>
 		<br>
 		<form  action="/ClientProject/MainServlet" method="get">
 		<input id="backBtn" type="submit" name="submit" value="Back">
-		<input name="operation" value="get" type="hidden">
 		</form>
 		</div>
 	</section>

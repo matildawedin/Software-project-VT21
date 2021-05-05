@@ -16,11 +16,8 @@
 <script src="js/search.js"></script>
 </head>
 <body>
-<form action="/ClientProject/MainServlet" method="get">
     <%ArrayList<Team> teams = (ArrayList<Team>) request.getAttribute("teams");%>
     <%ArrayList<Tournament> tournaments = (ArrayList<Tournament>) request.getAttribute("tournaments");%>
-    <input name="operation" value="get" type="hidden">
-</form>
     <header>
     Search for team or tournament
     </header>
