@@ -6,6 +6,7 @@
 <%@ page import="java.util.Set"%>
 <html>
 <head>
+<link rel="icon" type="image/png" href="images/icon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/showStyle.css">
 <title>Tournament</title>
@@ -47,16 +48,15 @@
 			<label>Name</label>
 			<p>
 				<input type="text" name="txtName" id="txtName"
-					value="<%=tournament.getTournamentName()%>">
+					value="<%=tournament.getTournamentName()%>" oninput="onUpdate();">
 			</p>
 			<label>Sport</label>
 			<p>
 				<input type="text" name="txtSport" id="txtSport"
-					value="<%=tournament.getSport()%>">
+					value="<%=tournament.getSport()%>" oninput="onUpdate();">
 			</p>
-			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn">
+			<input type="submit" name="submitBtn" value="Update" id="UpdateBtn" disabled>
 			<input name="operation" value="UpdateTournament" type="hidden">
-			
 		</form>
 		<br>
 		<form action="/ClientProject/MainServlet" method="get">

@@ -23,7 +23,7 @@ h2{
 	text-align:center;
 	padding-top: 50px;
 }
-/* Meny */
+/* Menu */
 nav {
 	overflow:hidden;
 	background-color: #333;
@@ -62,13 +62,17 @@ nav a:hover{
 /* Footer */
 
 footer{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
 	padding:20px;
 	text-align: center;
 	background:#ddd;
 }
 
 
-/* Main */
+/* Content */
 
 section{
 	padding:40px 700px 450px 700px;
@@ -85,6 +89,7 @@ p input{
 }
 
 /* Team main view */
+
 .teamSection{
 	max-width:100%;
 	margin-left:auto;
@@ -135,18 +140,16 @@ label{
 /* Buttons */
 
 #UpdateBtn{
+	
 	width:100%;
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Arial;
-	background-color: #747474;
-	color:white;
 	border-radius:4px;
 	cursor:pointer;
 	position:relative;
 	transition: all 0.1s ease-in-out;
-	visibility: disabled;
+
 }
 #UpdateBtn:hover{
 	 background-color: #4CAF50; 
@@ -160,9 +163,6 @@ label{
 	max-width:100px;
 	height:40px;
 	font-size:16px;
-	font-family:Arial;
-	background-color: #747474;
-	color:white;
 	border-radius:4px;
 	cursor:pointer;
 	position:relative;

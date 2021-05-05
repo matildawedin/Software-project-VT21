@@ -1,10 +1,4 @@
-function onloadFunction() {
-	document.getElementById("UpdateBtn").disabled = true;
 
-}
-
-
-function onTeamUpdate() {
+function onUpdate(){
 	document.getElementById("UpdateBtn").disabled = false;
-
 }
