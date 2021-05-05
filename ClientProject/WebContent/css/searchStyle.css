@@ -12,7 +12,7 @@ body{
 	margin:0;
 }
 
-/*Header/title*/
+/* Header/title */
 header{
 	padding:80px;
 	text-align:center;
@@ -25,7 +25,7 @@ h4{
 	text-align:center;
 	
 }
-/* meny*/
+/* Menu */
 nav {
 	overflow:hidden;
 	background-color: #333;
@@ -60,7 +60,7 @@ nav a:hover{
 	color:black;
 }
 
-/* Main */
+/* Content */
 
 .main{
 	background-color:white;
@@ -111,7 +111,7 @@ nav a:hover{
    box-shadow: none;
 }
 
-/*Drop Down style */
+/*Drop down style */
 .selectdiv{
 	display:flex;
 	justify-content:center;
@@ -167,7 +167,7 @@ option:hover{
 	background-color:#6C6C74;
 }
 
-/* Search buttom*/
+/* Search button */
 #FindBtn{
 	width:100%;
 	max-width:100px;
