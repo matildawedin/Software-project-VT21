@@ -79,7 +79,7 @@ section#welcome {
 /* Weather widget*/
 section#weatherSection {
 	float: right;
-	width: 25%;
+	width: 450px; /*350px*/
 	height: 270px;
 	padding: 0px 5px 5px 15px;
 	background-color: #a1dbff;
@@ -113,7 +113,7 @@ section#weatherSection {
 	float: right;
 	  font-weight: bold;
 	  margin-right: 5px;
-	  margin-left: 180px;
+	  margin-left: 200px;
 }
 #sunset{
 	float: right;
